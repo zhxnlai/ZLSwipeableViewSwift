@@ -1,0 +1,6 @@
+pod 'performSelector-swift'
+pod 'UIColor+FlatColors'
+pod 'Cartography'
+
+link_with 'ZLSwipeableViewSwiftDemo', 'ZLSwipeableViewSwiftDemoTests'
+use_frameworks!

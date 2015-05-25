@@ -1,0 +1,16 @@
+PODS:
+  - Cartography (0.5.0)
+  - performSelector-swift (0.1.0)
+  - UIColor+FlatColors (0.0.2)
+
+DEPENDENCIES:
+  - Cartography
+  - performSelector-swift
+  - UIColor+FlatColors
+
+SPEC CHECKSUMS:
+  Cartography: 774e5cc446f5a6bca5d4345c5aa6af9a1fe74dc6
+  performSelector-swift: 676d3dab420ed7e1505a7cdaf35e5741509cdd3c
+  UIColor+FlatColors: 6c699df7a575281794c688c64cee6c44fd1f93b4
+
+COCOAPODS: 0.37.1
