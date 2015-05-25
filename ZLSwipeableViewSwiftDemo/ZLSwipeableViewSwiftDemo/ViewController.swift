@@ -34,6 +34,8 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        swipeableView.layoutIfNeeded()
         swipeableView.loadViews()
     }
     override func viewDidLoad() {
