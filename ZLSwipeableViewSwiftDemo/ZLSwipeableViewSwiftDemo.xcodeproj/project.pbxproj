@@ -13,10 +13,10 @@
 		09673A8B1AEF5B2E008C7240 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09673A8A1AEF5B2E008C7240 /* Images.xcassets */; };
 		09673A8E1AEF5B2E008C7240 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09673A8C1AEF5B2E008C7240 /* LaunchScreen.xib */; };
 		09673A9A1AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09673A991AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift */; };
-		09673AA41AEF5BD4008C7240 /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09673AA31AEF5BD4008C7240 /* ZLSwipeableView.swift */; };
-		09673AA61AEF5BE5008C7240 /* ZLPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09673AA51AEF5BE5008C7240 /* ZLPanGestureRecognizer.swift */; };
 		098070A21B12ECAD00C90479 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070A11B12ECAD00C90479 /* CardView.swift */; };
 		098070A41B12ED6400C90479 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098070A31B12ED6400C90479 /* CardView.xib */; };
+		098070A81B12EDF400C90479 /* ZLPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070A61B12EDF400C90479 /* ZLPanGestureRecognizer.swift */; };
+		098070A91B12EDF400C90479 /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070A71B12EDF400C90479 /* ZLSwipeableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +40,10 @@
 		09673A931AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZLSwipeableViewSwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09673A981AEF5B2E008C7240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09673A991AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLSwipeableViewSwiftDemoTests.swift; sourceTree = "<group>"; };
-		09673AA31AEF5BD4008C7240 /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
-		09673AA51AEF5BE5008C7240 /* ZLPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		098070A11B12ECAD00C90479 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		098070A31B12ED6400C90479 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		098070A61B12EDF400C90479 /* ZLPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		098070A71B12EDF400C90479 /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 		09673A751AEF5B2E008C7240 = {
 			isa = PBXGroup;
 			children = (
-				099F1B901B11370300C524E6 /* ZLSwipeableViewSwift */,
+				098070A51B12EDF400C90479 /* ZLSwipeableViewSwift */,
 				09673A801AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemo */,
 				09673A961AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests */,
 				09673A7F1AEF5B2E008C7240 /* Products */,
@@ -123,14 +123,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		099F1B901B11370300C524E6 /* ZLSwipeableViewSwift */ = {
+		098070A51B12EDF400C90479 /* ZLSwipeableViewSwift */ = {
 			isa = PBXGroup;
 			children = (
-				09673AA31AEF5BD4008C7240 /* ZLSwipeableView.swift */,
-				09673AA51AEF5BE5008C7240 /* ZLPanGestureRecognizer.swift */,
+				098070A61B12EDF400C90479 /* ZLPanGestureRecognizer.swift */,
+				098070A71B12EDF400C90479 /* ZLSwipeableView.swift */,
 			);
 			name = ZLSwipeableViewSwift;
-			path = ZLSwipeableViewSwiftDemo;
+			path = ../ZLSwipeableViewSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,11 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				098070A91B12EDF400C90479 /* ZLSwipeableView.swift in Sources */,
 				09673A861AEF5B2E008C7240 /* ViewController.swift in Sources */,
-				09673AA41AEF5BD4008C7240 /* ZLSwipeableView.swift in Sources */,
 				09673A841AEF5B2E008C7240 /* AppDelegate.swift in Sources */,
-				09673AA61AEF5BE5008C7240 /* ZLPanGestureRecognizer.swift in Sources */,
 				098070A21B12ECAD00C90479 /* CardView.swift in Sources */,
+				098070A81B12EDF400C90479 /* ZLPanGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
