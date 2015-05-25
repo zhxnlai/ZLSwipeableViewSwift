@@ -1,0 +1,6 @@
+framework module ReactiveUI {
+  umbrella header "Pods-ReactiveUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -12,6 +12,12 @@
 #define COCOAPODS_VERSION_MINOR_Cartography 5
 #define COCOAPODS_VERSION_PATCH_Cartography 0
 
+// ReactiveUI
+#define COCOAPODS_POD_AVAILABLE_ReactiveUI
+#define COCOAPODS_VERSION_MAJOR_ReactiveUI 0
+#define COCOAPODS_VERSION_MINOR_ReactiveUI 0
+#define COCOAPODS_VERSION_PATCH_ReactiveUI 2
+
 // UIColor+FlatColors
 #define COCOAPODS_POD_AVAILABLE_UIColor_FlatColors
 #define COCOAPODS_VERSION_MAJOR_UIColor_FlatColors 0
