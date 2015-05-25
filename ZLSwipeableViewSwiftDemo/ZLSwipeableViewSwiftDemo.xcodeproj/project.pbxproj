@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09673A841AEF5B2E008C7240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09673A831AEF5B2E008C7240 /* AppDelegate.swift */; };
-		09673A861AEF5B2E008C7240 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09673A851AEF5B2E008C7240 /* ViewController.swift */; };
-		09673A891AEF5B2E008C7240 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09673A871AEF5B2E008C7240 /* Main.storyboard */; };
+		09673A861AEF5B2E008C7240 /* ZLSwipeableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09673A851AEF5B2E008C7240 /* ZLSwipeableViewController.swift */; };
 		09673A8B1AEF5B2E008C7240 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09673A8A1AEF5B2E008C7240 /* Images.xcassets */; };
 		09673A8E1AEF5B2E008C7240 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09673A8C1AEF5B2E008C7240 /* LaunchScreen.xib */; };
 		09673A9A1AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09673A991AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift */; };
@@ -17,6 +16,10 @@
 		098070A41B12ED6400C90479 /* CardContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098070A31B12ED6400C90479 /* CardContentView.xib */; };
 		098070A81B12EDF400C90479 /* ZLPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070A61B12EDF400C90479 /* ZLPanGestureRecognizer.swift */; };
 		098070A91B12EDF400C90479 /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070A71B12EDF400C90479 /* ZLSwipeableView.swift */; };
+		098070AB1B13D69300C90479 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AA1B13D69300C90479 /* MenuTableViewController.swift */; };
+		098070AD1B13DEA600C90479 /* UndoDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AC1B13DEA600C90479 /* UndoDemoViewController.swift */; };
+		098070AF1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AE1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift */; };
+		098070B11B13E9B900C90479 /* CustomSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070B01B13E9B900C90479 /* CustomSwipeDemoViewController.swift */; };
 		179604C29FFE95576E597034 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB7EDF499F2D90A9D123AB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		78FA118955F2E3CFC6B2C8A5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB7EDF499F2D90A9D123AB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -35,8 +38,7 @@
 		09673A7E1AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLSwipeableViewSwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09673A821AEF5B2E008C7240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09673A831AEF5B2E008C7240 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09673A851AEF5B2E008C7240 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		09673A881AEF5B2E008C7240 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		09673A851AEF5B2E008C7240 /* ZLSwipeableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLSwipeableViewController.swift; sourceTree = "<group>"; };
 		09673A8A1AEF5B2E008C7240 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		09673A8D1AEF5B2E008C7240 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		09673A931AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZLSwipeableViewSwiftDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +48,10 @@
 		098070A31B12ED6400C90479 /* CardContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardContentView.xib; sourceTree = "<group>"; };
 		098070A61B12EDF400C90479 /* ZLPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		098070A71B12EDF400C90479 /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
+		098070AA1B13D69300C90479 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		098070AC1B13DEA600C90479 /* UndoDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UndoDemoViewController.swift; sourceTree = "<group>"; };
+		098070AE1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimationDemoViewController.swift; sourceTree = "<group>"; };
+		098070B01B13E9B900C90479 /* CustomSwipeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwipeDemoViewController.swift; sourceTree = "<group>"; };
 		2BEB7EDF499F2D90A9D123AB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69405601F3D6658B5E93991C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6CC972748D132C6CB0208E7C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,10 +110,13 @@
 			isa = PBXGroup;
 			children = (
 				09673A831AEF5B2E008C7240 /* AppDelegate.swift */,
-				09673A851AEF5B2E008C7240 /* ViewController.swift */,
+				098070AA1B13D69300C90479 /* MenuTableViewController.swift */,
+				09673A851AEF5B2E008C7240 /* ZLSwipeableViewController.swift */,
+				098070AE1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift */,
+				098070B01B13E9B900C90479 /* CustomSwipeDemoViewController.swift */,
+				098070AC1B13DEA600C90479 /* UndoDemoViewController.swift */,
 				098070A11B12ECAD00C90479 /* CardView.swift */,
 				098070A31B12ED6400C90479 /* CardContentView.xib */,
-				09673A871AEF5B2E008C7240 /* Main.storyboard */,
 				09673A8A1AEF5B2E008C7240 /* Images.xcassets */,
 				09673A8C1AEF5B2E008C7240 /* LaunchScreen.xib */,
 				09673A811AEF5B2E008C7240 /* Supporting Files */,
@@ -245,7 +254,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09673A891AEF5B2E008C7240 /* Main.storyboard in Resources */,
 				09673A8E1AEF5B2E008C7240 /* LaunchScreen.xib in Resources */,
 				098070A41B12ED6400C90479 /* CardContentView.xib in Resources */,
 				09673A8B1AEF5B2E008C7240 /* Images.xcassets in Resources */,
@@ -360,7 +368,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				098070A91B12EDF400C90479 /* ZLSwipeableView.swift in Sources */,
-				09673A861AEF5B2E008C7240 /* ViewController.swift in Sources */,
+				098070AF1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift in Sources */,
+				098070AD1B13DEA600C90479 /* UndoDemoViewController.swift in Sources */,
+				09673A861AEF5B2E008C7240 /* ZLSwipeableViewController.swift in Sources */,
+				098070B11B13E9B900C90479 /* CustomSwipeDemoViewController.swift in Sources */,
+				098070AB1B13D69300C90479 /* MenuTableViewController.swift in Sources */,
 				09673A841AEF5B2E008C7240 /* AppDelegate.swift in Sources */,
 				098070A21B12ECAD00C90479 /* CardView.swift in Sources */,
 				098070A81B12EDF400C90479 /* ZLPanGestureRecognizer.swift in Sources */,
@@ -386,14 +398,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		09673A871AEF5B2E008C7240 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09673A881AEF5B2E008C7240 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		09673A8C1AEF5B2E008C7240 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (

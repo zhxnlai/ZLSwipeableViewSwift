@@ -124,7 +124,7 @@ public class ZLSwipeableView: UIView {
     public var velocityThreshold = CGFloat(750)
     public var direction = ZLSwipeableViewDirection.Horizontal
 
-    public var swipeTopView: (topView: UIView, direction: ZLSwipeableViewDirection, views: [UIView], swipeableView: ZLSwipeableView) -> (CGPoint, CGVector) = {(topView: UIView, direction: ZLSwipeableViewDirection, views: [UIView], swipeableView: ZLSwipeableView) in
+    public var interpretDirection: (topView: UIView, direction: ZLSwipeableViewDirection, views: [UIView], swipeableView: ZLSwipeableView) -> (CGPoint, CGVector) = {(topView: UIView, direction: ZLSwipeableViewDirection, views: [UIView], swipeableView: ZLSwipeableView) in
         let programmaticSwipeVelocity = CGFloat(1000)
         let location = CGPoint(x: topView.center.x, y: topView.center.y*0.7)
         var directionVector: CGVector?
@@ -144,7 +144,7 @@ public class ZLSwipeableView: UIView {
     }
     public func swipeTopView(inDirection direction: ZLSwipeableViewDirection) {
         if let topView = topView() {
-            let (location, directionVector) = swipeTopView(topView: topView, direction: direction, views: views, swipeableView: self)
+            let (location, directionVector) = interpretDirection(topView: topView, direction: direction, views: views, swipeableView: self)
             swipeTopView(fromPoint: location, inDirection: directionVector)
             didSwipe?(view: topView, inDirection: direction)
         }
@@ -182,6 +182,7 @@ public class ZLSwipeableView: UIView {
         }
     }
     
+    // point: in the swipeableView's coordinate
     public func insertTopView(view: UIView, fromPoint point: CGPoint) {
         if contains(views, view) {
             println("Error: trying to insert a view that has been added")
