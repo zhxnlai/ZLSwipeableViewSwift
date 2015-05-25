@@ -12,7 +12,7 @@ public func ==(lhs: ZLSwipeableViewDirection, rhs: ZLSwipeableViewDirection) -> 
     return lhs.rawValue == rhs.rawValue
 }
 
-public struct ZLSwipeableViewDirection : RawOptionSetType {
+public struct ZLSwipeableViewDirection : RawOptionSetType, Printable {
     public var rawValue: UInt
     
     public init(rawValue: UInt) {
@@ -41,9 +41,9 @@ public struct ZLSwipeableViewDirection : RawOptionSetType {
     static func fromPoint(point: CGPoint) -> ZLSwipeableViewDirection {
         switch (point.x, point.y) {
         case let (x, y) where abs(x)>=abs(y) && x>=0:
-            return .Left
-        case let (x, y) where abs(x)>=abs(y) && x<0:
             return .Right
+        case let (x, y) where abs(x)>=abs(y) && x<0:
+            return .Left
         case let (x, y) where abs(x)<abs(y) && y<=0:
             return .Up
         case let (x, y) where abs(x)<abs(y) && y>0:
@@ -52,18 +52,37 @@ public struct ZLSwipeableViewDirection : RawOptionSetType {
             return .None
         }
     }
+    
+    public var description: String {
+        switch self {
+        case ZLSwipeableViewDirection.None:
+            return "None"
+        case ZLSwipeableViewDirection.Left:
+            return "Left"
+        case ZLSwipeableViewDirection.Right:
+            return "Right"
+        case ZLSwipeableViewDirection.Up:
+            return "Up"
+        case ZLSwipeableViewDirection.Down:
+            return "Down"
+        case ZLSwipeableViewDirection.Horizontal:
+            return "Horizontal"
+        case ZLSwipeableViewDirection.Vertical:
+            return "Vertical"
+        case ZLSwipeableViewDirection.All:
+            return "All"
+        default:
+            return "Unknown"
+        }
+    }
 }
 
 public class ZLSwipeableView: UIView {
     // MARK: - Public
-    // Data Source
+    // MARK: Data Source
     public var numPrefetchedViews = 3
-    public var nextView: (() -> UIView)? {
-        didSet {
-            loadViews()
-        }
-    }
-    // Animation
+    public var nextView: (() -> UIView?)?
+    // MARK: Animation
     public var animateView: (view: UIView, index: Int, views: [UIView], swipeableView: ZLSwipeableView) -> () = {
         func toRadian(degree: CGFloat) -> CGFloat {
             return degree * CGFloat(M_PI/100)
@@ -92,14 +111,14 @@ public class ZLSwipeableView: UIView {
         }
     }()
     
-    // Delegate
-    public var didStart: ((didStartSwipingView: UIView, atLocation: CGPoint) -> ())?
-    public var swiping: ((swipingView: UIView, atLocation: CGPoint, translation: CGPoint) -> ())?
-    public var didEnd: ((didEndSwipingView: UIView, atLocation: CGPoint) -> ())?
-    public var didSwipe: ((didSwipeView: UIView, inDirection: ZLSwipeableViewDirection) -> ())?
-    public var didCancel: ((didCancelSwipingView: UIView) -> ())?
+    // MARK: Delegate
+    public var didStart: ((view: UIView, atLocation: CGPoint) -> ())?
+    public var swiping: ((view: UIView, atLocation: CGPoint, translation: CGPoint) -> ())?
+    public var didEnd: ((view: UIView, atLocation: CGPoint) -> ())?
+    public var didSwipe: ((view: UIView, inDirection: ZLSwipeableViewDirection) -> ())?
+    public var didCancel: ((view: UIView) -> ())?
 
-    // Swipe Control
+    // MARK: Swipe Control
     /// in percent
     public var translationThreshold = CGFloat(0.25)
     public var velocityThreshold = CGFloat(750)
@@ -231,13 +250,11 @@ public class ZLSwipeableView: UIView {
     
     override public func layoutSubviews() {
         super.layoutSubviews()
-        
         containerView.frame = bounds
     }
     
     // MARK: Animator
     private var animator: UIDynamicAnimator!
-    // anchorView
     static private let anchorViewWidth = CGFloat(1000)
     private var anchorView = UIView(frame: CGRect(x: 0, y: 0, width: anchorViewWidth, height: anchorViewWidth))
     private var anchorContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
@@ -251,11 +268,11 @@ public class ZLSwipeableView: UIView {
         case .Began:
             unsnapView()
             attachView(aView, toPoint: location)
-            didStart?(didStartSwipingView: aView, atLocation: location)
+            didStart?(view: aView, atLocation: location)
         case .Changed:
             unsnapView()
             attachView(aView, toPoint: location)
-            swiping?(swipingView: aView, atLocation: location, translation: translation)
+            swiping?(view: aView, atLocation: location, translation: translation)
         case .Ended, .Cancelled:
             detachView()
             let velocity = recognizer.velocityInView(self)
@@ -263,23 +280,23 @@ public class ZLSwipeableView: UIView {
             
             let directionChecked = ZLSwipeableViewDirection.fromPoint(translation) & direction != .None
             let signChecked = CGPoint.areInSameTheDirection(translation, p2: velocity)
-            let translationCheck = abs(translation.x) > translationThreshold * bounds.width ||
-                                   abs(translation.y) > translationThreshold * bounds.height
+            let translationChecked = abs(translation.x) > translationThreshold * bounds.width ||
+                                     abs(translation.y) > translationThreshold * bounds.height
             let velocityChecked = velocityMag > velocityThreshold
-            if directionChecked && signChecked && (translationCheck || velocityChecked){
+            if directionChecked && signChecked && (translationChecked || velocityChecked){
                 let normalizedTrans = translation.normalized
                 let throwVelocity = max(velocityMag, velocityThreshold)
                 let directionVector = CGVector(dx: normalizedTrans.x*throwVelocity, dy: normalizedTrans.y*throwVelocity)
 
                 pushView(aView, fromPoint: location, inDirection: directionVector)
                 removeTopView()
-                didSwipe?(didSwipeView: aView, inDirection: ZLSwipeableViewDirection.fromPoint(translation))
+                didSwipe?(view: aView, inDirection: ZLSwipeableViewDirection.fromPoint(translation))
                 loadViews()
             } else {
                 snapView(aView, toPoint: convertPoint(center, fromView: superview))
-                didCancel?(didCancelSwipingView: aView)
+                didCancel?(view: aView)
             }
-            didEnd?(didEndSwipingView: aView, atLocation: location)
+            didEnd?(view: aView, atLocation: location)
         default:
             break
         }
