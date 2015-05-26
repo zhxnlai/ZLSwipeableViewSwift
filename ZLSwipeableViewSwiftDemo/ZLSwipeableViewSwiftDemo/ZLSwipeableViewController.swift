@@ -35,6 +35,7 @@ class ZLSwipeableViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.setToolbarHidden(false, animated: false)
         view.backgroundColor = UIColor.whiteColor()
+        view.clipsToBounds = true
         
         reloadBarButtonItem.addAction() { item in
             let alertController = UIAlertController(title: nil, message: "Load Cards:", preferredStyle: .ActionSheet)
