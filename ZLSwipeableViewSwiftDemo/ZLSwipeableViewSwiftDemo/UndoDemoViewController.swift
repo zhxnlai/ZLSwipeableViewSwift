@@ -14,7 +14,7 @@ class UndoDemoViewController: ZLSwipeableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var lastSwipedView: (UIView, ZLSwipeableViewDirection)?
-        swipeableView.didSwipe = {view, direction in
+        swipeableView.didSwipe = {view, direction, vector in
             println("Did swipe view in direction: \(direction)")
             lastSwipedView = (view, direction)
         }

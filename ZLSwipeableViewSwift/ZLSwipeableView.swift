@@ -8,6 +8,10 @@
 
 import UIKit
 
+class ZLPanGestureRecognizer: UIPanGestureRecognizer {
+    
+}
+
 public func ==(lhs: ZLSwipeableViewDirection, rhs: ZLSwipeableViewDirection) -> Bool {
     return lhs.rawValue == rhs.rawValue
 }
@@ -115,7 +119,7 @@ public class ZLSwipeableView: UIView {
     public var didStart: ((view: UIView, atLocation: CGPoint) -> ())?
     public var swiping: ((view: UIView, atLocation: CGPoint, translation: CGPoint) -> ())?
     public var didEnd: ((view: UIView, atLocation: CGPoint) -> ())?
-    public var didSwipe: ((view: UIView, inDirection: ZLSwipeableViewDirection) -> ())?
+    public var didSwipe: ((view: UIView, inDirection: ZLSwipeableViewDirection, directionVector: CGVector) -> ())?
     public var didCancel: ((view: UIView) -> ())?
 
     // MARK: Swipe Control
@@ -145,17 +149,21 @@ public class ZLSwipeableView: UIView {
     public func swipeTopView(inDirection direction: ZLSwipeableViewDirection) {
         if let topView = topView() {
             let (location, directionVector) = interpretDirection(topView: topView, direction: direction, views: views, swipeableView: self)
-            swipeTopView(fromPoint: location, inDirection: directionVector)
-            didSwipe?(view: topView, inDirection: direction)
+            swipeTopView(topView, direction: direction, location: location, directionVector: directionVector)
         }
     }
-    public func swipeTopView(fromPoint location: CGPoint, inDirection direction: CGVector) {
+    public func swipeTopView(fromPoint location: CGPoint, inDirection directionVector: CGVector) {
         if let topView = topView() {
-            unsnapView()
-            pushView(topView, fromPoint: location, inDirection: direction)
-            removeFromViews(topView)
-            loadViews()
+            let direction = ZLSwipeableViewDirection.fromPoint(CGPoint(x: directionVector.dx, y: directionVector.dy))
+            swipeTopView(topView, direction: direction, location: location, directionVector: directionVector)
         }
+    }
+    private func swipeTopView(topView: UIView, direction: ZLSwipeableViewDirection, location: CGPoint, directionVector: CGVector) {
+        unsnapView()
+        pushView(topView, fromPoint: location, inDirection: directionVector)
+        removeFromViews(topView)
+        loadViews()
+        didSwipe?(view: topView, inDirection: direction, directionVector: directionVector)
     }
     
     // MARK: View Management
@@ -262,6 +270,14 @@ public class ZLSwipeableView: UIView {
         addSubview(anchorContainerView)
     }
     
+    deinit {
+        timer?.invalidate()
+        animator.removeAllBehaviors()
+        pushAnimator.removeAllBehaviors()
+        views.removeAll()
+        pushBehaviors.removeAll()
+    }
+    
     override public func layoutSubviews() {
         super.layoutSubviews()
         containerView.frame = bounds
@@ -276,17 +292,17 @@ public class ZLSwipeableView: UIView {
     func handlePan(recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translationInView(self)
         let location = recognizer.locationInView(self)
-        let aView = recognizer.view!
+        let topView = recognizer.view!
         
         switch recognizer.state {
         case .Began:
             unsnapView()
-            attachView(aView, toPoint: location)
-            didStart?(view: aView, atLocation: location)
+            attachView(topView, toPoint: location)
+            didStart?(view: topView, atLocation: location)
         case .Changed:
             unsnapView()
-            attachView(aView, toPoint: location)
-            swiping?(view: aView, atLocation: location, translation: translation)
+            attachView(topView, toPoint: location)
+            swiping?(view: topView, atLocation: location, translation: translation)
         case .Ended, .Cancelled:
             detachView()
             let velocity = recognizer.velocityInView(self)
@@ -301,16 +317,18 @@ public class ZLSwipeableView: UIView {
                 let normalizedTrans = translation.normalized
                 let throwVelocity = max(velocityMag, velocityThreshold)
                 let directionVector = CGVector(dx: normalizedTrans.x*throwVelocity, dy: normalizedTrans.y*throwVelocity)
+                
+                swipeTopView(topView, direction: direction, location: location, directionVector: directionVector)
 
-                pushView(aView, fromPoint: location, inDirection: directionVector)
-                removeFromViews(aView)
-                didSwipe?(view: aView, inDirection: ZLSwipeableViewDirection.fromPoint(translation))
-                loadViews()
+//                pushView(topView, fromPoint: location, inDirection: directionVector)
+//                removeFromViews(topView)
+//                didSwipe?(view: topView, inDirection: ZLSwipeableViewDirection.fromPoint(translation))
+//                loadViews()
             } else {
-                snapView(aView, toPoint: convertPoint(center, fromView: superview))
-                didCancel?(view: aView)
+                snapView(topView, toPoint: convertPoint(center, fromView: superview))
+                didCancel?(view: topView)
             }
-            didEnd?(view: aView, atLocation: location)
+            didEnd?(view: topView, atLocation: location)
         default:
             break
         }
@@ -376,7 +394,7 @@ public class ZLSwipeableView: UIView {
     private func cleanUpWithPredicate(predicate: (UIView) -> Bool) -> [Int] {
         var indexes = [Int]()
         for i in 0..<pushBehaviors.count {
-            let (anchorView, aView, attachment, push) = self.pushBehaviors[i]
+            let (anchorView, aView, attachment, push) = pushBehaviors[i]
             if predicate(aView) {
                 anchorView.removeFromSuperview()
                 removeFromContainerView(aView)
@@ -399,9 +417,8 @@ public class ZLSwipeableView: UIView {
         anchorView.hidden = true
         anchorContainerView.addSubview(anchorView)
 
-        var point = point
         let p = aView.convertPoint(aView.center, fromView: aView.superview)
-        point = aView.convertPoint(point, fromView: aView.superview)
+        var point = aView.convertPoint(point, fromView: aView.superview)
         var attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
         attachmentViewToAnchorView!.length = 0
 
