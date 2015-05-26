@@ -63,8 +63,8 @@ swipeableView.swiping = {view, location, translation in
 swipeableView.didEnd = {view, location in
     println("Did end swiping view at location: \(location)")
 }
-swipeableView.didSwipe = {view, direction in
-    println("Did swipe view in direction: \(direction)")
+swipeableView.didSwipe = {view, direction, vector in
+    println("Did swipe view in direction: \(direction), vector: \(vector)")
 }
 swipeableView.didCancel = {view in
     println("Did cancel swiping view")
