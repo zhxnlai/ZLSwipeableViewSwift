@@ -18,7 +18,7 @@ You can install `ZLSwipeableViewSwift` through CocoaPods adding the following to
 
     pod 'ZLSwipeableViewSwift'
     use_frameworks!
-Then import it using
+Then import it using:
 
     import ZLSwipeableViewSwift
 
