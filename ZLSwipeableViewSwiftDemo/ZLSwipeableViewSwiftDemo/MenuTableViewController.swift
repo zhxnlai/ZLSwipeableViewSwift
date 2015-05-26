@@ -11,10 +11,11 @@ import UIKit
 class MenuTableViewController: UITableViewController {
     // TODO: customize animation, direction
 
-    let demos = ["Default", "Custom Animation", "Custom Swipe", "Undo"]
+    let demos = ["Default", "Custom Animation", "Custom Swipe","Custom Direction", "Undo"]
     let viewControllers = [ZLSwipeableViewController.self,
                             CustomAnimationDemoViewController.self,
                             CustomSwipeDemoViewController.self,
+                            CustomDirectionDemoViewController.self,
                             UndoDemoViewController.self]
     override func viewDidLoad() {
         super.viewDidLoad()

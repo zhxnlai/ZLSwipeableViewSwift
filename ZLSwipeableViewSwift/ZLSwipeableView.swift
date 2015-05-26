@@ -100,7 +100,7 @@ public class ZLSwipeableView: UIView {
             let degree = CGFloat(1), offset = CGPoint(x: 0, y: CGRectGetHeight(swipeableView.bounds)*0.3)
             switch index {
             case 0:
-                break
+                rotateView(view, forDegree: 0, duration: 0.4, offsetFromCenter: offset, swipeableView)
             case 1:
                 rotateView(view, forDegree: degree, duration: 0.4, offsetFromCenter: offset, swipeableView)
             case 2:
@@ -177,7 +177,6 @@ public class ZLSwipeableView: UIView {
             }
         }
         if let topView = topView() {
-            snapView(topView, toPoint: convertPoint(center, fromView: superview))
             animateViews()
         }
     }
