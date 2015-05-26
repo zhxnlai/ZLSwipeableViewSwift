@@ -9,7 +9,6 @@
 import UIKit
 
 class MenuTableViewController: UITableViewController {
-    // TODO: customize animation, direction
 
     let demos = ["Default", "Custom Animation", "Custom Swipe","Custom Direction", "Undo"]
     let viewControllers = [ZLSwipeableViewController.self,
@@ -25,7 +24,6 @@ class MenuTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return count(demos)
     }

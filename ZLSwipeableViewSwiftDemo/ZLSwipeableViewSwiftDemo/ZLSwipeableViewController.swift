@@ -126,14 +126,6 @@ class ZLSwipeableViewController: UIViewController {
                         view1.width == cardView.bounds.width
                         view1.height == cardView.bounds.height
                     }
-                } else {
-                    var textView = UITextView(frame: cardView.bounds)
-                    textView.text = "This UITextView was created programmatically."
-                    textView.backgroundColor = UIColor.clearColor()
-                    textView.font = UIFont.systemFontOfSize(24)
-                    textView.editable = false
-                    textView.selectable = false
-                    cardView.addSubview(textView)
                 }
                 return cardView
             }

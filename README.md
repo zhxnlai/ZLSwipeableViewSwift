@@ -3,7 +3,14 @@ A simple view for building card like interface like [Tinder](http://www.gotinder
 
 Preview
 ---
-
+### Custom Animation
+![direction](Previews/animation.gif)
+### Custom Swipe
+![direction](Previews/swipe.gif)
+### Custom Direction
+![direction](Previews/direction.gif)
+### Undo
+![direction](Previews/undo.gif)
 
 CocoaPods
 ---
@@ -38,7 +45,7 @@ swipeableView.discardViews()
 swipeableView.loadViews()
 ~~~
 
-You can limit the direction swiping happens using the `direction` property and register callbacks like this. Take a look at the [Custom Direction]() example for details.
+You can limit the direction swiping happens using the `direction` property and register callbacks like this. Take a look at the [Custom Direction](#custom-direction) example for details.
 ~~~swift
 swipeableView.direction = .Left | .Up
 swipeableView.direction = .All
@@ -69,11 +76,11 @@ swipeableView.swipeTopView(inDirection: .Down)
 
 swipeableView.swipeTopView(fromPoint: CGPoint(x: 100, y: 30), inDirection: CGVector(dx: 100, dy: -800))
 ~~~
-You can also change how the direction gets interpreted by overriding the `interpretDirection` property. Take a look at the [Custom Swipe]() example for details.
+You can also change how the direction gets interpreted by overriding the `interpretDirection` property. Take a look at the [Custom Swipe](#custom-swipe) example for details.
 
-You can create custom animation by overriding the `animateView` property. Take a look at the [Custom Animation]() example for details.
+You can create custom animation by overriding the `animateView` property. Take a look at the [Custom Animation](#custom-animation) example for details.
 
-You can undo/rewind by storing the swiped views and insert them back to the top by calling `insertTopView`. Take a look at the [Undo]() example for details.
+You can undo/rewind by storing the swiped views and insert them back to the top by calling `insertTopView`. Take a look at the [Undo](#undo) example for details.
 
 Requirements
 ---
