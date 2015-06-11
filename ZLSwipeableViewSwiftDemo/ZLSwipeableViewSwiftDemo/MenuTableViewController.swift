@@ -25,12 +25,12 @@ class MenuTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return count(demos)
+        return demos.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cellIdentifier = String(format: "s%li-r%li", indexPath.section, indexPath.row)
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
+        let cellIdentifier = String(format: "s%li-r%li", indexPath.section, indexPath.row)
+        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
         }
@@ -44,7 +44,7 @@ class MenuTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let title = titleForRowAtIndexPath(indexPath)
-        var vc = viewControllerForRowAtIndexPath(indexPath)
+        let vc = viewControllerForRowAtIndexPath(indexPath)
         vc.title = title
         navigationController?.pushViewController(vc, animated: true)
     }

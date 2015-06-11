@@ -83,7 +83,7 @@ internal extension UIControl {
     }
     
     private func setProxyTargets(newValue: RUIControlProxyTargets) -> RUIControlProxyTargets {
-        objc_setAssociatedObject(self, &RUIProxyTargetsKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN_NONATOMIC));
+        objc_setAssociatedObject(self, &RUIProxyTargetsKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return newValue
     }
     
