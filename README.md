@@ -88,7 +88,7 @@ You can undo/rewind by storing the swiped views and insert them back to the top 
 
 Requirements
 ---
-- iOS 7 or higher.
+- iOS 8 or higher.
 
 Credits
 ---
