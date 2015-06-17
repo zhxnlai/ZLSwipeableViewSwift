@@ -77,10 +77,10 @@ class ZLSwipeableViewController: UIViewController {
             self.swipeableView.swipeTopView(inDirection: .Down)
         }
         
-        var fixedSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, action: {item in})
-        var flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, action: {item in})
+        let fixedSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, action: {item in})
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, action: {item in})
         
-        var items = [fixedSpace, reloadBarButtonItem, flexibleSpace, leftBarButtonItem, flexibleSpace, upBarButtonItem, flexibleSpace, rightBarButtonItem, flexibleSpace, downBarButtonItem, fixedSpace]
+        let items = [fixedSpace, reloadBarButtonItem, flexibleSpace, leftBarButtonItem, flexibleSpace, upBarButtonItem, flexibleSpace, rightBarButtonItem, flexibleSpace, downBarButtonItem, fixedSpace]
         toolbarItems = items
 
         swipeableView = ZLSwipeableView()

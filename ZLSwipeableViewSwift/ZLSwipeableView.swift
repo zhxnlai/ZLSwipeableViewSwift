@@ -121,7 +121,7 @@ public class ZLSwipeableView: UIView {
     public var didEnd: ((view: UIView, atLocation: CGPoint) -> ())?
     public var didSwipe: ((view: UIView, inDirection: ZLSwipeableViewDirection, directionVector: CGVector) -> ())?
     public var didCancel: ((view: UIView) -> ())?
-
+    
     // MARK: Swipe Control
     /// in percent
     public var translationThreshold = CGFloat(0.25)
@@ -175,7 +175,7 @@ public class ZLSwipeableView: UIView {
     
     public func loadViews() {
         if views.count<numPrefetchedViews {
-            for i in (views.count..<numPrefetchedViews) {
+            for _ in (views.count..<numPrefetchedViews) {
                 if let nextView = nextView?() {
                     nextView.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: Selector("handlePan:")))
                     views.append(nextView)
@@ -271,6 +271,12 @@ public class ZLSwipeableView: UIView {
     }
     
     deinit {
+        didStart = nil
+        swiping = nil
+        didEnd = nil
+        didSwipe = nil
+        didCancel = nil
+
         timer?.invalidate()
         animator.removeAllBehaviors()
         pushAnimator.removeAllBehaviors()

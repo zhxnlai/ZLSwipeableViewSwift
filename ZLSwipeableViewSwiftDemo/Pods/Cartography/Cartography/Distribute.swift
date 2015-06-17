@@ -18,8 +18,7 @@ private func reduce(first: LayoutProxy, rest: [LayoutProxy], combine: (LayoutPro
     rest.last?.view.car_translatesAutoresizingMaskIntoConstraints = false
 
     return rest.reduce(([], first)) { (acc, current) -> Accumulator in
-        var (constraints, previous) = acc
-
+        let (constraints, previous) = acc
         return (constraints + [ combine(previous, current) ], current)
     }.0
 }
