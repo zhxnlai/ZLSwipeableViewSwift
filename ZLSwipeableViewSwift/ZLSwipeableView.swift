@@ -23,24 +23,14 @@ public struct ZLSwipeableViewDirection : OptionSetType, CustomStringConvertible 
         self.rawValue = rawValue
     }
     
-    // MARK: NilLiteralConvertible
-    public init(nilLiteral: ()) {
-        self.rawValue = 0
-    }
-
-    // MARK: BitwiseOperationsType
-    public static var allZeros: ZLSwipeableViewDirection {
-        return self(rawValue: 0)
-    }
-
-    static var None: ZLSwipeableViewDirection       { return self(rawValue: 0b0000) }
-    static var Left: ZLSwipeableViewDirection       { return self(rawValue: 0b0001) }
-    static var Right: ZLSwipeableViewDirection      { return self(rawValue: 0b0010) }
-    static var Up: ZLSwipeableViewDirection         { return self(rawValue: 0b0100) }
-    static var Down: ZLSwipeableViewDirection       { return self(rawValue: 0b1000) }
-    static var Horizontal: ZLSwipeableViewDirection { return [Left, Right] }
-    static var Vertical: ZLSwipeableViewDirection   { return [Up, Down] }
-    static var All: ZLSwipeableViewDirection        { return [Horizontal, Vertical] }
+    static let None = ZLSwipeableViewDirection(rawValue: 0b0000)
+    static let Left = ZLSwipeableViewDirection(rawValue: 0b0001)
+    static let Right = ZLSwipeableViewDirection(rawValue: 0b0010)
+    static let Up = ZLSwipeableViewDirection(rawValue: 0b0100)
+    static let Down = ZLSwipeableViewDirection(rawValue: 0b1000)
+    static let Horizontal: ZLSwipeableViewDirection = [Left, Right]
+    static let Vertical: ZLSwipeableViewDirection = [Up, Down]
+    static let All: ZLSwipeableViewDirection = [Horizontal, Vertical]
     
     static func fromPoint(point: CGPoint) -> ZLSwipeableViewDirection {
         switch (point.x, point.y) {
@@ -271,6 +261,8 @@ public class ZLSwipeableView: UIView {
     }
     
     deinit {
+        nextView = nil
+
         didStart = nil
         swiping = nil
         didEnd = nil
@@ -325,11 +317,6 @@ public class ZLSwipeableView: UIView {
                 let directionVector = CGVector(dx: normalizedTrans.x*throwVelocity, dy: normalizedTrans.y*throwVelocity)
                 
                 swipeTopView(topView, direction: direction, location: location, directionVector: directionVector)
-
-//                pushView(topView, fromPoint: location, inDirection: directionVector)
-//                removeFromViews(topView)
-//                didSwipe?(view: topView, inDirection: ZLSwipeableViewDirection.fromPoint(translation))
-//                loadViews()
             } else {
                 snapView(topView, toPoint: convertPoint(center, fromView: superview))
                 didCancel?(view: topView)
