@@ -111,6 +111,7 @@ public class ZLSwipeableView: UIView {
     public var didEnd: ((view: UIView, atLocation: CGPoint) -> ())?
     public var didSwipe: ((view: UIView, inDirection: ZLSwipeableViewDirection, directionVector: CGVector) -> ())?
     public var didCancel: ((view: UIView) -> ())?
+    public var shouldSwipe: ((view: UIView, location: CGPoint, translation: CGPoint, velocity: CGPoint) -> Bool)?
     
     // MARK: Swipe Control
     /// in percent
@@ -306,12 +307,16 @@ public class ZLSwipeableView: UIView {
             let velocity = recognizer.velocityInView(self)
             let velocityMag = velocity.magnitude
             
+            var delegateChecked = true
+            if let shouldSwipe = shouldSwipe {
+                delegateChecked = shouldSwipe(view: topView, location: location, translation: translation, velocity: velocity)
+            }
             let directionChecked = ZLSwipeableViewDirection.fromPoint(translation).intersect(direction) != .None
             let signChecked = CGPoint.areInSameTheDirection(translation, p2: velocity)
             let translationChecked = abs(translation.x) > translationThreshold * bounds.width ||
                                      abs(translation.y) > translationThreshold * bounds.height
             let velocityChecked = velocityMag > velocityThreshold
-            if directionChecked && signChecked && (translationChecked || velocityChecked){
+            if delegateChecked && directionChecked && signChecked && (translationChecked || velocityChecked) {
                 let normalizedTrans = translation.normalized
                 let throwVelocity = max(velocityMag, velocityThreshold)
                 let directionVector = CGVector(dx: normalizedTrans.x*throwVelocity, dy: normalizedTrans.y*throwVelocity)

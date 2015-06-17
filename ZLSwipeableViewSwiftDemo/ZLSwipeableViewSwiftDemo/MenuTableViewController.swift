@@ -14,7 +14,8 @@ class MenuTableViewController: UITableViewController {
                                 ("Custom Animation", CustomAnimationDemoViewController.self),
                                 ("Custom Swipe", CustomSwipeDemoViewController.self),
                                 ("Custom Direction", CustomDirectionDemoViewController.self),
-                                ("Undo", UndoDemoViewController.self)]
+                                ("Undo", UndoDemoViewController.self),
+                                ("Should Swipe", ShouldSwipeDemoViewController.self)]
 
     override func viewDidLoad() {
         super.viewDidLoad()
