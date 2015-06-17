@@ -10,22 +10,21 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
 
-    let demos = ["Default", "Custom Animation", "Custom Swipe","Custom Direction", "Undo"]
-    let viewControllers = [ZLSwipeableViewController.self,
-                            CustomAnimationDemoViewController.self,
-                            CustomSwipeDemoViewController.self,
-                            CustomDirectionDemoViewController.self,
-                            UndoDemoViewController.self]
+    let demoViewControllers = [("Default", ZLSwipeableViewController.self),
+                                ("Custom Animation", CustomAnimationDemoViewController.self),
+                                ("Custom Swipe", CustomSwipeDemoViewController.self),
+                                ("Custom Direction", CustomDirectionDemoViewController.self),
+                                ("Undo", UndoDemoViewController.self)]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "ZLSwipeableView"
-
     }
 
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return demos.count
+        return demoViewControllers.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -50,10 +49,12 @@ class MenuTableViewController: UITableViewController {
     }
     
     func titleForRowAtIndexPath(indexPath: NSIndexPath) -> String {
-        return demos[indexPath.row]
+        let (title, _) = demoViewControllers[indexPath.row]
+        return title
     }
     func viewControllerForRowAtIndexPath(indexPath: NSIndexPath) -> ZLSwipeableViewController {
-        return viewControllers[indexPath.row]()
+        let (_, vc) = demoViewControllers[indexPath.row]
+        return vc()
     }
 
 }
