@@ -121,11 +121,13 @@ public class ZLSwipeableView: UIView {
     public var didEnd: ((view: UIView, atLocation: CGPoint) -> ())?
     public var didSwipe: ((view: UIView, inDirection: ZLSwipeableViewDirection, directionVector: CGVector) -> ())?
     public var didCancel: ((view: UIView) -> ())?
+    public var didTap: ((view: UIView) -> ())?
 
     // MARK: Swipe Control
     /// in percent
     public var translationThreshold = CGFloat(0.25)
     public var velocityThreshold = CGFloat(750)
+    public var tapThreshold = CGFloat(3)
     public var direction = ZLSwipeableViewDirection.Horizontal
 
     public var interpretDirection: (topView: UIView, direction: ZLSwipeableViewDirection, views: [UIView], swipeableView: ZLSwipeableView) -> (CGPoint, CGVector) = {(topView: UIView, direction: ZLSwipeableViewDirection, views: [UIView], swipeableView: ZLSwipeableView) in
@@ -178,6 +180,7 @@ public class ZLSwipeableView: UIView {
             for i in (views.count..<numPrefetchedViews) {
                 if let nextView = nextView?() {
                     nextView.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: Selector("handlePan:")))
+                    nextView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("handleTap:")))
                     views.append(nextView)
                     containerView.addSubview(nextView)
                     containerView.sendSubviewToBack(nextView)
@@ -198,6 +201,7 @@ public class ZLSwipeableView: UIView {
                 view.center = point
             }
             view.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: Selector("handlePan:")))
+            view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("handleTap:")))
             views.insert(view, atIndex: 0)
             containerView.addSubview(view)
             snapView(view, toPoint: convertPoint(center, fromView: superview))
@@ -289,6 +293,11 @@ public class ZLSwipeableView: UIView {
     private var anchorView = UIView(frame: CGRect(x: 0, y: 0, width: anchorViewWidth, height: anchorViewWidth))
     private var anchorContainerView = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
     
+    func handleTap(recognizer: UITapGestureRecognizer) {
+        let topView = recognizer.view!
+        didTap?(view: topView)
+    }
+    
     func handlePan(recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translationInView(self)
         let location = recognizer.locationInView(self)
@@ -303,12 +312,13 @@ public class ZLSwipeableView: UIView {
             unsnapView()
             attachView(topView, toPoint: location)
             swiping?(view: topView, atLocation: location, translation: translation)
-        case .Ended, .Cancelled:
+        case .Ended,.Cancelled:
             detachView()
             let velocity = recognizer.velocityInView(self)
             let velocityMag = velocity.magnitude
             
-            let directionChecked = ZLSwipeableViewDirection.fromPoint(translation) & direction != .None
+            let directionSwiped = ZLSwipeableViewDirection.fromPoint(translation)
+            let directionChecked = directionSwiped & direction != .None
             let signChecked = CGPoint.areInSameTheDirection(translation, p2: velocity)
             let translationChecked = abs(translation.x) > translationThreshold * bounds.width ||
                                      abs(translation.y) > translationThreshold * bounds.height
@@ -318,13 +328,13 @@ public class ZLSwipeableView: UIView {
                 let throwVelocity = max(velocityMag, velocityThreshold)
                 let directionVector = CGVector(dx: normalizedTrans.x*throwVelocity, dy: normalizedTrans.y*throwVelocity)
                 
-                swipeTopView(topView, direction: direction, location: location, directionVector: directionVector)
+                swipeTopView(topView, direction: directionSwiped, location: location, directionVector: directionVector)
 
 //                pushView(topView, fromPoint: location, inDirection: directionVector)
 //                removeFromViews(topView)
 //                didSwipe?(view: topView, inDirection: ZLSwipeableViewDirection.fromPoint(translation))
 //                loadViews()
-            } else {
+            }else {
                 snapView(topView, toPoint: convertPoint(center, fromView: superview))
                 didCancel?(view: topView)
             }
