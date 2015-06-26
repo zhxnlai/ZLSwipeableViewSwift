@@ -42,7 +42,7 @@ public struct ZLSwipeableViewDirection : RawOptionSetType, Printable {
     public static var Vertical: ZLSwipeableViewDirection   { return Up | Down }
     public static var All: ZLSwipeableViewDirection        { return Horizontal | Vertical }
     
-    static func fromPoint(point: CGPoint) -> ZLSwipeableViewDirection {
+    public static func fromPoint(point: CGPoint) -> ZLSwipeableViewDirection {
         switch (point.x, point.y) {
         case let (x, y) where abs(x)>=abs(y) && x>=0:
             return .Right
