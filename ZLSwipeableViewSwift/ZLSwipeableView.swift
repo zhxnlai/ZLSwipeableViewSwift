@@ -335,7 +335,7 @@ public class ZLSwipeableView: UIView {
 //                loadViews()
             }else {
                 let shouldSnapBack = didCancel?(view: topView, translation: translation)
-                if shouldSnapBack{
+                if (shouldSnapBack!){
                     snapView(topView, toPoint: convertPoint(center, fromView: superview))
                 }
             }
