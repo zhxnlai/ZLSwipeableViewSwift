@@ -30,14 +30,14 @@ public struct ZLSwipeableViewDirection : OptionSetType, CustomStringConvertible 
 
     // MARK: BitwiseOperationsType
     public static var allZeros: ZLSwipeableViewDirection {
-        return self(rawValue: 0)
+        return self.init(rawValue: 0)
     }
 
-    static var None: ZLSwipeableViewDirection       { return self(rawValue: 0b0000) }
-    static var Left: ZLSwipeableViewDirection       { return self(rawValue: 0b0001) }
-    static var Right: ZLSwipeableViewDirection      { return self(rawValue: 0b0010) }
-    static var Up: ZLSwipeableViewDirection         { return self(rawValue: 0b0100) }
-    static var Down: ZLSwipeableViewDirection       { return self(rawValue: 0b1000) }
+    static var None: ZLSwipeableViewDirection       { return self.init(rawValue: 0b0000) }
+    static var Left: ZLSwipeableViewDirection       { return self.init(rawValue: 0b0001) }
+    static var Right: ZLSwipeableViewDirection      { return self.init(rawValue: 0b0010) }
+    static var Up: ZLSwipeableViewDirection         { return self.init(rawValue: 0b0100) }
+    static var Down: ZLSwipeableViewDirection       { return self.init(rawValue: 0b1000) }
     static var Horizontal: ZLSwipeableViewDirection { return [Left, Right] }
     static var Vertical: ZLSwipeableViewDirection   { return [Up, Down] }
     static var All: ZLSwipeableViewDirection        { return [Horizontal, Vertical] }
