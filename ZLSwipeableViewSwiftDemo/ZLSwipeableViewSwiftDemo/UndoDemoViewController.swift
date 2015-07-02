@@ -8,6 +8,7 @@
 
 import UIKit
 import ReactiveUI
+import ZLSwipeableViewSwift
 
 class UndoDemoViewController: ZLSwipeableViewController {
 

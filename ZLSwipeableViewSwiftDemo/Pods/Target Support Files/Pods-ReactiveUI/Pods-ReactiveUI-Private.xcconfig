@@ -2,7 +2,7 @@
 CONFIGURATION_BUILD_DIR = $PODS_FRAMEWORK_BUILD_PATH
 FRAMEWORK_SEARCH_PATHS = "$PODS_FRAMEWORK_BUILD_PATH"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/ReactiveUI" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Cartography" "${PODS_ROOT}/Headers/Public/ReactiveUI" "${PODS_ROOT}/Headers/Public/UIColor+FlatColors" "${PODS_ROOT}/Headers/Public/performSelector-swift"
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/ReactiveUI" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Cartography" "${PODS_ROOT}/Headers/Public/ReactiveUI" "${PODS_ROOT}/Headers/Public/UIColor+FlatColors" "${PODS_ROOT}/Headers/Public/ZLSwipeableViewSwift" "${PODS_ROOT}/Headers/Public/performSelector-swift"
 OTHER_LDFLAGS = ${PODS_REACTIVEUI_OTHER_LDFLAGS} -ObjC
 OTHER_SWIFT_FLAGS = $(inherited) "-D" "COCOAPODS"
 PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods

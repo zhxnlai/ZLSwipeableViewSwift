@@ -11,6 +11,7 @@ import performSelector_swift
 import UIColor_FlatColors
 import Cartography
 import ReactiveUI
+import ZLSwipeableViewSwift
 
 class ZLSwipeableViewController: UIViewController {
 

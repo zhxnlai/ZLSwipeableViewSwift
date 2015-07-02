@@ -24,6 +24,12 @@
 #define COCOAPODS_VERSION_MINOR_UIColor_FlatColors 0
 #define COCOAPODS_VERSION_PATCH_UIColor_FlatColors 2
 
+// ZLSwipeableViewSwift
+#define COCOAPODS_POD_AVAILABLE_ZLSwipeableViewSwift
+#define COCOAPODS_VERSION_MAJOR_ZLSwipeableViewSwift 0
+#define COCOAPODS_VERSION_MINOR_ZLSwipeableViewSwift 0
+#define COCOAPODS_VERSION_PATCH_ZLSwipeableViewSwift 2
+
 // performSelector-swift
 #define COCOAPODS_POD_AVAILABLE_performSelector_swift
 #define COCOAPODS_VERSION_MAJOR_performSelector_swift 0

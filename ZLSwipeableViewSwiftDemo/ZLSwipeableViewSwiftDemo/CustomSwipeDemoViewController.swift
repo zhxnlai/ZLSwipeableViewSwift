@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZLSwipeableViewSwift
 
 class CustomSwipeDemoViewController: ZLSwipeableViewController {
 

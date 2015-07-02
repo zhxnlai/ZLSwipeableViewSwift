@@ -3,17 +3,24 @@ PODS:
   - performSelector-swift (0.1.0)
   - ReactiveUI (0.0.2)
   - UIColor+FlatColors (0.0.2)
+  - ZLSwipeableViewSwift (0.0.2)
 
 DEPENDENCIES:
   - Cartography
   - performSelector-swift
   - ReactiveUI
   - UIColor+FlatColors
+  - ZLSwipeableViewSwift (from `../`)
+
+EXTERNAL SOURCES:
+  ZLSwipeableViewSwift:
+    :path: "../"
 
 SPEC CHECKSUMS:
   Cartography: 774e5cc446f5a6bca5d4345c5aa6af9a1fe74dc6
   performSelector-swift: 676d3dab420ed7e1505a7cdaf35e5741509cdd3c
   ReactiveUI: 597b21e143dfc5fe438afc1b7a73c5c7e256175b
   UIColor+FlatColors: 6c699df7a575281794c688c64cee6c44fd1f93b4
+  ZLSwipeableViewSwift: 28b161ea3445ee380b684dd828a4d4bebc2a1f95
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.37.2

@@ -14,7 +14,6 @@
 		09673A9A1AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09673A991AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift */; };
 		098070A21B12ECAD00C90479 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070A11B12ECAD00C90479 /* CardView.swift */; };
 		098070A41B12ED6400C90479 /* CardContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098070A31B12ED6400C90479 /* CardContentView.xib */; };
-		098070A91B12EDF400C90479 /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070A71B12EDF400C90479 /* ZLSwipeableView.swift */; };
 		098070AB1B13D69300C90479 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AA1B13D69300C90479 /* MenuTableViewController.swift */; };
 		098070AD1B13DEA600C90479 /* UndoDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AC1B13DEA600C90479 /* UndoDemoViewController.swift */; };
 		098070AF1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AE1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift */; };
@@ -46,7 +45,6 @@
 		09673A991AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLSwipeableViewSwiftDemoTests.swift; sourceTree = "<group>"; };
 		098070A11B12ECAD00C90479 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		098070A31B12ED6400C90479 /* CardContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardContentView.xib; sourceTree = "<group>"; };
-		098070A71B12EDF400C90479 /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
 		098070AA1B13D69300C90479 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		098070AC1B13DEA600C90479 /* UndoDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UndoDemoViewController.swift; sourceTree = "<group>"; };
 		098070AE1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimationDemoViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 		09673A751AEF5B2E008C7240 = {
 			isa = PBXGroup;
 			children = (
-				098070A51B12EDF400C90479 /* ZLSwipeableViewSwift */,
 				09673A801AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemo */,
 				09673A961AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests */,
 				09673A7F1AEF5B2E008C7240 /* Products */,
@@ -148,15 +145,6 @@
 				09673A981AEF5B2E008C7240 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		098070A51B12EDF400C90479 /* ZLSwipeableViewSwift */ = {
-			isa = PBXGroup;
-			children = (
-				098070A71B12EDF400C90479 /* ZLSwipeableView.swift */,
-			);
-			name = ZLSwipeableViewSwift;
-			path = ../ZLSwipeableViewSwift;
 			sourceTree = "<group>";
 		};
 		58FF2FD44DE0959803FE941A /* Pods */ = {
@@ -367,7 +355,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				098070A91B12EDF400C90479 /* ZLSwipeableView.swift in Sources */,
 				098070AF1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift in Sources */,
 				098070AD1B13DEA600C90479 /* UndoDemoViewController.swift in Sources */,
 				09673A861AEF5B2E008C7240 /* ZLSwipeableViewController.swift in Sources */,

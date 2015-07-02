@@ -1,0 +1,6 @@
+framework module ZLSwipeableViewSwift {
+  umbrella header "Pods-ZLSwipeableViewSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

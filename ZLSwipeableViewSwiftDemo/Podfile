@@ -3,5 +3,7 @@ pod 'UIColor+FlatColors'
 pod 'Cartography'
 pod 'ReactiveUI'
 
+pod "ZLSwipeableViewSwift", :path => "../"
+
 link_with 'ZLSwipeableViewSwiftDemo', 'ZLSwipeableViewSwiftDemoTests'
 use_frameworks!
