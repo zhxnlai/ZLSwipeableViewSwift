@@ -130,7 +130,7 @@ public class ZLSwipeableView: UIView {
     public var direction = ZLSwipeableViewDirection.Horizontal
 
     public var interpretDirection: (topView: UIView, direction: ZLSwipeableViewDirection, views: [UIView], swipeableView: ZLSwipeableView) -> (CGPoint, CGVector) = {(topView: UIView, direction: ZLSwipeableViewDirection, views: [UIView], swipeableView: ZLSwipeableView) in
-        let programmaticSwipeVelocity = CGFloat(1000)
+        let programmaticSwipeVelocity = CGFloat(1500)
         let location = CGPoint(x: topView.center.x, y: topView.center.y*0.7)
         var directionVector: CGVector?
         switch direction {
@@ -357,25 +357,41 @@ public class ZLSwipeableView: UIView {
         snapBehavior = nil
     }
     
+    private var touchOffset = CGPointZero
+    
     private var attachmentViewToAnchorView: UIAttachmentBehavior?
     private var attachmentAnchorViewToPoint: UIAttachmentBehavior?
     private func attachView(aView: UIView, toPoint point: CGPoint) {
+        
+        
         if var attachmentViewToAnchorView = attachmentViewToAnchorView, attachmentAnchorViewToPoint = attachmentAnchorViewToPoint {
-            attachmentAnchorViewToPoint.anchorPoint = point
+            var p = point
+            p.x = point.x + touchOffset.x
+            p.y = point.y + touchOffset.y
+            
+            attachmentAnchorViewToPoint.anchorPoint = p
         } else {
-            anchorView.center = point
+            
+            touchOffset.x = aView.center.x - point.x
+            touchOffset.y = aView.center.y - point.y - 25
+            
+            var newp = point
+            newp.x = point.x + touchOffset.x
+            newp.y = point.y + touchOffset.y
+            
+            anchorView.center = newp
             anchorView.backgroundColor = UIColor.blueColor()
             anchorView.hidden = true
             anchorContainerView.addSubview(anchorView)
             
             // attach aView to anchorView
             let p = aView.center
-            attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
+            attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, offsetFromCenter: UIOffset(horizontal: -(p.x - newp.x), vertical: -(p.y - newp.y + 25)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
             attachmentViewToAnchorView!.length = 0
             
             // attach anchorView to point
-            attachmentAnchorViewToPoint = UIAttachmentBehavior(item: anchorView, offsetFromCenter: UIOffsetZero, attachedToAnchor: point)
-            attachmentAnchorViewToPoint!.damping = 100
+            attachmentAnchorViewToPoint = UIAttachmentBehavior(item: anchorView, offsetFromCenter: UIOffsetMake(0, 25), attachedToAnchor: newp)
+            attachmentAnchorViewToPoint!.damping = 5
             attachmentAnchorViewToPoint!.length = 0
             
             animator.addBehavior(attachmentViewToAnchorView)
