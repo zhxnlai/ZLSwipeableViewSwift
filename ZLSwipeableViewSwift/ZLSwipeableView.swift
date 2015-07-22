@@ -367,7 +367,7 @@ public class ZLSwipeableView: UIView {
         if var attachmentViewToAnchorView = attachmentViewToAnchorView, attachmentAnchorViewToPoint = attachmentAnchorViewToPoint {
             var p = point
             p.x = point.x + touchOffset.x
-            p.y = point.y + touchOffset.y
+            p.y = point.y + touchOffset.y + 25
             
             attachmentAnchorViewToPoint.anchorPoint = p
         } else {
