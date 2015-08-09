@@ -52,7 +52,7 @@ public struct ZLSwipeableViewDirection : OptionSetType, CustomStringConvertible 
             return .Up
         case let (x, y) where abs(x)<abs(y) && y>0:
             return .Down
-        case let (x, y):
+        case (_, _):
             return .None
         }
     }
@@ -175,7 +175,7 @@ public class ZLSwipeableView: UIView {
     
     public func loadViews() {
         if views.count<numPrefetchedViews {
-            for i in (views.count..<numPrefetchedViews) {
+            for _ in (views.count..<numPrefetchedViews) {
                 if let nextView = nextView?() {
                     nextView.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: Selector("handlePan:")))
                     views.append(nextView)
@@ -184,7 +184,7 @@ public class ZLSwipeableView: UIView {
                 }
             }
         }
-        if let topView = topView() {
+        if let _ = topView() {
             animateViews()
         }
     }
@@ -207,7 +207,7 @@ public class ZLSwipeableView: UIView {
     
     private func animateViews() {
         if let topView = topView() {
-            for gestureRecognizer in topView.gestureRecognizers as! [UIGestureRecognizer] {
+            for gestureRecognizer in topView.gestureRecognizers! {
                 if gestureRecognizer.state != .Possible {
                     return
                 }
@@ -215,7 +215,7 @@ public class ZLSwipeableView: UIView {
         }
         
         for i in (0..<views.count) {
-            var view = views[i]
+            let view = views[i]
             view.userInteractionEnabled = i == 0
             animateView(view: view, index: i, views: views, swipeableView: self)
         }
@@ -241,7 +241,7 @@ public class ZLSwipeableView: UIView {
         }
     }
     private func removeFromContainerView(aView: UIView) {
-        for gestureRecognizer in aView.gestureRecognizers as! [UIGestureRecognizer] {
+        for gestureRecognizer in aView.gestureRecognizers! {
             if gestureRecognizer.isKindOfClass(ZLPanGestureRecognizer.classForCoder()) {
                 aView.removeGestureRecognizer(gestureRecognizer)
             }
@@ -349,7 +349,7 @@ public class ZLSwipeableView: UIView {
     private var attachmentViewToAnchorView: UIAttachmentBehavior?
     private var attachmentAnchorViewToPoint: UIAttachmentBehavior?
     private func attachView(aView: UIView, toPoint point: CGPoint) {
-        if let attachmentViewToAnchorView = attachmentViewToAnchorView, attachmentAnchorViewToPoint = attachmentAnchorViewToPoint {
+        if let _ = attachmentViewToAnchorView, attachmentAnchorViewToPoint = attachmentAnchorViewToPoint {
             attachmentAnchorViewToPoint.anchorPoint = point
         } else {
             anchorView.center = point
@@ -367,13 +367,13 @@ public class ZLSwipeableView: UIView {
             attachmentAnchorViewToPoint!.damping = 100
             attachmentAnchorViewToPoint!.length = 0
             
-            animator.addBehavior(attachmentViewToAnchorView)
-            animator.addBehavior(attachmentAnchorViewToPoint)
+            animator.addBehavior(attachmentViewToAnchorView!)
+            animator.addBehavior(attachmentAnchorViewToPoint!)
         }
     }
     private func detachView() {
-        animator.removeBehavior(attachmentViewToAnchorView)
-        animator.removeBehavior(attachmentAnchorViewToPoint)
+        animator.removeBehavior(attachmentViewToAnchorView!)
+        animator.removeBehavior(attachmentAnchorViewToPoint!)
         attachmentViewToAnchorView = nil
         attachmentAnchorViewToPoint = nil
     }
@@ -411,18 +411,18 @@ public class ZLSwipeableView: UIView {
     }
 
     private func pushView(aView: UIView, fromPoint point: CGPoint, inDirection direction: CGVector) {
-        var anchorView = UIView(frame: CGRect(x: 0, y: 0, width: ZLSwipeableView.anchorViewWidth, height: ZLSwipeableView.anchorViewWidth))
+        let anchorView = UIView(frame: CGRect(x: 0, y: 0, width: ZLSwipeableView.anchorViewWidth, height: ZLSwipeableView.anchorViewWidth))
         anchorView.center = point
         anchorView.backgroundColor = UIColor.greenColor()
         anchorView.hidden = true
         anchorContainerView.addSubview(anchorView)
 
         let p = aView.convertPoint(aView.center, fromView: aView.superview)
-        var point = aView.convertPoint(point, fromView: aView.superview)
-        var attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
+        let point = aView.convertPoint(point, fromView: aView.superview)
+        let attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
         attachmentViewToAnchorView.length = 0
 
-        var pushBehavior = UIPushBehavior(items: [anchorView], mode: .Instantaneous)
+        let pushBehavior = UIPushBehavior(items: [anchorView], mode: .Instantaneous)
         pushBehavior.pushDirection = direction
         
         pushAnimator.addBehavior(attachmentViewToAnchorView)
