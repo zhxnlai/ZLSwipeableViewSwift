@@ -342,8 +342,10 @@ public class ZLSwipeableView: UIView {
         animator.addBehavior(snapBehavior)
     }
     private func unsnapView() {
-        animator.removeBehavior(snapBehavior)
-        snapBehavior = nil
+        if let snapBehavior = snapBehavior {
+            animator.removeBehavior(snapBehavior)
+            snapBehavior = nil
+        }
     }
     
     private var attachmentViewToAnchorView: UIAttachmentBehavior?
