@@ -30,17 +30,17 @@ public struct ZLSwipeableViewDirection : OptionSetType, CustomStringConvertible 
 
     // MARK: BitwiseOperationsType
     public static var allZeros: ZLSwipeableViewDirection {
-        return self(rawValue: 0)
+        return self.init(rawValue: 0)
     }
 
-    static var None: ZLSwipeableViewDirection       { return self(rawValue: 0b0000) }
-    static var Left: ZLSwipeableViewDirection       { return self(rawValue: 0b0001) }
-    static var Right: ZLSwipeableViewDirection      { return self(rawValue: 0b0010) }
-    static var Up: ZLSwipeableViewDirection         { return self(rawValue: 0b0100) }
-    static var Down: ZLSwipeableViewDirection       { return self(rawValue: 0b1000) }
-    static var Horizontal: ZLSwipeableViewDirection { return [Left, Right] }
-    static var Vertical: ZLSwipeableViewDirection   { return [Up, Down] }
-    static var All: ZLSwipeableViewDirection        { return [Horizontal, Vertical] }
+    public static var None: ZLSwipeableViewDirection       { return self.init(rawValue: 0b0000) }
+    public static var Left: ZLSwipeableViewDirection       { return self.init(rawValue: 0b0001) }
+    public static var Right: ZLSwipeableViewDirection      { return self.init(rawValue: 0b0010) }
+    public static var Up: ZLSwipeableViewDirection         { return self.init(rawValue: 0b0100) }
+    public static var Down: ZLSwipeableViewDirection       { return self.init(rawValue: 0b1000) }
+    public static var Horizontal: ZLSwipeableViewDirection { return [Left, Right] }
+    public static var Vertical: ZLSwipeableViewDirection   { return [Up, Down] }
+    public static var All: ZLSwipeableViewDirection        { return [Horizontal, Vertical] }
     
     static func fromPoint(point: CGPoint) -> ZLSwipeableViewDirection {
         switch (point.x, point.y) {
@@ -258,7 +258,7 @@ public class ZLSwipeableView: UIView {
     }
     
     required public init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         setup()
     }
 
