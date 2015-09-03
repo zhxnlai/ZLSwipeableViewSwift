@@ -16,7 +16,7 @@ public func ==(lhs: ZLSwipeableViewDirection, rhs: ZLSwipeableViewDirection) -> 
     return lhs.rawValue == rhs.rawValue
 }
 
-public struct ZLSwipeableViewDirection : RawOptionSetType, Printable {
+public struct ZLSwipeableViewDirection : OptionSetType, CustomStringConvertible {
     public var rawValue: UInt
     
     public init(rawValue: UInt) {
@@ -30,17 +30,17 @@ public struct ZLSwipeableViewDirection : RawOptionSetType, Printable {
 
     // MARK: BitwiseOperationsType
     public static var allZeros: ZLSwipeableViewDirection {
-        return self(rawValue: 0)
+        return self.init(rawValue: 0)
     }
 
-    public static var None: ZLSwipeableViewDirection       { return self(rawValue: 0b0000) }
-    public static var Left: ZLSwipeableViewDirection       { return self(rawValue: 0b0001) }
-    public static var Right: ZLSwipeableViewDirection      { return self(rawValue: 0b0010) }
-    public static var Up: ZLSwipeableViewDirection         { return self(rawValue: 0b0100) }
-    public static var Down: ZLSwipeableViewDirection       { return self(rawValue: 0b1000) }
-    public static var Horizontal: ZLSwipeableViewDirection { return Left | Right }
-    public static var Vertical: ZLSwipeableViewDirection   { return Up | Down }
-    public static var All: ZLSwipeableViewDirection        { return Horizontal | Vertical }
+    public static var None: ZLSwipeableViewDirection       { return self.init(rawValue: 0b0000) }
+    public static var Left: ZLSwipeableViewDirection       { return self.init(rawValue: 0b0001) }
+    public static var Right: ZLSwipeableViewDirection      { return self.init(rawValue: 0b0010) }
+    public static var Up: ZLSwipeableViewDirection         { return self.init(rawValue: 0b0100) }
+    public static var Down: ZLSwipeableViewDirection       { return self.init(rawValue: 0b1000) }
+    public static var Horizontal: ZLSwipeableViewDirection { return [Left, Right] }
+    public static var Vertical: ZLSwipeableViewDirection   { return [Up , Down] }
+    public static var All: ZLSwipeableViewDirection        { return [Horizontal , Vertical] }
     
     public static func fromPoint(point: CGPoint) -> ZLSwipeableViewDirection {
         switch (point.x, point.y) {
@@ -52,7 +52,7 @@ public struct ZLSwipeableViewDirection : RawOptionSetType, Printable {
             return .Up
         case let (x, y) where abs(x)<abs(y) && y>0:
             return .Down
-        case let (x, y):
+        case (_, _):
             return .None
         }
     }
@@ -91,7 +91,7 @@ public class ZLSwipeableView: UIView {
         func toRadian(degree: CGFloat) -> CGFloat {
             return degree * CGFloat(M_PI/100)
         }
-        func rotateView(view: UIView, forDegree degree: CGFloat, #duration: NSTimeInterval, offsetFromCenter offset: CGPoint, swipeableView: ZLSwipeableView) {
+        func rotateView(view: UIView, forDegree degree: CGFloat, duration: NSTimeInterval, offsetFromCenter offset: CGPoint, swipeableView: ZLSwipeableView) {
             UIView.animateWithDuration(duration, delay: 0, options: .AllowUserInteraction, animations: {
                 view.center = swipeableView.convertPoint(swipeableView.center, fromView: swipeableView.superview)
                 var transform = CGAffineTransformMakeTranslation(offset.x, offset.y)
@@ -104,13 +104,13 @@ public class ZLSwipeableView: UIView {
             let degree = CGFloat(1), offset = CGPoint(x: 0, y: CGRectGetHeight(swipeableView.bounds)*0.3)
             switch index {
             case 0:
-                rotateView(view, forDegree: 0, duration: 0.4, offsetFromCenter: offset, swipeableView)
+                rotateView(view, forDegree: 0, duration: 0.4, offsetFromCenter: offset, swipeableView: swipeableView)
             case 1:
-                rotateView(view, forDegree: degree, duration: 0.4, offsetFromCenter: offset, swipeableView)
+                rotateView(view, forDegree: degree, duration: 0.4, offsetFromCenter: offset, swipeableView: swipeableView)
             case 2:
-                rotateView(view, forDegree: -degree, duration: 0.4, offsetFromCenter: offset, swipeableView)
+                rotateView(view, forDegree: -degree, duration: 0.4, offsetFromCenter: offset, swipeableView: swipeableView)
             default:
-                rotateView(view, forDegree: 0, duration: 0.4, offsetFromCenter: offset, swipeableView)
+                rotateView(view, forDegree: 0, duration: 0.4, offsetFromCenter: offset, swipeableView: swipeableView)
             }
         }
     }()
@@ -176,7 +176,7 @@ public class ZLSwipeableView: UIView {
     
     public func loadViews() {
         if views.count<numPrefetchedViews {
-            for i in (views.count..<numPrefetchedViews) {
+            for _ in (views.count..<numPrefetchedViews) {
                 if let nextView = nextView?() {
                     nextView.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: Selector("handlePan:")))
                     nextView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: Selector("handleTap:")))
@@ -186,15 +186,15 @@ public class ZLSwipeableView: UIView {
                 }
             }
         }
-        if let topView = topView() {
+        if let _ = topView() {
             animateViews()
         }
     }
     
     // point: in the swipeableView's coordinate
     public func insertTopView(view: UIView, fromPoint point: CGPoint) {
-        if contains(views, view) {
-            println("Error: trying to insert a view that has been added")
+        if views.contains(view) {
+            print("Error: trying to insert a view that has been added")
         } else {
             if cleanUpWithPredicate({ aView in aView == view }).count == 0 {
                 view.center = point
@@ -210,7 +210,7 @@ public class ZLSwipeableView: UIView {
     
     private func animateViews() {
         if let topView = topView() {
-            for gestureRecognizer in topView.gestureRecognizers as! [UIGestureRecognizer] {
+            for gestureRecognizer in topView.gestureRecognizers! {
                 if gestureRecognizer.state != .Possible {
                     return
                 }
@@ -218,7 +218,7 @@ public class ZLSwipeableView: UIView {
         }
         
         for i in (0..<views.count) {
-            var view = views[i]
+            let view = views[i]
             view.userInteractionEnabled = i == 0
             animateView(view: view, index: i, views: views, swipeableView: self)
         }
@@ -244,7 +244,7 @@ public class ZLSwipeableView: UIView {
         }
     }
     private func removeFromContainerView(aView: UIView) {
-        for gestureRecognizer in aView.gestureRecognizers as! [UIGestureRecognizer] {
+        for gestureRecognizer in aView.gestureRecognizers! {
             if gestureRecognizer.isKindOfClass(ZLPanGestureRecognizer.classForCoder()) {
                 aView.removeGestureRecognizer(gestureRecognizer)
             }
@@ -260,7 +260,7 @@ public class ZLSwipeableView: UIView {
         setup()
     }
     
-    required public init(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
@@ -317,7 +317,7 @@ public class ZLSwipeableView: UIView {
             let velocityMag = velocity.magnitude
             
             let directionSwiped = ZLSwipeableViewDirection.fromPoint(translation)
-            let directionChecked = directionSwiped & direction != .None
+            let directionChecked = [directionSwiped , direction] != ZLSwipeableViewDirection.None
             let signChecked = CGPoint.areInSameTheDirection(translation, p2: velocity)
             let translationChecked = abs(translation.x) > translationThreshold * bounds.width ||
                                      abs(translation.y) > translationThreshold * bounds.height
@@ -364,7 +364,7 @@ public class ZLSwipeableView: UIView {
     private func attachView(aView: UIView, toPoint point: CGPoint) {
         
         
-        if var attachmentViewToAnchorView = attachmentViewToAnchorView, attachmentAnchorViewToPoint = attachmentAnchorViewToPoint {
+        if let _ = attachmentViewToAnchorView, attachmentAnchorViewToPoint = attachmentAnchorViewToPoint {
             var p = point
             p.x = point.x + touchOffset.x
             p.y = point.y + touchOffset.y + 25
@@ -394,13 +394,13 @@ public class ZLSwipeableView: UIView {
             attachmentAnchorViewToPoint!.damping = 5
             attachmentAnchorViewToPoint!.length = 0
             
-            animator.addBehavior(attachmentViewToAnchorView)
-            animator.addBehavior(attachmentAnchorViewToPoint)
+            animator.addBehavior(attachmentViewToAnchorView!)
+            animator.addBehavior(attachmentAnchorViewToPoint!)
         }
     }
     private func detachView() {
-        animator.removeBehavior(attachmentViewToAnchorView)
-        animator.removeBehavior(attachmentAnchorViewToPoint)
+        animator.removeBehavior(attachmentViewToAnchorView!)
+        animator.removeBehavior(attachmentAnchorViewToPoint!)
         attachmentViewToAnchorView = nil
         attachmentAnchorViewToPoint = nil
     }
@@ -438,18 +438,18 @@ public class ZLSwipeableView: UIView {
     }
 
     private func pushView(aView: UIView, fromPoint point: CGPoint, inDirection direction: CGVector) {
-        var anchorView = UIView(frame: CGRect(x: 0, y: 0, width: ZLSwipeableView.anchorViewWidth, height: ZLSwipeableView.anchorViewWidth))
+        let anchorView = UIView(frame: CGRect(x: 0, y: 0, width: ZLSwipeableView.anchorViewWidth, height: ZLSwipeableView.anchorViewWidth))
         anchorView.center = point
         anchorView.backgroundColor = UIColor.greenColor()
         anchorView.hidden = true
         anchorContainerView.addSubview(anchorView)
 
         let p = aView.convertPoint(aView.center, fromView: aView.superview)
-        var point = aView.convertPoint(point, fromView: aView.superview)
-        var attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
-        attachmentViewToAnchorView!.length = 0
+        let point = aView.convertPoint(point, fromView: aView.superview)
+        let attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
+        attachmentViewToAnchorView.length = 0
 
-        var pushBehavior = UIPushBehavior(items: [anchorView], mode: .Instantaneous)
+        let pushBehavior = UIPushBehavior(items: [anchorView], mode: .Instantaneous)
         pushBehavior.pushDirection = direction
         
         pushAnimator.addBehavior(attachmentViewToAnchorView)
