@@ -345,16 +345,18 @@ public class ZLSwipeableView: UIView {
         }
     }
     
-    private var snapBehavior: UISnapBehavior!
+    private var snapBehavior: UISnapBehavior?
     private func snapView(aView: UIView, toPoint point: CGPoint) {
         unsnapView()
         snapBehavior = UISnapBehavior(item: aView, snapToPoint: point)
         snapBehavior!.damping = 0.75
-        animator.addBehavior(snapBehavior)
+        animator.addBehavior(snapBehavior!)
     }
     private func unsnapView() {
-        animator.removeBehavior(snapBehavior)
-        snapBehavior = nil
+        if snapBehavior != nil{
+            animator.removeBehavior(snapBehavior!)
+            snapBehavior = nil
+        }
     }
     
     private var touchOffset = CGPointZero
