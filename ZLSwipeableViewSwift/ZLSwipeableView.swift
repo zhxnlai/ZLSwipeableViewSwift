@@ -401,8 +401,10 @@ public class ZLSwipeableView: UIView {
         }
     }
     private func detachView() {
-        animator.removeBehavior(attachmentViewToAnchorView!)
-        animator.removeBehavior(attachmentAnchorViewToPoint!)
+        if attachmentViewToAnchorView != nil{
+            animator.removeBehavior(attachmentViewToAnchorView!)
+            animator.removeBehavior(attachmentAnchorViewToPoint!)
+        }
         attachmentViewToAnchorView = nil
         attachmentAnchorViewToPoint = nil
     }
