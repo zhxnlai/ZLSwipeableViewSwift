@@ -317,7 +317,7 @@ public class ZLSwipeableView: UIView {
             let velocityMag = velocity.magnitude
             
             let directionSwiped = ZLSwipeableViewDirection.fromPoint(translation)
-            let directionChecked = [directionSwiped , direction] != ZLSwipeableViewDirection.None
+            let directionChecked = directionSwiped.intersect(direction) != .None
             let signChecked = CGPoint.areInSameTheDirection(translation, p2: velocity)
             let translationChecked = abs(translation.x) > translationThreshold * bounds.width ||
                                      abs(translation.y) > translationThreshold * bounds.height
