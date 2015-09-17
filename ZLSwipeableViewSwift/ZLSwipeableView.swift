@@ -355,20 +355,22 @@ public class ZLSwipeableView: UIView {
             attachmentAnchorViewToPoint.anchorPoint = point
         } else {
             anchorView.center = point
+            anchorView.transform = CGAffineTransformIdentity
             anchorView.backgroundColor = UIColor.blueColor()
             anchorView.hidden = true
             anchorContainerView.addSubview(anchorView)
-            
+      
             // attach aView to anchorView
             let p = aView.center
             attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, attachedToItem: anchorView)
             attachmentViewToAnchorView!.length = 0
-            
+      
             // attach anchorView to point
-            attachmentAnchorViewToPoint = UIAttachmentBehavior(item: anchorView, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToAnchor: point)
+            let offset = UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y))
+            attachmentAnchorViewToPoint = UIAttachmentBehavior(item: anchorView, offsetFromCenter: offset, attachedToAnchor: point)
             attachmentAnchorViewToPoint!.damping = 100
             attachmentAnchorViewToPoint!.length = 0
-            
+      
             animator.addBehavior(attachmentViewToAnchorView!)
             animator.addBehavior(attachmentAnchorViewToPoint!)
         }
