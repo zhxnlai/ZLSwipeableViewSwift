@@ -369,13 +369,16 @@ public class ZLSwipeableView: UIView {
         if let _ = attachmentViewToAnchorView, attachmentAnchorViewToPoint = attachmentAnchorViewToPoint {
             var p = point
             p.x = point.x + touchOffset.x
-            p.y = point.y + touchOffset.y + 25
+            p.y = point.y + touchOffset.y
             
             attachmentAnchorViewToPoint.anchorPoint = p
         } else {
             
-            touchOffset.x = aView.center.x - point.x
-            touchOffset.y = aView.center.y - point.y - 25
+            let center = aView.center
+            let offset : CGFloat = 22
+            
+            touchOffset.x = center.x - point.x
+            touchOffset.y = center.y - point.y - offset
             
             var newp = point
             newp.x = point.x + touchOffset.x
@@ -387,12 +390,12 @@ public class ZLSwipeableView: UIView {
             anchorContainerView.addSubview(anchorView)
             
             // attach aView to anchorView
-            let p = aView.center
-            attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, offsetFromCenter: UIOffset(horizontal: -(p.x - newp.x), vertical: -(p.y - newp.y + 25)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
+            
+            attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, offsetFromCenter: UIOffset(horizontal: -(center.x - newp.x), vertical: -(center.y - newp.y + offset)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
             attachmentViewToAnchorView!.length = 0
             
             // attach anchorView to point
-            attachmentAnchorViewToPoint = UIAttachmentBehavior(item: anchorView, offsetFromCenter: UIOffsetMake(0, 25), attachedToAnchor: newp)
+            attachmentAnchorViewToPoint = UIAttachmentBehavior(item: anchorView, offsetFromCenter: UIOffsetMake(0, offset), attachedToAnchor: newp)
             attachmentAnchorViewToPoint!.damping = 5
             attachmentAnchorViewToPoint!.length = 0
             
