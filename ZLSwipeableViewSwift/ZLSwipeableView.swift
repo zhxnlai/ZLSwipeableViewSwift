@@ -361,11 +361,11 @@ public class ZLSwipeableView: UIView {
             
             // attach aView to anchorView
             let p = aView.center
-            attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
+            attachmentViewToAnchorView = UIAttachmentBehavior(item: aView, attachedToItem: anchorView)
             attachmentViewToAnchorView!.length = 0
             
             // attach anchorView to point
-            attachmentAnchorViewToPoint = UIAttachmentBehavior(item: anchorView, offsetFromCenter: UIOffsetZero, attachedToAnchor: point)
+            attachmentAnchorViewToPoint = UIAttachmentBehavior(item: anchorView, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToAnchor: point)
             attachmentAnchorViewToPoint!.damping = 100
             attachmentAnchorViewToPoint!.length = 0
             
