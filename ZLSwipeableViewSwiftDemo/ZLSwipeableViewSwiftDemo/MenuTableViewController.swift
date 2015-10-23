@@ -53,9 +53,10 @@ class MenuTableViewController: UITableViewController {
         let (title, _) = demoViewControllers[indexPath.row]
         return title
     }
+    
     func viewControllerForRowAtIndexPath(indexPath: NSIndexPath) -> ZLSwipeableViewController {
         let (_, vc) = demoViewControllers[indexPath.row]
-        return vc()
+        return vc.init()
     }
 
 }

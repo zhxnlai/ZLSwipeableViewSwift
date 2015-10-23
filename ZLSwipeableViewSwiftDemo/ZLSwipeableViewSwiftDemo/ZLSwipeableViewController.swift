@@ -121,7 +121,7 @@ class ZLSwipeableViewController: UIViewController {
                     cardView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[contentView(width)]", options: .AlignAllLeft, metrics: metrics, views: views))
                     cardView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView(height)]", options: .AlignAllLeft, metrics: metrics, views: views))
                     */
-                    layout(contentView, view2: cardView) { view1, view2 in
+                    constrain(contentView, cardView) { view1, view2 in
                         view1.left == view2.left
                         view1.top == view2.top
                         view1.width == cardView.bounds.width
@@ -133,7 +133,7 @@ class ZLSwipeableViewController: UIViewController {
             return nil
         }
         
-        layout(swipeableView, view2: view) { view1, view2 in
+        constrain(swipeableView, view) { view1, view2 in
             view1.left == view2.left+50
             view1.right == view2.right-50
             view1.top == view2.top + 120

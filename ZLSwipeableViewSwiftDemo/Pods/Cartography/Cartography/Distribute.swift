@@ -19,6 +19,7 @@ private func reduce(first: LayoutProxy, rest: [LayoutProxy], combine: (LayoutPro
 
     return rest.reduce(([], first)) { (acc, current) -> Accumulator in
         let (constraints, previous) = acc
+
         return (constraints + [ combine(previous, current) ], current)
     }.0
 }
@@ -33,7 +34,7 @@ private func reduce(first: LayoutProxy, rest: [LayoutProxy], combine: (LayoutPro
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-public func distribute(by amount: Double, horizontally first: LayoutProxy, rest: LayoutProxy...) -> [NSLayoutConstraint] {
+public func distribute(by amount: CGFloat, horizontally first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
     return reduce(first, rest: rest) { $0.trailing == $1.leading - amount }
 }
 
@@ -47,7 +48,7 @@ public func distribute(by amount: Double, horizontally first: LayoutProxy, rest:
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-public func distribute(by amount: Double, leftToRight first: LayoutProxy, rest: LayoutProxy...) -> [NSLayoutConstraint] {
+public func distribute(by amount: CGFloat, leftToRight first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
     return reduce(first, rest: rest) { $0.right == $1.left - amount  }
 }
 
@@ -61,6 +62,6 @@ public func distribute(by amount: Double, leftToRight first: LayoutProxy, rest: 
 ///
 /// - returns: An array of `NSLayoutConstraint` instances.
 ///
-public func distribute(by amount: Double, vertically first: LayoutProxy, rest: LayoutProxy...) -> [NSLayoutConstraint] {
+public func distribute(by amount: CGFloat, vertically first: LayoutProxy, _ rest: LayoutProxy...) -> [NSLayoutConstraint] {
     return reduce(first, rest: rest) { $0.bottom == $1.top - amount }
 }
