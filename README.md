@@ -11,6 +11,8 @@ Preview
 ![direction](Previews/direction.gif)
 ### Undo
 ![direction](Previews/undo.gif)
+### Rewind
+![direction](Previews/rewind.gif)
 
 CocoaPods
 ---
