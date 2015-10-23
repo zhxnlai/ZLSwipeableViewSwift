@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlwaysSwipeViewController: ZLSwipeableViewController {
+class AlwaysSwipeDemoViewController: ZLSwipeableViewController {
 
     var shouldSwipe = true
     override func viewDidLoad() {

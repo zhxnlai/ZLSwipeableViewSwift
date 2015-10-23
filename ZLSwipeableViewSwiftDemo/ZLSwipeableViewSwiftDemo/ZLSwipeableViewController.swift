@@ -100,37 +100,8 @@ class ZLSwipeableViewController: UIViewController {
         swipeableView.didCancel = {view in
             print("Did cancel swiping view")
         }
-
         swipeableView.nextView = {
-            if self.colorIndex < self.colors.count {
-                let cardView = CardView(frame: self.swipeableView.bounds)
-                cardView.backgroundColor = self.colorForName(self.colors[self.colorIndex])
-                self.colorIndex++
-                
-                if self.loadCardsFromXib {
-                    let contentView = NSBundle.mainBundle().loadNibNamed("CardContentView", owner: self, options: nil).first! as! UIView
-                    contentView.translatesAutoresizingMaskIntoConstraints = false
-                    contentView.backgroundColor = cardView.backgroundColor
-                    cardView.addSubview(contentView)
-                    
-                    // This is important:
-                    // https://github.com/zhxnlai/ZLSwipeableView/issues/9
-                    /*// Alternative:
-                    let metrics = ["width":cardView.bounds.width, "height": cardView.bounds.height]
-                    let views = ["contentView": contentView, "cardView": cardView]
-                    cardView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[contentView(width)]", options: .AlignAllLeft, metrics: metrics, views: views))
-                    cardView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView(height)]", options: .AlignAllLeft, metrics: metrics, views: views))
-                    */
-                    constrain(contentView, cardView) { view1, view2 in
-                        view1.left == view2.left
-                        view1.top == view2.top
-                        view1.width == cardView.bounds.width
-                        view1.height == cardView.bounds.height
-                    }
-                }
-                return cardView
-            }
-            return nil
+            return self.nextCardView()
         }
         
         constrain(swipeableView, view) { view1, view2 in
@@ -142,6 +113,39 @@ class ZLSwipeableViewController: UIViewController {
     }
     
     // MARK: ()
+    func nextCardView() -> UIView? {
+        if colorIndex >= colors.count {
+            colorIndex = 0
+        }
+
+        let cardView = CardView(frame: swipeableView.bounds)
+        cardView.backgroundColor = colorForName(colors[colorIndex])
+        colorIndex++
+
+        if loadCardsFromXib {
+            let contentView = NSBundle.mainBundle().loadNibNamed("CardContentView", owner: self, options: nil).first! as! UIView
+            contentView.translatesAutoresizingMaskIntoConstraints = false
+            contentView.backgroundColor = cardView.backgroundColor
+            cardView.addSubview(contentView)
+
+            // This is important:
+            // https://github.com/zhxnlai/ZLSwipeableView/issues/9
+            /*// Alternative:
+            let metrics = ["width":cardView.bounds.width, "height": cardView.bounds.height]
+            let views = ["contentView": contentView, "cardView": cardView]
+            cardView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[contentView(width)]", options: .AlignAllLeft, metrics: metrics, views: views))
+            cardView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView(height)]", options: .AlignAllLeft, metrics: metrics, views: views))
+            */
+            constrain(contentView, cardView) { view1, view2 in
+                view1.left == view2.left
+                view1.top == view2.top
+                view1.width == cardView.bounds.width
+                view1.height == cardView.bounds.height
+            }
+        }
+        return cardView
+    }
+
     func colorForName(name: String) -> UIColor {
         let sanitizedName = name.stringByReplacingOccurrencesOfString(" ", withString: "")
         let selector = "flat\(sanitizedName)Color"

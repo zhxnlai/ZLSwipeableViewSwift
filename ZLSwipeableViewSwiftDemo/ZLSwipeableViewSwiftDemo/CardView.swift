@@ -23,7 +23,7 @@ class CardView: UIView {
     func setup() {
         // Shadow
         layer.shadowColor = UIColor.blackColor().CGColor
-        layer.shadowOpacity = 0.33
+        layer.shadowOpacity = 0.25
         layer.shadowOffset = CGSizeMake(0, 1.5)
         layer.shadowRadius = 4.0
         layer.shouldRasterize = true
