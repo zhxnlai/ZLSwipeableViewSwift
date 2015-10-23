@@ -26,22 +26,22 @@ public struct Direction : OptionSetType, CustomStringConvertible {
         self.rawValue = rawValue
     }
 
-    static let None = Direction(rawValue: 0b0000)
-    static let Left = Direction(rawValue: 0b0001)
-    static let Right = Direction(rawValue: 0b0010)
-    static let Up = Direction(rawValue: 0b0100)
-    static let Down = Direction(rawValue: 0b1000)
-    static let Horizontal: Direction = [Left, Right]
-    static let Vertical: Direction = [Up, Down]
-    static let All: Direction = [Horizontal, Vertical]
+    public static let None = Direction(rawValue: 0b0000)
+    public static let Left = Direction(rawValue: 0b0001)
+    public static let Right = Direction(rawValue: 0b0010)
+    public static let Up = Direction(rawValue: 0b0100)
+    public static let Down = Direction(rawValue: 0b1000)
+    public static let Horizontal: Direction = [Left, Right]
+    public static let Vertical: Direction = [Up, Down]
+    public static let All: Direction = [Horizontal, Vertical]
 
-    static func fromPoint(point: CGPoint) -> Direction {
+    public static func fromPoint(point: CGPoint) -> Direction {
         switch (point.x, point.y) {
-        case let (x, y) where abs(x) >= abs(y) && x >= 0:
+        case let (x, y) where abs(x) >= abs(y) && x > 0:
             return .Right
         case let (x, y) where abs(x) >= abs(y) && x < 0:
             return .Left
-        case let (x, y) where abs(x) < abs(y) && y <= 0:
+        case let (x, y) where abs(x) < abs(y) && y < 0:
             return .Up
         case let (x, y) where abs(x) < abs(y) && y > 0:
             return .Down
