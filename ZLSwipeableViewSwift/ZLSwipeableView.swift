@@ -106,7 +106,7 @@ public class ZLSwipeableView: UIView {
     // MARK: Customizable behavior
     public var animateView = ZLSwipeableView.defaultAnimateViewHandler()
     public var interpretDirection = ZLSwipeableView.defaultInterpretDirectionHandler()
-    public var shouldSwipeView = ZLSwipeableView.defaultShouldSwipeViewHandler(0.25, minVelocityInPointPerSecond: 750, allowedDirection: Direction.Horizontal)
+    public var shouldSwipeView = ZLSwipeableView.defaultShouldSwipeViewHandler()
     public var minTranslationInPercent = CGFloat(0.25)
     public var minVelocityInPointPerSecond = CGFloat(750)
     public var allowedDirection = Direction.Horizontal
@@ -335,11 +335,14 @@ extension ZLSwipeableView {
         }
     }
 
-    static func defaultShouldSwipeViewHandler(minTranslationInPercent: CGFloat, minVelocityInPointPerSecond: CGFloat, allowedDirection: Direction) -> ShouldSwipeHandler {
+    static func defaultShouldSwipeViewHandler() -> ShouldSwipeHandler {
         return { (view: UIView, movement: Movement, swipeableView: ZLSwipeableView) -> Bool in
             let translation = movement.translation
             let velocity = movement.velocity
             let bounds = swipeableView.bounds
+            let minTranslationInPercent = swipeableView.minTranslationInPercent
+            let minVelocityInPointPerSecond = swipeableView.minVelocityInPointPerSecond
+            let allowedDirection = swipeableView.allowedDirection
 
             func areTranslationAndVelocityInTheSameDirection() -> Bool {
                 return CGPoint.areInSameTheDirection(translation, p2: velocity)
