@@ -15,11 +15,11 @@ class CardView: UIView {
         setup()
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setup()
     }
-    
+
     func setup() {
         // Shadow
         layer.shadowColor = UIColor.blackColor().CGColor

@@ -15,7 +15,7 @@ class CustomAnimationDemoViewController: ZLSwipeableViewController {
         func toRadian(degree: CGFloat) -> CGFloat {
             return degree * CGFloat(M_PI/100)
         }
-        func rotateAndTranslateView(view: UIView, forDegree degree: CGFloat, forPoint point: CGPoint, #duration: NSTimeInterval, offsetFromCenter offset: CGPoint, swipeableView: ZLSwipeableView) {
+        func rotateAndTranslateView(view: UIView, forDegree degree: CGFloat, forPoint point: CGPoint, duration: NSTimeInterval, offsetFromCenter offset: CGPoint, swipeableView: ZLSwipeableView) {
             UIView.animateWithDuration(duration, delay: 0, options: .AllowUserInteraction, animations: {
                 view.center = swipeableView.convertPoint(swipeableView.center, fromView: swipeableView.superview)
                 var transform = CGAffineTransformMakeTranslation(offset.x, offset.y)
@@ -30,7 +30,7 @@ class CustomAnimationDemoViewController: ZLSwipeableViewController {
             let degree = CGFloat(sin(0.5*Double(index))),
                 offset = CGPoint(x: 0, y: CGRectGetHeight(swipeableView.bounds)*0.3)
             let point = CGPoint(x: degree*10, y: CGFloat(-index*5))
-            rotateAndTranslateView(view, forDegree: degree, forPoint: point, duration: 0.4, offsetFromCenter: offset, swipeableView)
+            rotateAndTranslateView(view, forDegree: degree, forPoint: point, duration: 0.4, offsetFromCenter: offset, swipeableView: swipeableView)
         }
     }
     

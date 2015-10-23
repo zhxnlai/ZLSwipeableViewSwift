@@ -20,6 +20,9 @@
 		098070AF1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AE1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift */; };
 		098070B11B13E9B900C90479 /* CustomSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070B01B13E9B900C90479 /* CustomSwipeDemoViewController.swift */; };
 		098070B31B13EDB800C90479 /* CustomDirectionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070B21B13EDB800C90479 /* CustomDirectionDemoViewController.swift */; };
+		09B2F5291B32018000ECD8B1 /* ShouldSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B2F5281B32018000ECD8B1 /* ShouldSwipeDemoViewController.swift */; };
+		09E79D171BDA002F00A609A1 /* DirectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D161BDA002F00A609A1 /* DirectionTests.swift */; settings = {ASSET_TAGS = (); }; };
+		09E79D191BDA058000A609A1 /* ViewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D181BDA058000A609A1 /* ViewManagerTests.swift */; settings = {ASSET_TAGS = (); }; };
 		179604C29FFE95576E597034 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB7EDF499F2D90A9D123AB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		78FA118955F2E3CFC6B2C8A5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB7EDF499F2D90A9D123AB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
@@ -52,6 +55,9 @@
 		098070AE1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimationDemoViewController.swift; sourceTree = "<group>"; };
 		098070B01B13E9B900C90479 /* CustomSwipeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwipeDemoViewController.swift; sourceTree = "<group>"; };
 		098070B21B13EDB800C90479 /* CustomDirectionDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomDirectionDemoViewController.swift; sourceTree = "<group>"; };
+		09B2F5281B32018000ECD8B1 /* ShouldSwipeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldSwipeDemoViewController.swift; sourceTree = "<group>"; };
+		09E79D161BDA002F00A609A1 /* DirectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionTests.swift; sourceTree = "<group>"; };
+		09E79D181BDA058000A609A1 /* ViewManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManagerTests.swift; sourceTree = "<group>"; };
 		2BEB7EDF499F2D90A9D123AB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69405601F3D6658B5E93991C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6CC972748D132C6CB0208E7C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +122,7 @@
 				098070B01B13E9B900C90479 /* CustomSwipeDemoViewController.swift */,
 				098070B21B13EDB800C90479 /* CustomDirectionDemoViewController.swift */,
 				098070AC1B13DEA600C90479 /* UndoDemoViewController.swift */,
+				09B2F5281B32018000ECD8B1 /* ShouldSwipeDemoViewController.swift */,
 				098070A11B12ECAD00C90479 /* CardView.swift */,
 				098070A31B12ED6400C90479 /* CardContentView.xib */,
 				09673A8A1AEF5B2E008C7240 /* Images.xcassets */,
@@ -137,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				09673A991AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift */,
+				09E79D161BDA002F00A609A1 /* DirectionTests.swift */,
+				09E79D181BDA058000A609A1 /* ViewManagerTests.swift */,
 				09673A971AEF5B2E008C7240 /* Supporting Files */,
 			);
 			path = ZLSwipeableViewSwiftDemoTests;
@@ -218,6 +227,7 @@
 		09673A761AEF5B2E008C7240 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Zhixuan Lai";
 				TargetAttributes = {
@@ -370,6 +380,7 @@
 				098070A91B12EDF400C90479 /* ZLSwipeableView.swift in Sources */,
 				098070AF1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift in Sources */,
 				098070AD1B13DEA600C90479 /* UndoDemoViewController.swift in Sources */,
+				09B2F5291B32018000ECD8B1 /* ShouldSwipeDemoViewController.swift in Sources */,
 				09673A861AEF5B2E008C7240 /* ZLSwipeableViewController.swift in Sources */,
 				098070B31B13EDB800C90479 /* CustomDirectionDemoViewController.swift in Sources */,
 				098070B11B13E9B900C90479 /* CustomSwipeDemoViewController.swift in Sources */,
@@ -384,6 +395,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				09673A9A1AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift in Sources */,
+				09E79D191BDA058000A609A1 /* ViewManagerTests.swift in Sources */,
+				09E79D171BDA002F00A609A1 /* DirectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {
-            var menuViewController = MenuTableViewController(style: .Grouped)
+            let menuViewController = MenuTableViewController(style: .Grouped)
             window.rootViewController = UINavigationController(rootViewController: menuViewController)
             window.makeKeyAndVisible()
         }

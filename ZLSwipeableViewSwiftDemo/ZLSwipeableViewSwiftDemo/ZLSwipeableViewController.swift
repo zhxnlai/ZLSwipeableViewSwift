@@ -77,39 +77,39 @@ class ZLSwipeableViewController: UIViewController {
             self.swipeableView.swipeTopView(inDirection: .Down)
         }
         
-        var fixedSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, action: {item in})
-        var flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, action: {item in})
+        let fixedSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, action: {item in})
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, action: {item in})
         
-        var items = [fixedSpace, reloadBarButtonItem, flexibleSpace, leftBarButtonItem, flexibleSpace, upBarButtonItem, flexibleSpace, rightBarButtonItem, flexibleSpace, downBarButtonItem, fixedSpace]
+        let items = [fixedSpace, reloadBarButtonItem, flexibleSpace, leftBarButtonItem, flexibleSpace, upBarButtonItem, flexibleSpace, rightBarButtonItem, flexibleSpace, downBarButtonItem, fixedSpace]
         toolbarItems = items
 
         swipeableView = ZLSwipeableView()
         view.addSubview(swipeableView)
         swipeableView.didStart = {view, location in
-            println("Did start swiping view at location: \(location)")
+            print("Did start swiping view at location: \(location)")
         }
         swipeableView.swiping = {view, location, translation in
-            println("Swiping at view location: \(location) translation: \(translation)")
+            print("Swiping at view location: \(location) translation: \(translation)")
         }
         swipeableView.didEnd = {view, location in
-            println("Did end swiping view at location: \(location)")
+            print("Did end swiping view at location: \(location)")
         }
         swipeableView.didSwipe = {view, direction, vector in
-            println("Did swipe view in direction: \(direction), vector: \(vector)")
+            print("Did swipe view in direction: \(direction), vector: \(vector)")
         }
         swipeableView.didCancel = {view in
-            println("Did cancel swiping view")
+            print("Did cancel swiping view")
         }
 
         swipeableView.nextView = {
             if self.colorIndex < self.colors.count {
-                var cardView = CardView(frame: self.swipeableView.bounds)
+                let cardView = CardView(frame: self.swipeableView.bounds)
                 cardView.backgroundColor = self.colorForName(self.colors[self.colorIndex])
                 self.colorIndex++
                 
                 if self.loadCardsFromXib {
-                    var contentView = NSBundle.mainBundle().loadNibNamed("CardContentView", owner: self, options: nil).first! as! UIView
-                    contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
+                    let contentView = NSBundle.mainBundle().loadNibNamed("CardContentView", owner: self, options: nil).first! as! UIView
+                    contentView.translatesAutoresizingMaskIntoConstraints = false
                     contentView.backgroundColor = cardView.backgroundColor
                     cardView.addSubview(contentView)
                     
@@ -121,7 +121,7 @@ class ZLSwipeableViewController: UIViewController {
                     cardView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[contentView(width)]", options: .AlignAllLeft, metrics: metrics, views: views))
                     cardView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView(height)]", options: .AlignAllLeft, metrics: metrics, views: views))
                     */
-                    layout(contentView, cardView) { view1, view2 in
+                    constrain(contentView, cardView) { view1, view2 in
                         view1.left == view2.left
                         view1.top == view2.top
                         view1.width == cardView.bounds.width
@@ -133,7 +133,7 @@ class ZLSwipeableViewController: UIViewController {
             return nil
         }
         
-        layout(swipeableView, view) { view1, view2 in
+        constrain(swipeableView, view) { view1, view2 in
             view1.left == view2.left+50
             view1.right == view2.right-50
             view1.top == view2.top + 120
