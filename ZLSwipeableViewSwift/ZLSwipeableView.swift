@@ -100,7 +100,7 @@ public struct Movement {
 public class ZLSwipeableView: UIView {
 
     // MARK: Data Source
-    public var numberOfPrefetchedViews = UInt(3)
+    public var numberOfActiveViews = UInt(3)
     public var nextView: NextViewHandler?
 
     // MARK: Customizable behavior
@@ -178,7 +178,7 @@ public class ZLSwipeableView: UIView {
     }
 
     public func loadViews() {
-        for var i = UInt(activeViews().count); i < numberOfPrefetchedViews; i++ {
+        for var i = UInt(activeViews().count); i < numberOfActiveViews; i++ {
             if let nextView = nextView?() {
                 insert(nextView, atIndex: 0)
             }
@@ -189,6 +189,7 @@ public class ZLSwipeableView: UIView {
 
     // point: in the swipeableView's coordinate
     public func insertTopView(view: UIView, fromPoint point: CGPoint) {
+        guard !allViews().contains(view) else { return }
         insert(view, atIndex: allViews().count)
         view.center = point
         animateViews()
@@ -198,8 +199,12 @@ public class ZLSwipeableView: UIView {
         let views = activeViews()
         guard let gestureRecognizers = views.first?.gestureRecognizers where gestureRecognizers.filter({ gestureRecognizer in gestureRecognizer.state != .Possible }).count == 0 else { return }
 
+        let maxNumberOfActiveViewsOnScreen = Int(numberOfActiveViews)
         for i in 0 ..< views.count {
             let view = views[i]
+            let shouldBeHidden = i >= maxNumberOfActiveViewsOnScreen
+            view.hidden = shouldBeHidden
+            guard !shouldBeHidden else { continue }
             // view.userInteractionEnabled = i == 0
             animateView(view: view, index: i, views: views, swipeableView: self)
         }
@@ -221,7 +226,7 @@ public class ZLSwipeableView: UIView {
         guard let topView = topView(), topViewManager = viewManagers[topView] else { return }
         topViewManager.state = .Moving(location)
         topViewManager.state = .Swiping(location, directionVector)
-        swipeTopView(location, directionVector: directionVector)
+        swipeView(topView, location: location, directionVector: directionVector)
     }
 
     // MARK: Private APIs
@@ -242,13 +247,11 @@ public class ZLSwipeableView: UIView {
         viewManagers.removeValueForKey(view)
     }
 
-    private func swipeTopView(location: CGPoint, directionVector: CGVector) {
-        guard let topView = topView() else { return }
-
+    private func swipeView(view: UIView, location: CGPoint, directionVector: CGVector) {
         let direction = Direction.fromPoint(CGPoint(x: directionVector.dx, y: directionVector.dy))
-        didSwipe?(view: topView, inDirection: direction, directionVector: directionVector)
+        didSwipe?(view: view, inDirection: direction, directionVector: directionVector)
 
-        scheduleToBeRemoved(topView) { aView in
+        scheduleToBeRemoved(view) { aView in
             !CGRectIntersectsRect(self.containerView.convertRect(aView.frame, toView: nil), UIScreen.mainScreen().bounds)
         }
         loadViews()
@@ -257,20 +260,9 @@ public class ZLSwipeableView: UIView {
     private func scheduleToBeRemoved(view: UIView, withPredicate predicate: (UIView) -> Bool) {
         guard allViews().contains(view) else { return }
 
-        Scheduler.schedule({ () -> Void in
-            var viewsToBeRemoved = [UIView]()
-            let inactiveViews = self.allViews().arrayByRemoveObjectsInArray(self.activeViews())
-            for subview in inactiveViews {
-                if predicate(subview) {
-                    viewsToBeRemoved.append(subview)
-                }
-            }
-
-            for view in viewsToBeRemoved {
-                self.remove(view)
-            }
-
-            }) { () -> Bool in
+        Scheduler.scheduleRepeatedly({ () -> Void in
+            self.allViews().arrayByRemoveObjectsInArray(self.activeViews()).filter({ view in predicate(view) }).forEach({ view in self.remove(view) })
+            }, interval: 0.3) { () -> Bool in
                 return self.activeViews().count == self.allViews().count
         }
     }
@@ -371,10 +363,10 @@ extension ZLSwipeableView {
 
     public var numPrefetchedViews: UInt {
         get {
-            return numberOfPrefetchedViews
+            return numberOfActiveViews
         }
         set(newValue){
-            numberOfPrefetchedViews = newValue
+            numberOfActiveViews = newValue
         }
     }
 
@@ -498,16 +490,19 @@ internal class ViewManager : NSObject {
 
         switch recognizer.state {
         case .Began:
+            guard case .Snapping(_) = state else { return }
             state = .Moving(location)
             swipeableView.didStart?(view: view, atLocation: location)
         case .Changed:
+            guard case .Moving(_) = state else { return }
             state = .Moving(location)
             swipeableView.swiping?(view: view, atLocation: location, translation: translation)
         case .Ended, .Cancelled:
+            guard case .Moving(_) = state else { return }
             if swipeableView.shouldSwipeView(view: view, movement: movement, swipeableView: swipeableView) {
                 let directionVector = CGVector(point: translation.normalized * max(velocity.magnitude, swipeableView.minVelocityInPointPerSecond))
                 state = .Swiping(location, directionVector)
-                swipeableView.swipeTopView(location, directionVector: directionVector)
+                swipeableView.swipeView(view, location: location, directionVector: directionVector)
             } else {
                 state = .Snapping(containerView.convertPoint(swipeableView.center, fromView: swipeableView.superview))
                 swipeableView.didCancel?(view: view)
@@ -590,11 +585,11 @@ internal class Scheduler : NSObject {
 
     static let sharedInstance = Scheduler()
 
-    static func schedule(action: Action, endCondition: EndCondition)  {
-        guard sharedInstance.timer == nil else { return }
+    static func scheduleRepeatedly(action: Action, interval: NSTimeInterval, endCondition: EndCondition)  {
+        guard sharedInstance.timer == nil && interval > 0 else { return }
         sharedInstance.action = action
         sharedInstance.endCondition = endCondition
-        sharedInstance.timer = NSTimer.scheduledTimerWithTimeInterval(0.3, target: sharedInstance, selector: Selector("doAction:"), userInfo: nil, repeats: true)
+        sharedInstance.timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: sharedInstance, selector: Selector("doAction:"), userInfo: nil, repeats: true)
     }
 
     func doAction(timer: NSTimer) {
@@ -614,6 +609,10 @@ public func *(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
 }
 
 extension CGPoint {
+
+    init(vector: CGVector) {
+        self.init(x: vector.dx, y: vector.dy)
+    }
 
     var normalized: CGPoint {
         return CGPoint(x: x / magnitude, y: y / magnitude)

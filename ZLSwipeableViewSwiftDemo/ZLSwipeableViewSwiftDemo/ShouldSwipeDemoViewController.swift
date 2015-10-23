@@ -20,8 +20,11 @@ class ShouldSwipeDemoViewController: ZLSwipeableViewController {
             self.shouldSwipe = !self.shouldSwipe
             self.title = "Should Swipe " + (self.shouldSwipe ? "👍" : "👎")
         }, repeats: true)
-        
-        swipeableView.shouldSwipeView = {_, _, _ in self.shouldSwipe}
+
+        let defaultHandler = swipeableView.shouldSwipeView
+        swipeableView.shouldSwipeView = {(view: UIView, movement: Movement, swipeableView: ZLSwipeableView) in
+            self.shouldSwipe && defaultHandler(view: view, movement: movement, swipeableView: swipeableView)
+        }
     }
 
 }
