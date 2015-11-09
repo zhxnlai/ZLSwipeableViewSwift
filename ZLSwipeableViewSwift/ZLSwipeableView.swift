@@ -134,6 +134,8 @@ public class ZLSwipeableView: UIView {
 
     private var viewManagers = [UIView: ViewManager]()
 
+    private var scheduler = Scheduler()
+
     // MARK: Life cycle
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -171,6 +173,7 @@ public class ZLSwipeableView: UIView {
         return activeViews().first
     }
 
+    // top view first
     public func activeViews() -> [UIView] {
         return allViews().filter() {
             view in
@@ -256,11 +259,10 @@ public class ZLSwipeableView: UIView {
 
         guard let gestureRecognizers = activeViews.first?.gestureRecognizers where gestureRecognizers.filter({ gestureRecognizer in gestureRecognizer.state != .Possible }).count == 0 else { return }
 
-        let maxNumberOfActiveViewOnScreen = Int(numberOfActiveView)
         for i in 0 ..< activeViews.count {
             let view = activeViews[i]
             view.userInteractionEnabled = true
-            let shouldBeHidden = i >= maxNumberOfActiveViewOnScreen
+            let shouldBeHidden = i >= Int(numberOfActiveView)
             view.hidden = shouldBeHidden
             guard !shouldBeHidden else { continue }
             animateView(view: view, index: i, views: activeViews, swipeableView: self)
@@ -284,7 +286,7 @@ public class ZLSwipeableView: UIView {
         if UInt(history.count) > numberOfHistoryItem {
             history.removeFirst()
         }
-        Scheduler.scheduleRepeatedly({ () -> Void in
+        scheduler.scheduleRepeatedly({ () -> Void in
             self.allViews().arrayByRemoveObjectsInArray(self.activeViews()).filter({ view in predicate(view) }).forEach({ view in self.remove(view) })
             }, interval: 0.3) { () -> Bool in
                 return self.activeViews().count == self.allViews().count
@@ -314,16 +316,17 @@ extension ZLSwipeableView {
 
         return { (view: UIView, index: Int, views: [UIView], swipeableView: ZLSwipeableView) in
             let degree = CGFloat(1)
+            let duration = 0.4
             let offset = CGPoint(x: 0, y: CGRectGetHeight(swipeableView.bounds) * 0.3)
             switch index {
             case 0:
-                rotateView(view, forDegree: 0, duration: 0.4, offsetFromCenter: offset, swipeableView: swipeableView)
+                rotateView(view, forDegree: 0, duration: duration, offsetFromCenter: offset, swipeableView: swipeableView)
             case 1:
-                rotateView(view, forDegree: degree, duration: 0.4, offsetFromCenter: offset, swipeableView: swipeableView)
+                rotateView(view, forDegree: degree, duration: duration, offsetFromCenter: offset, swipeableView: swipeableView)
             case 2:
-                rotateView(view, forDegree: -degree, duration: 0.4, offsetFromCenter: offset, swipeableView: swipeableView)
+                rotateView(view, forDegree: -degree, duration: duration, offsetFromCenter: offset, swipeableView: swipeableView)
             default:
-                rotateView(view, forDegree: 0, duration: 0.4, offsetFromCenter: offset, swipeableView: swipeableView)
+                rotateView(view, forDegree: 0, duration: duration, offsetFromCenter: offset, swipeableView: swipeableView)
             }
         }
     }
@@ -369,7 +372,7 @@ extension ZLSwipeableView {
             }
 
             func isTranslationLargeEnough() -> Bool {
-                return abs(translation.x) > minTranslationInPercent * swipeableView.bounds.width || abs(translation.y) > minTranslationInPercent * bounds.height
+                return abs(translation.x) > minTranslationInPercent * bounds.width || abs(translation.y) > minTranslationInPercent * bounds.height
             }
 
             func isVelocityLargeEnough() -> Bool {
@@ -385,6 +388,7 @@ extension ZLSwipeableView {
 // MARK: - Deprecated APIs
 extension ZLSwipeableView {
 
+    @available(*, deprecated=1, message="Use numberOfActiveView")
     public var numPrefetchedViews: UInt {
         get {
             return numberOfActiveView
@@ -394,6 +398,7 @@ extension ZLSwipeableView {
         }
     }
 
+    @available(*, deprecated=1, message="Use allowedDirection")
     public var direction: Direction {
         get {
             return allowedDirection
@@ -403,6 +408,7 @@ extension ZLSwipeableView {
         }
     }
 
+    @available(*, deprecated=1, message="Use minTranslationInPercent")
     public var translationThreshold: CGFloat {
         get {
             return minTranslationInPercent
@@ -412,6 +418,7 @@ extension ZLSwipeableView {
         }
     }
 
+    @available(*, deprecated=1, message="Use minVelocityInPointPerSecond")
     public var velocityThreshold: CGFloat {
         get {
             return minVelocityInPointPerSecond
@@ -590,7 +597,7 @@ internal class ViewManager : NSObject {
     }
 
     private func detachView() {
-        guard let viewToAnchorViewAttachmentBehavior = viewToAnchorViewAttachmentBehavior, let anchorViewToPointAttachmentBehavior = anchorViewToPointAttachmentBehavior  else { return }
+        guard let viewToAnchorViewAttachmentBehavior = viewToAnchorViewAttachmentBehavior, let anchorViewToPointAttachmentBehavior = anchorViewToPointAttachmentBehavior else { return }
         removeBehavior(viewToAnchorViewAttachmentBehavior)
         removeBehavior(anchorViewToPointAttachmentBehavior)
     }
@@ -629,13 +636,11 @@ internal class Scheduler : NSObject {
     var action: Action?
     var endCondition: EndCondition?
 
-    static let sharedInstance = Scheduler()
-
-    static func scheduleRepeatedly(action: Action, interval: NSTimeInterval, endCondition: EndCondition)  {
-        guard sharedInstance.timer == nil && interval > 0 else { return }
-        sharedInstance.action = action
-        sharedInstance.endCondition = endCondition
-        sharedInstance.timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: sharedInstance, selector: Selector("doAction:"), userInfo: nil, repeats: true)
+    func scheduleRepeatedly(action: Action, interval: NSTimeInterval, endCondition: EndCondition)  {
+        guard timer == nil && interval > 0 else { return }
+        self.action = action
+        self.endCondition = endCondition
+        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: Selector("doAction:"), userInfo: nil, repeats: true)
     }
 
     func doAction(timer: NSTimer) {
