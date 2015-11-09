@@ -13,7 +13,7 @@ class MenuTableViewController: UITableViewController {
     let demoViewControllers = [("Default", ZLSwipeableViewController.self),
                                 ("Custom Animation", CustomAnimationDemoViewController.self),
                                 ("Custom Swipe", CustomSwipeDemoViewController.self),
-                                ("Custom Direction", CustomDirectionDemoViewController.self),
+                                ("Allowed Direction", CustomDirectionDemoViewController.self),
                                 ("History", HistoryDemoViewController.self),
                                 ("Previous View", PreviousViewDemoViewController.self),
                                 ("Should Swipe", ShouldSwipeDemoViewController.self),

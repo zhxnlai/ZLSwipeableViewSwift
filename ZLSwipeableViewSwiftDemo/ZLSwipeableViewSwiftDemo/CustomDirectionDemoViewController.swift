@@ -20,7 +20,7 @@ class CustomDirectionDemoViewController: ZLSwipeableViewController {
         let directions: [ZLSwipeableViewDirection] = [.None, .Left, .Up, .Right, .Down, .Horizontal, .Vertical, .All]
         segmentControl.forControlEvents(.ValueChanged) { control in
             if let control = control as? UISegmentedControl {
-                self.swipeableView.direction = directions[control.selectedSegmentIndex]
+                self.swipeableView.allowedDirection = directions[control.selectedSegmentIndex]
             }
         }
     }

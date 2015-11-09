@@ -10,11 +10,9 @@ import UIKit
 
 class AlwaysSwipeDemoViewController: ZLSwipeableViewController {
 
-    var shouldSwipe = true
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Always Swipe"
         swipeableView.shouldSwipeView = { _, _, _ in true }
     }
 
