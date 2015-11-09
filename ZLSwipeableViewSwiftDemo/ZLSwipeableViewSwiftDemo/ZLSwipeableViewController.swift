@@ -28,7 +28,9 @@ class ZLSwipeableViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        swipeableView.loadViews()
+        swipeableView.nextView = {
+            return self.nextCardView()
+        }
     }
     
     override func viewDidLoad() {
@@ -100,10 +102,7 @@ class ZLSwipeableViewController: UIViewController {
         swipeableView.didCancel = {view in
             print("Did cancel swiping view")
         }
-        swipeableView.nextView = {
-            return self.nextCardView()
-        }
-        
+
         constrain(swipeableView, view) { view1, view2 in
             view1.left == view2.left+50
             view1.right == view2.right-50
