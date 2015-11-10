@@ -144,7 +144,7 @@ You can change how the direction gets interpreted by overriding the `interpretDi
 You can create custom animation by overriding the `animateView` property. Take a look at the [Custom Animation](#custom-animation) example for details.
 
 #### Should Swipe
-`shouldSwipeView`, `minTranslationInPercent` and `minVelocityInPointPerSecond` determines whether a view should be swiped or not. Please see Should Swipe example for details.
+`shouldSwipeView`, `minTranslationInPercent` and `minVelocityInPointPerSecond` determines whether a view should be swiped or not. Please see the Should Swipe example for details.
 
 #### allowedDirection
 The `allowedDirection` property limits the directions in which the user is allowed to swipe. Please see the [Custom Direction](#custom-direction) example for details.
