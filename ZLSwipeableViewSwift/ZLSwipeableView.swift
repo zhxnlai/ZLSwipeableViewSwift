@@ -651,6 +651,8 @@ internal class Scheduler : NSObject {
         guard let action = action, let endCondition = endCondition where !endCondition() else {
             timer.invalidate()
             self.timer = nil
+            self.action = nil
+            self.endCondition = nil
             return
         }
         action()
