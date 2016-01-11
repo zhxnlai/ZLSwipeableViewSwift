@@ -344,7 +344,7 @@ public class ZLSwipeableView: UIView {
     private func unsnapView() {
         if let snapBehavior = snapBehavior {
             animator.removeBehavior(snapBehavior)
-            snapBehavior = nil
+            self.snapBehavior = nil
         }
     }
     
