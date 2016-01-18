@@ -141,7 +141,7 @@ public class ZLSwipeableView: UIView {
     private var scheduler = Scheduler()
 
     // MARK: Life cycle
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
