@@ -14,7 +14,7 @@ public extension UIControl {
         self.init()
         addAction(action, forControlEvents: events)
     }
-
+    
     convenience init(forControlEvents events: UIControlEvents, action: UIControl -> ()) {
         self.init()
         addAction(action, forControlEvents: events)
@@ -22,7 +22,7 @@ public extension UIControl {
     
     func addAction(action: UIControl -> (), forControlEvents events: UIControlEvents) {
         removeAction(forControlEvents: events)
-
+        
         let proxyTarget = RUIControlProxyTarget(action: action)
         proxyTargets[keyForEvents(events)] = proxyTarget
         addTarget(proxyTarget, action: RUIControlProxyTarget.actionSelector(), forControlEvents: events)
@@ -31,7 +31,7 @@ public extension UIControl {
     func forControlEvents(events: UIControlEvents, addAction action: UIControl -> ()) {
         addAction(action, forControlEvents: events)
     }
-
+    
     func removeAction(forControlEvents events: UIControlEvents) {
         if let proxyTarget = proxyTargets[keyForEvents(events)] {
             removeTarget(proxyTarget, action: RUIControlProxyTarget.actionSelector(), forControlEvents: events)
@@ -50,7 +50,7 @@ public extension UIControl {
 }
 
 internal extension UIControl {
-
+    
     typealias RUIControlProxyTargets = [String: RUIControlProxyTarget]
     
     class RUIControlProxyTarget : RUIProxyTarget {
@@ -83,7 +83,7 @@ internal extension UIControl {
     }
     
     private func setProxyTargets(newValue: RUIControlProxyTargets) -> RUIControlProxyTargets {
-        objc_setAssociatedObject(self, &RUIProxyTargetsKey, newValue, UInt(OBJC_ASSOCIATION_RETAIN_NONATOMIC));
+        objc_setAssociatedObject(self, &RUIProxyTargetsKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         return newValue
     }
     

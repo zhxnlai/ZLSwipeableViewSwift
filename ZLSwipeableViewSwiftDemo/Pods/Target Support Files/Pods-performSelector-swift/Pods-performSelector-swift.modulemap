@@ -1,6 +1,0 @@
-framework module performSelector_swift {
-  umbrella header "Pods-performSelector-swift-umbrella.h"
-
-  export *
-  module * { export * }
-}

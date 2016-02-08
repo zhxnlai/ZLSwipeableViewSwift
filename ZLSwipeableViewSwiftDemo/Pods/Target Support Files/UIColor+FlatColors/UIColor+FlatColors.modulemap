@@ -1,0 +1,6 @@
+framework module UIColor_FlatColors {
+  umbrella header "UIColor+FlatColors-umbrella.h"
+
+  export *
+  module * { export * }
+}

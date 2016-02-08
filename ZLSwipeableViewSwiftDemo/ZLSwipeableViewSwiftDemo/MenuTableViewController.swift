@@ -10,27 +10,29 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
 
-    let demos = ["Default", "Custom Animation", "Custom Swipe","Custom Direction", "Undo"]
-    let viewControllers = [ZLSwipeableViewController.self,
-                            CustomAnimationDemoViewController.self,
-                            CustomSwipeDemoViewController.self,
-                            CustomDirectionDemoViewController.self,
-                            UndoDemoViewController.self]
+    let demoViewControllers = [("Default", ZLSwipeableViewController.self),
+                                ("Custom Animation", CustomAnimationDemoViewController.self),
+                                ("Custom Swipe", CustomSwipeDemoViewController.self),
+                                ("Allowed Direction", CustomDirectionDemoViewController.self),
+                                ("History", HistoryDemoViewController.self),
+                                ("Previous View", PreviousViewDemoViewController.self),
+                                ("Should Swipe", ShouldSwipeDemoViewController.self),
+                                ("Always Swipe", AlwaysSwipeDemoViewController.self)]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "ZLSwipeableView"
-
     }
 
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return count(demos)
+        return demoViewControllers.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cellIdentifier = String(format: "s%li-r%li", indexPath.section, indexPath.row)
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as? UITableViewCell
+        let cellIdentifier = String(format: "s%li-r%li", indexPath.section, indexPath.row)
+        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
         }
@@ -44,16 +46,19 @@ class MenuTableViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let title = titleForRowAtIndexPath(indexPath)
-        var vc = viewControllerForRowAtIndexPath(indexPath)
+        let vc = viewControllerForRowAtIndexPath(indexPath)
         vc.title = title
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func titleForRowAtIndexPath(indexPath: NSIndexPath) -> String {
-        return demos[indexPath.row]
+        let (title, _) = demoViewControllers[indexPath.row]
+        return title
     }
+    
     func viewControllerForRowAtIndexPath(indexPath: NSIndexPath) -> ZLSwipeableViewController {
-        return viewControllers[indexPath.row]()
+        let (_, vc) = demoViewControllers[indexPath.row]
+        return vc.init()
     }
 
 }

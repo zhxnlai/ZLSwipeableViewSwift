@@ -1,0 +1,6 @@
+framework module performSelector_swift {
+  umbrella header "performSelector-swift-umbrella.h"
+
+  export *
+  module * { export * }
+}
