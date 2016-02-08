@@ -353,7 +353,7 @@ extension ZLSwipeableView {
             default:
                 directionVector = CGVector(dx: 0, dy: 0)
             }
-            
+
             return (location, directionVector)
         }
     }
@@ -431,7 +431,7 @@ extension ZLSwipeableView {
             minVelocityInPointPerSecond = newValue
         }
     }
-    
+
 }
 
 // MARK: - Internal classes
@@ -620,15 +620,15 @@ internal class ViewManager : NSObject {
         guard let pushBehavior = pushBehavior else { return }
         removeBehavior(pushBehavior)
     }
-    
+
     private func addBehavior(behavior: UIDynamicBehavior) {
         animator.addBehavior(behavior)
     }
-    
+
     private func removeBehavior(behavior: UIDynamicBehavior) {
         animator.removeBehavior(behavior)
     }
-    
+
 }
 
 internal class Scheduler : NSObject {

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		460B725D1B76D42600BB5ED8 /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B725C1B76D42600BB5ED8 /* ZLSwipeableView.swift */; };
+		98D01DAB1C687EEB00A8A1BF /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D01DAA1C687EEB00A8A1BF /* ZLSwipeableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		460B72511B76D3E600BB5ED8 /* ZLSwipeableViewSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZLSwipeableViewSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		460B72561B76D3E600BB5ED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		460B725C1B76D42600BB5ED8 /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
+		98D01DAA1C687EEB00A8A1BF /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 		460B72531B76D3E600BB5ED8 /* ZLSwipeableViewSwift */ = {
 			isa = PBXGroup;
 			children = (
-				460B725C1B76D42600BB5ED8 /* ZLSwipeableView.swift */,
+				98D01DAA1C687EEB00A8A1BF /* ZLSwipeableView.swift */,
 				460B72561B76D3E600BB5ED8 /* Info.plist */,
 			);
 			path = ZLSwipeableViewSwift;
@@ -130,7 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				460B725D1B76D42600BB5ED8 /* ZLSwipeableView.swift in Sources */,
+				98D01DAB1C687EEB00A8A1BF /* ZLSwipeableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,282 +7,309 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00A4EC5FF857F97988DCDE17FAADF5A7 /* performSelector-swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A8987105D5280FDF5E6081DA6DB5609 /* performSelector-swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0816C41B8E7C3E175CC0BAB01692AD85 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D313B6E542A5943CC04F9556243A0BFE /* Pods-dummy.m */; };
-		086B51A3F2099FEB8C446EB0D1516266 /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3661901726E284BCF8848C03348A0B12 /* UIColor+FlatColors.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		0CF67069C39330D5147EC5E848F2C82F /* performSelector-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 42A8615C79B92EEA2A6B6C7F19025E53 /* performSelector-swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D55B6ADDAF7EBF72B94520D940E70CE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8043C8854CBC34E97F077C904291B746 /* Foundation.framework */; };
-		28472373E6A4561ED4E764F09DC030B2 /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A54048A9BA2FBFAD69A1C4B9C08784 /* Constrain.swift */; };
-		3BC07D47ECAF0D1DB21A048679D880CD /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B599CD3C009E2B31595C187C66B4E /* Priority.swift */; };
-		4512B7A4FB8C3CE71486FE87E83AF0A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8043C8854CBC34E97F077C904291B746 /* Foundation.framework */; };
-		4901B3C93967E9C2B46114A9C338DEFF /* UIColor+FlatColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 996E473CA56372EB133B567C08E0884A /* UIColor+FlatColors-dummy.m */; };
-		4D3AD3149F04E8EBEE950B8AAE757002 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11526064BA4C8DAEEB62982D37A11108 /* View.swift */; };
-		4D950C211EF80B49C6F0BCE92547C528 /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = D543838DDB9A32C5F084235AF0C92D78 /* Edges.swift */; };
-		51AB2A7D444F9F19200EF2CAA929D98B /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6653030347C40901D6486C94E378BC3A /* Edge.swift */; };
-		53C111530A3648FFC9968C9373AAE1C0 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AA559755DDEDBC3BCFA6F62FEF0F7E7 /* Point.swift */; };
-		563D11092B964A103EDBBD31A3348103 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E51480E857EA1B1A5CE67007E46D3C1 /* Extensions.swift */; };
-		5B00CE08D6A2FF944280D152B5607758 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D7AA55CF2998D07AB64495A4BBA14 /* Property.swift */; };
-		5B443BF30542FF403DE4485D016344CD /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A40BF4526CC181C4CBF91A671520FA3 /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C4FB6024536E01CCAF33DB50DA91557 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8043C8854CBC34E97F077C904291B746 /* Foundation.framework */; };
-		5C88FE12734BBBF66880742A01FF199E /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA75D092F6CE54AE2E0DA42EB0685CA0 /* Size.swift */; };
-		64A913DD1A516C9F5544FE0C02A9AA66 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F7A992C9A7911879C05ECB19DE14BAE /* Expression.swift */; };
-		656671EAA29E39E04F110E02255D19FA /* UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96200C5CDBE8801F13A4C407E69DD724 /* UIGestureRecognizer.swift */; };
-		666E88636DD71FE0CCE1E560A9636063 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8043C8854CBC34E97F077C904291B746 /* Foundation.framework */; };
-		740FD143DD4F45E2188DC425F491DA34 /* Cartography-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E6AFE7BA8F332CF166EDA81D129DE7B3 /* Cartography-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7FB32896F168397A874FF40EC0639EE5 /* NSObject+Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A54FA174537202BA5FDB563D0540E1D /* NSObject+Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8892242A38B0EBB3A8B9AA75AAEAAF50 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BCA18C0747E307EC84D0B4CB651364 /* UIBarButtonItem.swift */; };
-		9F5E158238C887F2531DFE48BF1D058E /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA0C8297E9EA4A1898D9131EE7923857 /* Align.swift */; };
-		A25BE8BA0216D60F790D9F72D306D35E /* UIColor+FlatColors-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DAC94C0DF1BFCE0B0C83DB7044DA9ADE /* UIColor+FlatColors-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2D9F1BB116292E4D21DA2767BCC2034 /* Distribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAE1246FD1F4CEC686F3E19AF67C0CD /* Distribute.swift */; };
-		A3CD7E4CB68FDBF35CDF07BAE50399E7 /* ReactiveUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C3582C2BCBF06DBC2C874D10E42DE6F2 /* ReactiveUI-dummy.m */; };
-		A8AB4560903275EEB9B1C107D09D69A0 /* ConstraintGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC35BBE84CFE27722E7B0A2540CFCA26 /* ConstraintGroup.swift */; };
-		AEA1C77FFF5452645DBE4BF1047EF8C0 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D1A0682CCB9349156AAAA4F70612DF6 /* UIControl.swift */; };
-		B0F49CA262C04EAC262340C03734048F /* UIColor+FlatColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 5CA2C91E5720A5F8263EC55C258DC154 /* UIColor+FlatColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7EDFFCD38CFCD547274A0C6AA0BDE5E /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446B9DF955487A37A00B85C2110709FB /* Compound.swift */; };
-		B875A291982B253EE198E64F95670111 /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85582D09DC1FB702259B4F9715F6296F /* LayoutProxy.swift */; };
-		BBB7221D83958030AD5E44C00342F90D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3857DCB4E642D01727B0FF65B59AAF /* UIKit.framework */; };
-		BDDD03027CB71DA5D125D9FEC70E851A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8043C8854CBC34E97F077C904291B746 /* Foundation.framework */; };
-		C6266E9556BE260B53D6BA1140A6716E /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD327099CCBDE745FD19FA6B51B9EDB9 /* Context.swift */; };
-		D1969EFCFB38E2F32C90841A53CB26A8 /* NSObject+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = C955A18B655E75926E5536249D162039 /* NSObject+Swift.m */; };
-		D58BE51956978566F89AC71EC14EAFB6 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C6AB2312DEF4849F11338404077C9E /* ViewUtils.swift */; };
-		D84AFDCF6296BFA754E5D879E679148C /* performSelector-swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548357F81A43DD9743DB72CEDCCD55B /* performSelector-swift-dummy.m */; };
-		D8FFE020C1E3441659AB6D1AEE0E1294 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79DB0DEDADE6D787B93F517017A5D14 /* Dimension.swift */; };
-		DCFD9E8507982F433577B09CAD0302F1 /* Cartography-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22C239987E492DBCB4315A6777FB8602 /* Cartography-dummy.m */; };
-		E7A6937340AE12C7C330FB2DDEDB560C /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC34A879A9AB9A3421F08EFBE7F0CEA3 /* Coefficients.swift */; };
-		E7BC37AF059F25A448049B241F75EED9 /* NSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2220C75930951CDFA0503D765C02F1B4 /* NSTimer.swift */; };
-		F550F6A193B771A967F926377EF4FBD3 /* ReactiveUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E7DB973D9FF3A1665C4CD5EF3D31E54 /* ReactiveUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD24489FE23D121A6E2C124DA057AAF3 /* ReactiveUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31982906EE1F5BE9FD8C7868F8D93275 /* ReactiveUI.swift */; };
-		FD4F87B941CC6E507BD66EEF83508D9F /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21C860CA3C96BE6A9C52846FE68C0B9 /* Constraint.swift */; };
+		00A4EC5FF857F97988DCDE17FAADF5A7 /* performSelector-swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C0691A7A3B1717EC3F122786FF91E6E /* performSelector-swift-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0729DED1737DCDB309394E0B59393F37 /* Dimension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA8771E74138D3B6D325E6BF7B4EB3A /* Dimension.swift */; };
+		0BB3B0C1AB18127124A1CCF53EB3B018 /* UIColor+FlatColors.h in Headers */ = {isa = PBXBuildFile; fileRef = 7557079F636AEC2AC78C39C1A5E521C1 /* UIColor+FlatColors.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CF67069C39330D5147EC5E848F2C82F /* performSelector-swift.h in Headers */ = {isa = PBXBuildFile; fileRef = 76CC29301C7E5F4425CA7B449216081F /* performSelector-swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D70A17434A0D068F1AFD9782795095B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		2057FF930EF0F28E7AD548BF23BE78EE /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0088DBFA6EA78F2ABB21C3AA26350A /* Edge.swift */; };
+		28515F6FFAA0E2F9591A862D532F33AC /* Compound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D32AAAEAD55B3F022ECB909E4C5FDF /* Compound.swift */; };
+		2BAE6556B5CAAA1F884B5005BA0B0B90 /* ReactiveUI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A5E90B423CD83675B5EEDC147A9A90C5 /* ReactiveUI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DA8C30AC1637DDBCBD399EB56529CE3 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDCE6FACAE88F0F3D2E35CBAD1F7B94 /* UIBarButtonItem.swift */; };
+		369CA2AACEED2517C99D77D7700DFCEA /* Distribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D80CA12E151DC54D9B0F71764455B85 /* Distribute.swift */; };
+		452C09D0CAC1F8286ABA1CE076033B23 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B93E1B4D9D313ED9C651F51F6AE2B1 /* Context.swift */; };
+		48ADE3FB3F30FCA5893083351449DA98 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CED7937967FDDF0AFAFE6CF26670A44 /* ViewUtils.swift */; };
+		5044CA9F7CCBB02F3C294106022FCF9F /* Edges.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7A6E289430791D5889B256F0CD1A97 /* Edges.swift */; };
+		565D4C7F4F8443022140EEF2CEA622F6 /* ReactiveUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 817843EA8597E1C5465006AF2559E906 /* ReactiveUI-dummy.m */; };
+		584B68A7069844742AEF67ED9311FF50 /* Align.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E6EF5DDD8883F1E898062567088C77 /* Align.swift */; };
+		59BDE3593286EBC5F3721B7F2EADFBA1 /* UIColor+FlatColors-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 54817938D8C26E9373B2C8D37BCEB8CD /* UIColor+FlatColors-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		69F58A35F46434F857A74F8120442968 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */; };
+		7315785D574A13488638A647EE54B274 /* UIGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89BFF77BC73258F9E601BD8FCF5F8FB7 /* UIGestureRecognizer.swift */; };
+		7828F9971C7B1E3B6C543D308FC9BE54 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CD04D81B5ED213A105DFC517187EB87 /* Expression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFADC672BF151767A53679CF2271EEC /* Expression.swift */; };
+		7FB32896F168397A874FF40EC0639EE5 /* NSObject+Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = DCB2F50C660A4FF88EF8BA77FBEDD107 /* NSObject+Swift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		802E1310D70FC96F6D6F517471DCE41F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
+		821DF2B9681F6C9EDDDE25DB5DC9B70A /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B96C975F16ECD38681C40529F61A1A2 /* UIControl.swift */; };
+		8378B61D28075525380201114F6E4582 /* LayoutProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AA5F2B56B98664115C9AFFE4C93845 /* LayoutProxy.swift */; };
+		94FA81E5AAD99FC80DC4123F16239B36 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		9D5A4AD4D1A64AE31F8F9A409D2363D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		A43EE2844A4B8DBFFC81AE7507FEC9DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		B23E3B878363F72D1E874E46EB62FA7F /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F15E49BA3EB741C6E0ECACD89EAF01B /* Size.swift */; };
+		B90891688A088BC37455234028C2E993 /* Cartography-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 95A19491144BFC1B1D973E59FACAC1E7 /* Cartography-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BE2FC20F5EDBAE658F688978AB12C279 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB25B3441046C1EB8D2BB467564D9C75 /* Extensions.swift */; };
+		C3649839064E53A4BF767D2EF29651EF /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE268DB413156B4E6C3CCA8E1FF4952 /* Priority.swift */; };
+		D1969EFCFB38E2F32C90841A53CB26A8 /* NSObject+Swift.m in Sources */ = {isa = PBXBuildFile; fileRef = 58DB31DDE081E2FCA6FF9DD09F027802 /* NSObject+Swift.m */; };
+		D2C9087C6581055C25D5559F934AF65B /* Constrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F731CD262558600B9BB357CA558FC8C0 /* Constrain.swift */; };
+		D3C01862D88692FA2E85A2D84345982B /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F743F0229F0CD3F9EB023A5CD13108 /* Point.swift */; };
+		D5502831813157201B7B3F70DB1452B6 /* ReactiveUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6664E531BB14A646D830F008C6A84E73 /* ReactiveUI.swift */; };
+		D56BD3B0ACF32790F3EF43EA3DB08016 /* Cartography-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A9A1B9B3E54492CE9A94C0395DADF7 /* Cartography-dummy.m */; };
+		D84AFDCF6296BFA754E5D879E679148C /* performSelector-swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CC6D111C1C616378F382CB8BA9B6EE2 /* performSelector-swift-dummy.m */; };
+		DFF8D71E53101C81010C7EB7CBB8220D /* UIColor+FlatColors-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 617F7D2E3B6A45DEDA22322A2CFECEEB /* UIColor+FlatColors-dummy.m */; };
+		E032CD3230E8F1948503F6A5A1493473 /* UIColor+FlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2697E2747DDB94F318B0240C78C9FC41 /* UIColor+FlatColors.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E1451AA498D7B41C4E049F5D9027B4A7 /* ConstraintGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74358AE3D02129F4C53BB08EB3E9FB7 /* ConstraintGroup.swift */; };
+		EB9E85B0CE6A53DCBDE040A716B5DBF8 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92A234EF55571C3C37FDAF4DFE5CE0CB /* Property.swift */; };
+		EE94E3F06DA2F096BA43F0679567DC4B /* Coefficients.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2674251A2F0B3925A2AAE77AA4F4484 /* Coefficients.swift */; };
+		F469BC9885602957FCB73DD39B5B92B0 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4569857E8082C939107F1141A702D12 /* Constraint.swift */; };
+		F95ADCA0B85C6C0640372D3EFBBF1AD6 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86F58A45B0098234E3F2D823D97E163 /* View.swift */; };
+		FD1749852537D3F9BBE1DA828DBB1835 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
+		FFAA00434BDC2BDE6633D50383660094 /* NSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DCDF3E0B141662B3160FAA253D82C7 /* NSTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		49D5E7A6A3B4BA8CDBC452DE59970E7E /* PBXContainerItemProxy */ = {
+		2277346CC8FB39FABFEE49AA5BE1019D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A7FF7AF4496870B930CA9A09DA5B0FEA;
+			remoteGlobalIDString = 6A64DD697F368173C74A8134709A56E0;
+			remoteInfo = "UIColor+FlatColors";
+		};
+		43B124D883B95B07E243D2B0B5B32CC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C3A04698AAE4D6124C20602D622956E5;
 			remoteInfo = Cartography;
 		};
-		BAD7BB95D0EAB34274FEADA492CB7623 /* PBXContainerItemProxy */ = {
+		B3F5490EF0E47ABA52BA09EDCA2BFB10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1210328ADFD63D429621787F2E3EC6D5;
+			remoteInfo = ReactiveUI;
+		};
+		EA46CFF0147EE5506EB380CE38BC478E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 7AA8D0F18A0D95FF0B44C79F40EF4D60;
 			remoteInfo = "performSelector-swift";
 		};
-		DA7B5A5BAD67DCFD518CEC311D6A37B3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 25751BC425F66713BC342DAEAEF41DA6;
-			remoteInfo = "UIColor+FlatColors";
-		};
-		F2D960CF906B5C7328AD8314080E5563 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 923487DCF29E9267FE3EC6540516AC64;
-			remoteInfo = ReactiveUI;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		029E0F5675073DA11EC9BC6773102A6D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		06ECF6ACE721D431EC9AA3E6F0ED50C9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		0A54FA174537202BA5FDB563D0540E1D /* NSObject+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Swift.h"; path = "performSelector-swift/NSObject+Swift.h"; sourceTree = "<group>"; };
-		0E3857DCB4E642D01727B0FF65B59AAF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		11526064BA4C8DAEEB62982D37A11108 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Cartography/View.swift; sourceTree = "<group>"; };
-		16FC1F0DCBBCDF92C9CE459A4C0EF84E /* Cartography.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cartography.modulemap; sourceTree = "<group>"; };
-		17BC120C2A3477C44EBB60CA8D8E5A6A /* performSelector-swift-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "performSelector-swift-Private.xcconfig"; sourceTree = "<group>"; };
-		1C1E3FBDDE5F0B02C9B78E5B5DA15C21 /* UIColor+FlatColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "UIColor+FlatColors.modulemap"; sourceTree = "<group>"; };
-		1D05F38CD30D4F5B7694D04E626841D1 /* UIColor+FlatColors-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIColor+FlatColors-Private.xcconfig"; sourceTree = "<group>"; };
-		2220C75930951CDFA0503D765C02F1B4 /* NSTimer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSTimer.swift; path = ReactiveUI/ReactiveUI/NSTimer.swift; sourceTree = "<group>"; };
-		22C239987E492DBCB4315A6777FB8602 /* Cartography-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cartography-dummy.m"; sourceTree = "<group>"; };
-		249C3EEDBD74EC170259150916E992C6 /* Cartography-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Cartography-Private.xcconfig"; sourceTree = "<group>"; };
-		260CD6DA5D2A29A0A2F46CCD0F3DDEF7 /* ReactiveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		28487E776C82B741982F32EDBDF85CDC /* ReactiveUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ReactiveUI.modulemap; sourceTree = "<group>"; };
-		2DD6DB23719CCE1982E9749ABBA2C3D9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		31982906EE1F5BE9FD8C7868F8D93275 /* ReactiveUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReactiveUI.swift; path = ReactiveUI/ReactiveUI/ReactiveUI.swift; sourceTree = "<group>"; };
-		3661901726E284BCF8848C03348A0B12 /* UIColor+FlatColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+FlatColors.m"; path = "UIColor+FlatColors/UIColor+FlatColors.m"; sourceTree = "<group>"; };
-		3A2591CC868E3E3E64D8D44935CAED8A /* ReactiveUI-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "ReactiveUI-Private.xcconfig"; sourceTree = "<group>"; };
-		3DB1FF3AEDBB4CB9989F7A37B7B62C3F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42A8615C79B92EEA2A6B6C7F19025E53 /* performSelector-swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "performSelector-swift.h"; path = "performSelector-swift/performSelector-swift.h"; sourceTree = "<group>"; };
-		4376B9D9C8D028A8378F7F124BBE2712 /* ReactiveUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactiveUI-prefix.pch"; sourceTree = "<group>"; };
-		43A54048A9BA2FBFAD69A1C4B9C08784 /* Constrain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constrain.swift; path = Cartography/Constrain.swift; sourceTree = "<group>"; };
-		43CD25A6F182220AD548988E7FBED1FF /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		446B9DF955487A37A00B85C2110709FB /* Compound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compound.swift; path = Cartography/Compound.swift; sourceTree = "<group>"; };
-		495620DB392592A3FB815E83BB4A6F51 /* performSelector_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = performSelector_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4CE273F152475DA3A5093B7F14CE7667 /* performSelector-swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "performSelector-swift.xcconfig"; sourceTree = "<group>"; };
-		4E51480E857EA1B1A5CE67007E46D3C1 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Cartography/Extensions.swift; sourceTree = "<group>"; };
-		4E7DB973D9FF3A1665C4CD5EF3D31E54 /* ReactiveUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactiveUI-umbrella.h"; sourceTree = "<group>"; };
-		5CA2C91E5720A5F8263EC55C258DC154 /* UIColor+FlatColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+FlatColors.h"; path = "UIColor+FlatColors/UIColor+FlatColors.h"; sourceTree = "<group>"; };
-		5DEFE23DCBB5FFED82B3529617B2E39E /* ReactiveUI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReactiveUI.xcconfig; sourceTree = "<group>"; };
-		6548357F81A43DD9743DB72CEDCCD55B /* performSelector-swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "performSelector-swift-dummy.m"; sourceTree = "<group>"; };
-		6653030347C40901D6486C94E378BC3A /* Edge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = Cartography/Edge.swift; sourceTree = "<group>"; };
-		67D56209C380DE6D7D1CD73FEB1A21DB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		69BE109A073123589276A73C4B042BC4 /* Cartography-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-prefix.pch"; sourceTree = "<group>"; };
-		6AA559755DDEDBC3BCFA6F62FEF0F7E7 /* Point.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Point.swift; path = Cartography/Point.swift; sourceTree = "<group>"; };
-		6D1A0682CCB9349156AAAA4F70612DF6 /* UIControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIControl.swift; path = ReactiveUI/ReactiveUI/UIControl.swift; sourceTree = "<group>"; };
-		6F7A992C9A7911879C05ECB19DE14BAE /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Cartography/Expression.swift; sourceTree = "<group>"; };
-		6FCF0C040044C3002677CCBC9D165DB4 /* UIColor+FlatColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors-prefix.pch"; sourceTree = "<group>"; };
-		772704C9E6F41860254A1D3CE7A89F1A /* Cartography.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cartography.xcconfig; sourceTree = "<group>"; };
-		77C6AB2312DEF4849F11338404077C9E /* ViewUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewUtils.swift; path = Cartography/ViewUtils.swift; sourceTree = "<group>"; };
+		0667E38D6A1FCFA1C27F3CC1475BDB48 /* Cartography.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cartography.xcconfig; sourceTree = "<group>"; };
+		0B96C975F16ECD38681C40529F61A1A2 /* UIControl.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIControl.swift; path = ReactiveUI/ReactiveUI/UIControl.swift; sourceTree = "<group>"; };
+		0C0691A7A3B1717EC3F122786FF91E6E /* performSelector-swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "performSelector-swift-umbrella.h"; sourceTree = "<group>"; };
+		1E0088DBFA6EA78F2ABB21C3AA26350A /* Edge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = Cartography/Edge.swift; sourceTree = "<group>"; };
+		2697E2747DDB94F318B0240C78C9FC41 /* UIColor+FlatColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+FlatColors.m"; path = "UIColor+FlatColors/UIColor+FlatColors.m"; sourceTree = "<group>"; };
+		2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
+		2D80CA12E151DC54D9B0F71764455B85 /* Distribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Distribute.swift; path = Cartography/Distribute.swift; sourceTree = "<group>"; };
+		30FB66C82CD815B971FDF95885176896 /* ReactiveUI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ReactiveUI.modulemap; sourceTree = "<group>"; };
+		31F743F0229F0CD3F9EB023A5CD13108 /* Point.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Point.swift; path = Cartography/Point.swift; sourceTree = "<group>"; };
+		38A9A1B9B3E54492CE9A94C0395DADF7 /* Cartography-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cartography-dummy.m"; sourceTree = "<group>"; };
+		3ADF1F1271B90DA3148ED61F86B58576 /* performSelector-swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "performSelector-swift.xcconfig"; sourceTree = "<group>"; };
+		453CCBB7DEB11AFF43F1C7A13547309E /* performSelector_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = performSelector_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CED7937967FDDF0AFAFE6CF26670A44 /* ViewUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewUtils.swift; path = Cartography/ViewUtils.swift; sourceTree = "<group>"; };
+		54817938D8C26E9373B2C8D37BCEB8CD /* UIColor+FlatColors-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors-umbrella.h"; sourceTree = "<group>"; };
+		58DB31DDE081E2FCA6FF9DD09F027802 /* NSObject+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Swift.m"; path = "performSelector-swift/NSObject+Swift.m"; sourceTree = "<group>"; };
+		5A1FC00BC0A9E99D7C533C6B2B0026A0 /* UIColor+FlatColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors-prefix.pch"; sourceTree = "<group>"; };
+		5B2EB51E491912C4318A4D30FC117C16 /* ReactiveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EDCE6FACAE88F0F3D2E35CBAD1F7B94 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIBarButtonItem.swift; path = ReactiveUI/ReactiveUI/UIBarButtonItem.swift; sourceTree = "<group>"; };
+		5FAF11EB6C955662ABD96EE0DF1E839B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		617F7D2E3B6A45DEDA22322A2CFECEEB /* UIColor+FlatColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors-dummy.m"; sourceTree = "<group>"; };
+		6545A48956F30B68F49DED31071B0966 /* UIColor+FlatColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIColor+FlatColors.xcconfig"; sourceTree = "<group>"; };
+		6664E531BB14A646D830F008C6A84E73 /* ReactiveUI.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReactiveUI.swift; path = ReactiveUI/ReactiveUI/ReactiveUI.swift; sourceTree = "<group>"; };
+		6CC6D111C1C616378F382CB8BA9B6EE2 /* performSelector-swift-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "performSelector-swift-dummy.m"; sourceTree = "<group>"; };
+		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7557079F636AEC2AC78C39C1A5E521C1 /* UIColor+FlatColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+FlatColors.h"; path = "UIColor+FlatColors/UIColor+FlatColors.h"; sourceTree = "<group>"; };
+		766326BEC0A5881E7FEC61EA8C7F05A3 /* Cartography.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cartography.modulemap; sourceTree = "<group>"; };
+		76CC29301C7E5F4425CA7B449216081F /* performSelector-swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "performSelector-swift.h"; path = "performSelector-swift/performSelector-swift.h"; sourceTree = "<group>"; };
+		78AA5F2B56B98664115C9AFFE4C93845 /* LayoutProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutProxy.swift; path = Cartography/LayoutProxy.swift; sourceTree = "<group>"; };
 		79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		7A40BF4526CC181C4CBF91A671520FA3 /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		8043C8854CBC34E97F077C904291B746 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		85582D09DC1FB702259B4F9715F6296F /* LayoutProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutProxy.swift; path = Cartography/LayoutProxy.swift; sourceTree = "<group>"; };
+		7EE268DB413156B4E6C3CCA8E1FF4952 /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Cartography/Priority.swift; sourceTree = "<group>"; };
+		7F15E49BA3EB741C6E0ECACD89EAF01B /* Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Size.swift; path = Cartography/Size.swift; sourceTree = "<group>"; };
+		817843EA8597E1C5465006AF2559E906 /* ReactiveUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReactiveUI-dummy.m"; sourceTree = "<group>"; };
+		82E23457F12CD64F55485949F22EEB74 /* UIColor+FlatColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "UIColor+FlatColors.modulemap"; sourceTree = "<group>"; };
+		84B50CDD8F7720A3821F4E66BC5088D3 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85636DC8148C0995E9C4F99CBBC03686 /* ReactiveUI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReactiveUI.xcconfig; sourceTree = "<group>"; };
 		87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		8A8987105D5280FDF5E6081DA6DB5609 /* performSelector-swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "performSelector-swift-umbrella.h"; sourceTree = "<group>"; };
-		96200C5CDBE8801F13A4C407E69DD724 /* UIGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIGestureRecognizer.swift; path = ReactiveUI/ReactiveUI/UIGestureRecognizer.swift; sourceTree = "<group>"; };
-		996E473CA56372EB133B567C08E0884A /* UIColor+FlatColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors-dummy.m"; sourceTree = "<group>"; };
-		A08EF8BFC07D4697E389BD2389E9258D /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B06D7AA55CF2998D07AB64495A4BBA14 /* Property.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Property.swift; path = Cartography/Property.swift; sourceTree = "<group>"; };
-		B79DB0DEDADE6D787B93F517017A5D14 /* Dimension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dimension.swift; path = Cartography/Dimension.swift; sourceTree = "<group>"; };
+		88F094CB7AD2DA609FC6DF95D5B14D59 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		89BFF77BC73258F9E601BD8FCF5F8FB7 /* UIGestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIGestureRecognizer.swift; path = ReactiveUI/ReactiveUI/UIGestureRecognizer.swift; sourceTree = "<group>"; };
+		924F138FC6B23766705B7BB3473AC51C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92A234EF55571C3C37FDAF4DFE5CE0CB /* Property.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Property.swift; path = Cartography/Property.swift; sourceTree = "<group>"; };
+		95A19491144BFC1B1D973E59FACAC1E7 /* Cartography-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-umbrella.h"; sourceTree = "<group>"; };
+		977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		98D32AAAEAD55B3F022ECB909E4C5FDF /* Compound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compound.swift; path = Cartography/Compound.swift; sourceTree = "<group>"; };
+		9AFADC672BF151767A53679CF2271EEC /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Cartography/Expression.swift; sourceTree = "<group>"; };
+		9D9587BD45D8C95BFAFA9687F453D349 /* ReactiveUI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactiveUI-prefix.pch"; sourceTree = "<group>"; };
+		A0E6EF5DDD8883F1E898062567088C77 /* Align.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Align.swift; path = Cartography/Align.swift; sourceTree = "<group>"; };
+		A2674251A2F0B3925A2AAE77AA4F4484 /* Coefficients.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coefficients.swift; path = Cartography/Coefficients.swift; sourceTree = "<group>"; };
+		A5E90B423CD83675B5EEDC147A9A90C5 /* ReactiveUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactiveUI-umbrella.h"; sourceTree = "<group>"; };
+		ACA8771E74138D3B6D325E6BF7B4EB3A /* Dimension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Dimension.swift; path = Cartography/Dimension.swift; sourceTree = "<group>"; };
+		AF4D50D8A71887A36D598F4DD439A4B0 /* Cartography-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-prefix.pch"; sourceTree = "<group>"; };
+		B4569857E8082C939107F1141A702D12 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Cartography/Constraint.swift; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BA75D092F6CE54AE2E0DA42EB0685CA0 /* Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Size.swift; path = Cartography/Size.swift; sourceTree = "<group>"; };
-		BC34A879A9AB9A3421F08EFBE7F0CEA3 /* Coefficients.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Coefficients.swift; path = Cartography/Coefficients.swift; sourceTree = "<group>"; };
-		BC35BBE84CFE27722E7B0A2540CFCA26 /* ConstraintGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintGroup.swift; path = Cartography/ConstraintGroup.swift; sourceTree = "<group>"; };
-		C21C860CA3C96BE6A9C52846FE68C0B9 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Cartography/Constraint.swift; sourceTree = "<group>"; };
-		C3582C2BCBF06DBC2C874D10E42DE6F2 /* ReactiveUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReactiveUI-dummy.m"; sourceTree = "<group>"; };
-		C955A18B655E75926E5536249D162039 /* NSObject+Swift.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Swift.m"; path = "performSelector-swift/NSObject+Swift.m"; sourceTree = "<group>"; };
-		C97D0CA86D0D79C858A9AD8C87865903 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		BD7A6E289430791D5889B256F0CD1A97 /* Edges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edges.swift; path = Cartography/Edges.swift; sourceTree = "<group>"; };
+		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
-		CF15D93D7D460FDA6015E06AECA49956 /* performSelector-swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "performSelector-swift.modulemap"; sourceTree = "<group>"; };
 		D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D313B6E542A5943CC04F9556243A0BFE /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		D543838DDB9A32C5F084235AF0C92D78 /* Edges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edges.swift; path = Cartography/Edges.swift; sourceTree = "<group>"; };
-		D67B599CD3C009E2B31595C187C66B4E /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Cartography/Priority.swift; sourceTree = "<group>"; };
-		D72BFFC73916503F913D2F881494B3D7 /* performSelector-swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "performSelector-swift-prefix.pch"; sourceTree = "<group>"; };
-		D9A88281B9C1A6E83DD69B39F4E1615F /* UIColor_FlatColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIColor_FlatColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DAC94C0DF1BFCE0B0C83DB7044DA9ADE /* UIColor+FlatColors-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors-umbrella.h"; sourceTree = "<group>"; };
-		E6AFE7BA8F332CF166EDA81D129DE7B3 /* Cartography-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-umbrella.h"; sourceTree = "<group>"; };
-		E7BCA18C0747E307EC84D0B4CB651364 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIBarButtonItem.swift; path = ReactiveUI/ReactiveUI/UIBarButtonItem.swift; sourceTree = "<group>"; };
+		D1CD237F3D145A3DAC4C51032D3DCE69 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4B93E1B4D9D313ED9C651F51F6AE2B1 /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Cartography/Context.swift; sourceTree = "<group>"; };
+		D7CF443CB5BE133C6A0972E48CF1C09A /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		DBB4CFF1FE6C36731BD92C2F4CC1DB0C /* performSelector-swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "performSelector-swift.modulemap"; sourceTree = "<group>"; };
+		DCB2F50C660A4FF88EF8BA77FBEDD107 /* NSObject+Swift.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Swift.h"; path = "performSelector-swift/NSObject+Swift.h"; sourceTree = "<group>"; };
+		E29C22F29DE0923E9A57C5613E8A6757 /* performSelector-swift-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "performSelector-swift-prefix.pch"; sourceTree = "<group>"; };
+		E74358AE3D02129F4C53BB08EB3E9FB7 /* ConstraintGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintGroup.swift; path = Cartography/ConstraintGroup.swift; sourceTree = "<group>"; };
 		E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
 		E8446514FBAD26C0E18F24A5715AEF67 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EA0C8297E9EA4A1898D9131EE7923857 /* Align.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Align.swift; path = Cartography/Align.swift; sourceTree = "<group>"; };
-		EDAE1246FD1F4CEC686F3E19AF67C0CD /* Distribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Distribute.swift; path = Cartography/Distribute.swift; sourceTree = "<group>"; };
-		F1410D685B7CA8F2AFA9B3492B69A309 /* UIColor+FlatColors.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIColor+FlatColors.xcconfig"; sourceTree = "<group>"; };
-		FD327099CCBDE745FD19FA6B51B9EDB9 /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Cartography/Context.swift; sourceTree = "<group>"; };
+		E86F58A45B0098234E3F2D823D97E163 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Cartography/View.swift; sourceTree = "<group>"; };
+		E8DCDF3E0B141662B3160FAA253D82C7 /* NSTimer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSTimer.swift; path = ReactiveUI/ReactiveUI/NSTimer.swift; sourceTree = "<group>"; };
+		EB25B3441046C1EB8D2BB467564D9C75 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Cartography/Extensions.swift; sourceTree = "<group>"; };
+		F40F9F29886886F1083A5DAC3BE8F000 /* UIColor_FlatColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIColor_FlatColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F731CD262558600B9BB357CA558FC8C0 /* Constrain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constrain.swift; path = Cartography/Constrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		429A34DF3BBD7321C9C7D6FBF5F1E3FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94FA81E5AAD99FC80DC4123F16239B36 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5A7A05F65842ED5576A72647C1545EC8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BDDD03027CB71DA5D125D9FEC70E851A /* Foundation.framework in Frameworks */,
+				1D70A17434A0D068F1AFD9782795095B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C80CCF44DF0B64B9CA1BBB8E3C41785 /* Frameworks */ = {
+		6EC73C4D3FD493EE6E5DA2FBD00B3DF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				666E88636DD71FE0CCE1E560A9636063 /* Foundation.framework in Frameworks */,
-				BBB7221D83958030AD5E44C00342F90D /* UIKit.framework in Frameworks */,
+				A43EE2844A4B8DBFFC81AE7507FEC9DD /* Foundation.framework in Frameworks */,
+				802E1310D70FC96F6D6F517471DCE41F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		60A2038B606C4189B67A70FEB31E3D12 /* Frameworks */ = {
+		797012AD46118560850DC925088FF407 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D55B6ADDAF7EBF72B94520D940E70CE /* Foundation.framework in Frameworks */,
+				FD1749852537D3F9BBE1DA828DBB1835 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8614A7F999B301748D2E168C7BA78826 /* Frameworks */ = {
+		8F612F8814DD95A7B64DEA47EAB5C0C5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4512B7A4FB8C3CE71486FE87E83AF0A9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF7D669E6AFA9DE9ACCA0035879C12AF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5C4FB6024536E01CCAF33DB50DA91557 /* Foundation.framework in Frameworks */,
+				9D5A4AD4D1A64AE31F8F9A409D2363D3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04B0A9CE45891D18C7A0BFDAE7A4C3CC /* performSelector-swift */ = {
+		05A248404176CC2BC4C17770D1136983 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A54FA174537202BA5FDB563D0540E1D /* NSObject+Swift.h */,
-				C955A18B655E75926E5536249D162039 /* NSObject+Swift.m */,
-				42A8615C79B92EEA2A6B6C7F19025E53 /* performSelector-swift.h */,
-				3140A77033047B7E5ED2EFE1ECFB6B05 /* Support Files */,
+				D7CF443CB5BE133C6A0972E48CF1C09A /* Cartography.framework */,
+				453CCBB7DEB11AFF43F1C7A13547309E /* performSelector_swift.framework */,
+				D1CD237F3D145A3DAC4C51032D3DCE69 /* Pods.framework */,
+				5B2EB51E491912C4318A4D30FC117C16 /* ReactiveUI.framework */,
+				F40F9F29886886F1083A5DAC3BE8F000 /* UIColor_FlatColors.framework */,
 			);
-			path = "performSelector-swift";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		2CB42AAA4B1E40BCF91C763DEB1EF69D /* Pods */ = {
+		06216C14B3EC09B007C6838CA743CA57 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				86DBC55E1BABD556BA3070CB12B5558B /* Cartography */,
-				8D86996B2B7F44CDD5593DFEE113DB90 /* ReactiveUI */,
-				9FE44ACDDA7CD18822E0BE85C93E7D06 /* UIColor+FlatColors */,
-				04B0A9CE45891D18C7A0BFDAE7A4C3CC /* performSelector-swift */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		3140A77033047B7E5ED2EFE1ECFB6B05 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3DB1FF3AEDBB4CB9989F7A37B7B62C3F /* Info.plist */,
-				CF15D93D7D460FDA6015E06AECA49956 /* performSelector-swift.modulemap */,
-				4CE273F152475DA3A5093B7F14CE7667 /* performSelector-swift.xcconfig */,
-				17BC120C2A3477C44EBB60CA8D8E5A6A /* performSelector-swift-Private.xcconfig */,
-				6548357F81A43DD9743DB72CEDCCD55B /* performSelector-swift-dummy.m */,
-				D72BFFC73916503F913D2F881494B3D7 /* performSelector-swift-prefix.pch */,
-				8A8987105D5280FDF5E6081DA6DB5609 /* performSelector-swift-umbrella.h */,
+				5FAF11EB6C955662ABD96EE0DF1E839B /* Info.plist */,
+				DBB4CFF1FE6C36731BD92C2F4CC1DB0C /* performSelector-swift.modulemap */,
+				3ADF1F1271B90DA3148ED61F86B58576 /* performSelector-swift.xcconfig */,
+				6CC6D111C1C616378F382CB8BA9B6EE2 /* performSelector-swift-dummy.m */,
+				E29C22F29DE0923E9A57C5613E8A6757 /* performSelector-swift-prefix.pch */,
+				0C0691A7A3B1717EC3F122786FF91E6E /* performSelector-swift-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/performSelector-swift";
 			sourceTree = "<group>";
 		};
+		18340F12838DEE43507667CC74401EB1 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */,
+				C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		3EDFD72C7AAB883C3EB6BF4A1C3641F2 /* Cartography */ = {
+			isa = PBXGroup;
+			children = (
+				A0E6EF5DDD8883F1E898062567088C77 /* Align.swift */,
+				A2674251A2F0B3925A2AAE77AA4F4484 /* Coefficients.swift */,
+				98D32AAAEAD55B3F022ECB909E4C5FDF /* Compound.swift */,
+				F731CD262558600B9BB357CA558FC8C0 /* Constrain.swift */,
+				B4569857E8082C939107F1141A702D12 /* Constraint.swift */,
+				E74358AE3D02129F4C53BB08EB3E9FB7 /* ConstraintGroup.swift */,
+				D4B93E1B4D9D313ED9C651F51F6AE2B1 /* Context.swift */,
+				ACA8771E74138D3B6D325E6BF7B4EB3A /* Dimension.swift */,
+				2D80CA12E151DC54D9B0F71764455B85 /* Distribute.swift */,
+				1E0088DBFA6EA78F2ABB21C3AA26350A /* Edge.swift */,
+				BD7A6E289430791D5889B256F0CD1A97 /* Edges.swift */,
+				9AFADC672BF151767A53679CF2271EEC /* Expression.swift */,
+				EB25B3441046C1EB8D2BB467564D9C75 /* Extensions.swift */,
+				78AA5F2B56B98664115C9AFFE4C93845 /* LayoutProxy.swift */,
+				31F743F0229F0CD3F9EB023A5CD13108 /* Point.swift */,
+				7EE268DB413156B4E6C3CCA8E1FF4952 /* Priority.swift */,
+				92A234EF55571C3C37FDAF4DFE5CE0CB /* Property.swift */,
+				7F15E49BA3EB741C6E0ECACD89EAF01B /* Size.swift */,
+				E86F58A45B0098234E3F2D823D97E163 /* View.swift */,
+				4CED7937967FDDF0AFAFE6CF26670A44 /* ViewUtils.swift */,
+				DEEFD45CDC0C70BC90E9D246A0EC1905 /* Support Files */,
+			);
+			path = Cartography;
+			sourceTree = "<group>";
+		};
+		3FA8948AA79735A1D510372297465B6C /* performSelector-swift */ = {
+			isa = PBXGroup;
+			children = (
+				DCB2F50C660A4FF88EF8BA77FBEDD107 /* NSObject+Swift.h */,
+				58DB31DDE081E2FCA6FF9DD09F027802 /* NSObject+Swift.m */,
+				76CC29301C7E5F4425CA7B449216081F /* performSelector-swift.h */,
+				06216C14B3EC09B007C6838CA743CA57 /* Support Files */,
+			);
+			path = "performSelector-swift";
+			sourceTree = "<group>";
+		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D0FB9306D21AF23A056944AE037CBFFF /* iOS */,
+				18340F12838DEE43507667CC74401EB1 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4CB82DD1D7B4157D213E11E50989CB58 /* Support Files */ = {
+		6CE285CFE1CE4E8823C7A201BF99E14B /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				16FC1F0DCBBCDF92C9CE459A4C0EF84E /* Cartography.modulemap */,
-				772704C9E6F41860254A1D3CE7A89F1A /* Cartography.xcconfig */,
-				249C3EEDBD74EC170259150916E992C6 /* Cartography-Private.xcconfig */,
-				22C239987E492DBCB4315A6777FB8602 /* Cartography-dummy.m */,
-				69BE109A073123589276A73C4B042BC4 /* Cartography-prefix.pch */,
-				E6AFE7BA8F332CF166EDA81D129DE7B3 /* Cartography-umbrella.h */,
-				67D56209C380DE6D7D1CD73FEB1A21DB /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Cartography";
-			sourceTree = "<group>";
-		};
-		53BF4E88B50E560F8E6F76BB1ED2AE01 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				029E0F5675073DA11EC9BC6773102A6D /* Info.plist */,
-				1C1E3FBDDE5F0B02C9B78E5B5DA15C21 /* UIColor+FlatColors.modulemap */,
-				F1410D685B7CA8F2AFA9B3492B69A309 /* UIColor+FlatColors.xcconfig */,
-				1D05F38CD30D4F5B7694D04E626841D1 /* UIColor+FlatColors-Private.xcconfig */,
-				996E473CA56372EB133B567C08E0884A /* UIColor+FlatColors-dummy.m */,
-				6FCF0C040044C3002677CCBC9D165DB4 /* UIColor+FlatColors-prefix.pch */,
-				DAC94C0DF1BFCE0B0C83DB7044DA9ADE /* UIColor+FlatColors-umbrella.h */,
+				88F094CB7AD2DA609FC6DF95D5B14D59 /* Info.plist */,
+				82E23457F12CD64F55485949F22EEB74 /* UIColor+FlatColors.modulemap */,
+				6545A48956F30B68F49DED31071B0966 /* UIColor+FlatColors.xcconfig */,
+				617F7D2E3B6A45DEDA22322A2CFECEEB /* UIColor+FlatColors-dummy.m */,
+				5A1FC00BC0A9E99D7C533C6B2B0026A0 /* UIColor+FlatColors-prefix.pch */,
+				54817938D8C26E9373B2C8D37BCEB8CD /* UIColor+FlatColors-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/UIColor+FlatColors";
+			sourceTree = "<group>";
+		};
+		710DD9A854824B13FB8237FB48D2E853 /* UIColor+FlatColors */ = {
+			isa = PBXGroup;
+			children = (
+				7557079F636AEC2AC78C39C1A5E521C1 /* UIColor+FlatColors.h */,
+				2697E2747DDB94F318B0240C78C9FC41 /* UIColor+FlatColors.m */,
+				6CE285CFE1CE4E8823C7A201BF99E14B /* Support Files */,
+			);
+			path = "UIColor+FlatColors";
 			sourceTree = "<group>";
 		};
 		75D98FF52E597A11900E131B6C4E1ADA /* Pods */ = {
@@ -292,15 +319,26 @@
 				79A9DEDC89FE8336BF5FEDAAF75BF7FC /* Pods.modulemap */,
 				D0405803033A2A777B8E4DFA0C1800ED /* Pods-acknowledgements.markdown */,
 				87B213035BAC5F75386F62D3C75D2342 /* Pods-acknowledgements.plist */,
-				D313B6E542A5943CC04F9556243A0BFE /* Pods-dummy.m */,
+				894E5DA93A9F359521A89826BE6DA777 /* Pods-dummy.m */,
 				E7F21354943D9F42A70697D5A5EF72E9 /* Pods-frameworks.sh */,
 				CBC0F7C552B739C909B650A0F42F7F38 /* Pods-resources.sh */,
-				7A40BF4526CC181C4CBF91A671520FA3 /* Pods-umbrella.h */,
-				C97D0CA86D0D79C858A9AD8C87865903 /* Pods.debug.xcconfig */,
-				06ECF6ACE721D431EC9AA3E6F0ED50C9 /* Pods.release.xcconfig */,
+				2BCC458FDD5F692BBB2BFC64BB5701FC /* Pods-umbrella.h */,
+				977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */,
+				DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */,
 			);
 			name = Pods;
 			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+		7C91B73F8FC22F628CDD72F481F63556 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EDFD72C7AAB883C3EB6BF4A1C3641F2 /* Cartography */,
+				3FA8948AA79735A1D510372297465B6C /* performSelector-swift */,
+				AB52702B8F736BB0BBFA30305D3EDAC6 /* ReactiveUI */,
+				710DD9A854824B13FB8237FB48D2E853 /* UIColor+FlatColors */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -308,61 +346,23 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				2CB42AAA4B1E40BCF91C763DEB1EF69D /* Pods */,
-				CCA510CFBEA2D207524CDA0D73C3B561 /* Products */,
+				7C91B73F8FC22F628CDD72F481F63556 /* Pods */,
+				05A248404176CC2BC4C17770D1136983 /* Products */,
 				B7B80995527643776607AFFA75B91E24 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		86DBC55E1BABD556BA3070CB12B5558B /* Cartography */ = {
+		AB52702B8F736BB0BBFA30305D3EDAC6 /* ReactiveUI */ = {
 			isa = PBXGroup;
 			children = (
-				EA0C8297E9EA4A1898D9131EE7923857 /* Align.swift */,
-				BC34A879A9AB9A3421F08EFBE7F0CEA3 /* Coefficients.swift */,
-				446B9DF955487A37A00B85C2110709FB /* Compound.swift */,
-				43A54048A9BA2FBFAD69A1C4B9C08784 /* Constrain.swift */,
-				C21C860CA3C96BE6A9C52846FE68C0B9 /* Constraint.swift */,
-				BC35BBE84CFE27722E7B0A2540CFCA26 /* ConstraintGroup.swift */,
-				FD327099CCBDE745FD19FA6B51B9EDB9 /* Context.swift */,
-				B79DB0DEDADE6D787B93F517017A5D14 /* Dimension.swift */,
-				EDAE1246FD1F4CEC686F3E19AF67C0CD /* Distribute.swift */,
-				6653030347C40901D6486C94E378BC3A /* Edge.swift */,
-				D543838DDB9A32C5F084235AF0C92D78 /* Edges.swift */,
-				6F7A992C9A7911879C05ECB19DE14BAE /* Expression.swift */,
-				4E51480E857EA1B1A5CE67007E46D3C1 /* Extensions.swift */,
-				85582D09DC1FB702259B4F9715F6296F /* LayoutProxy.swift */,
-				6AA559755DDEDBC3BCFA6F62FEF0F7E7 /* Point.swift */,
-				D67B599CD3C009E2B31595C187C66B4E /* Priority.swift */,
-				B06D7AA55CF2998D07AB64495A4BBA14 /* Property.swift */,
-				BA75D092F6CE54AE2E0DA42EB0685CA0 /* Size.swift */,
-				11526064BA4C8DAEEB62982D37A11108 /* View.swift */,
-				77C6AB2312DEF4849F11338404077C9E /* ViewUtils.swift */,
-				4CB82DD1D7B4157D213E11E50989CB58 /* Support Files */,
-			);
-			path = Cartography;
-			sourceTree = "<group>";
-		};
-		8D86996B2B7F44CDD5593DFEE113DB90 /* ReactiveUI */ = {
-			isa = PBXGroup;
-			children = (
-				2220C75930951CDFA0503D765C02F1B4 /* NSTimer.swift */,
-				31982906EE1F5BE9FD8C7868F8D93275 /* ReactiveUI.swift */,
-				E7BCA18C0747E307EC84D0B4CB651364 /* UIBarButtonItem.swift */,
-				6D1A0682CCB9349156AAAA4F70612DF6 /* UIControl.swift */,
-				96200C5CDBE8801F13A4C407E69DD724 /* UIGestureRecognizer.swift */,
-				F1616C0C00689B46525FA0D4E9A4F17A /* Support Files */,
+				E8DCDF3E0B141662B3160FAA253D82C7 /* NSTimer.swift */,
+				6664E531BB14A646D830F008C6A84E73 /* ReactiveUI.swift */,
+				5EDCE6FACAE88F0F3D2E35CBAD1F7B94 /* UIBarButtonItem.swift */,
+				0B96C975F16ECD38681C40529F61A1A2 /* UIControl.swift */,
+				89BFF77BC73258F9E601BD8FCF5F8FB7 /* UIGestureRecognizer.swift */,
+				CA76D5F946C354705B685D18B0F58297 /* Support Files */,
 			);
 			path = ReactiveUI;
-			sourceTree = "<group>";
-		};
-		9FE44ACDDA7CD18822E0BE85C93E7D06 /* UIColor+FlatColors */ = {
-			isa = PBXGroup;
-			children = (
-				5CA2C91E5720A5F8263EC55C258DC154 /* UIColor+FlatColors.h */,
-				3661901726E284BCF8848C03348A0B12 /* UIColor+FlatColors.m */,
-				53BF4E88B50E560F8E6F76BB1ED2AE01 /* Support Files */,
-			);
-			path = "UIColor+FlatColors";
 			sourceTree = "<group>";
 		};
 		B7B80995527643776607AFFA75B91E24 /* Targets Support Files */ = {
@@ -373,58 +373,67 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		CCA510CFBEA2D207524CDA0D73C3B561 /* Products */ = {
+		CA76D5F946C354705B685D18B0F58297 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A08EF8BFC07D4697E389BD2389E9258D /* Cartography.framework */,
-				43CD25A6F182220AD548988E7FBED1FF /* Pods.framework */,
-				260CD6DA5D2A29A0A2F46CCD0F3DDEF7 /* ReactiveUI.framework */,
-				D9A88281B9C1A6E83DD69B39F4E1615F /* UIColor_FlatColors.framework */,
-				495620DB392592A3FB815E83BB4A6F51 /* performSelector_swift.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		D0FB9306D21AF23A056944AE037CBFFF /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				8043C8854CBC34E97F077C904291B746 /* Foundation.framework */,
-				0E3857DCB4E642D01727B0FF65B59AAF /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		F1616C0C00689B46525FA0D4E9A4F17A /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2DD6DB23719CCE1982E9749ABBA2C3D9 /* Info.plist */,
-				28487E776C82B741982F32EDBDF85CDC /* ReactiveUI.modulemap */,
-				5DEFE23DCBB5FFED82B3529617B2E39E /* ReactiveUI.xcconfig */,
-				3A2591CC868E3E3E64D8D44935CAED8A /* ReactiveUI-Private.xcconfig */,
-				C3582C2BCBF06DBC2C874D10E42DE6F2 /* ReactiveUI-dummy.m */,
-				4376B9D9C8D028A8378F7F124BBE2712 /* ReactiveUI-prefix.pch */,
-				4E7DB973D9FF3A1665C4CD5EF3D31E54 /* ReactiveUI-umbrella.h */,
+				924F138FC6B23766705B7BB3473AC51C /* Info.plist */,
+				30FB66C82CD815B971FDF95885176896 /* ReactiveUI.modulemap */,
+				85636DC8148C0995E9C4F99CBBC03686 /* ReactiveUI.xcconfig */,
+				817843EA8597E1C5465006AF2559E906 /* ReactiveUI-dummy.m */,
+				9D9587BD45D8C95BFAFA9687F453D349 /* ReactiveUI-prefix.pch */,
+				A5E90B423CD83675B5EEDC147A9A90C5 /* ReactiveUI-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ReactiveUI";
 			sourceTree = "<group>";
 		};
+		DEEFD45CDC0C70BC90E9D246A0EC1905 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				766326BEC0A5881E7FEC61EA8C7F05A3 /* Cartography.modulemap */,
+				0667E38D6A1FCFA1C27F3CC1475BDB48 /* Cartography.xcconfig */,
+				38A9A1B9B3E54492CE9A94C0395DADF7 /* Cartography-dummy.m */,
+				AF4D50D8A71887A36D598F4DD439A4B0 /* Cartography-prefix.pch */,
+				95A19491144BFC1B1D973E59FACAC1E7 /* Cartography-umbrella.h */,
+				84B50CDD8F7720A3821F4E66BC5088D3 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Cartography";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		6C5443147EBE5F0F838FFCCF972F09BC /* Headers */ = {
+		514705BF944036B79FA99816C564643C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B443BF30542FF403DE4485D016344CD /* Pods-umbrella.h in Headers */,
+				B90891688A088BC37455234028C2E993 /* Cartography-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CF37D0CA572483D72D88DAF8B86BCC7A /* Headers */ = {
+		682FF9E0D691F4A4CD8920006513D4AD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F550F6A193B771A967F926377EF4FBD3 /* ReactiveUI-umbrella.h in Headers */,
+				2BAE6556B5CAAA1F884B5005BA0B0B90 /* ReactiveUI-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86B94333D668E4C3C3137F471B81C6B0 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59BDE3593286EBC5F3721B7F2EADFBA1 /* UIColor+FlatColors-umbrella.h in Headers */,
+				0BB3B0C1AB18127124A1CCF53EB3B018 /* UIColor+FlatColors.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		880FF6F9A37113A08F23C1F50ADB0310 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7828F9971C7B1E3B6C543D308FC9BE54 /* Pods-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,33 +447,54 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DCADE397235C529DCD5E98E97C2647AA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A25BE8BA0216D60F790D9F72D306D35E /* UIColor+FlatColors-umbrella.h in Headers */,
-				B0F49CA262C04EAC262340C03734048F /* UIColor+FlatColors.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2A776CB55F1CCA16FE390F8985076C1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				740FD143DD4F45E2188DC425F491DA34 /* Cartography-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		25751BC425F66713BC342DAEAEF41DA6 /* UIColor+FlatColors */ = {
+		1210328ADFD63D429621787F2E3EC6D5 /* ReactiveUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B58B3505C999919F7A52BD6A63B2ED85 /* Build configuration list for PBXNativeTarget "UIColor+FlatColors" */;
+			buildConfigurationList = 31D7968481D1A82B1CACAC15E94DAD35 /* Build configuration list for PBXNativeTarget "ReactiveUI" */;
 			buildPhases = (
-				0AA7E0F1655BD2E5FB2BFE986E94954E /* Sources */,
-				8614A7F999B301748D2E168C7BA78826 /* Frameworks */,
-				DCADE397235C529DCD5E98E97C2647AA /* Headers */,
+				3DA1C4588C818EED154A4BD2DA3BCD0B /* Sources */,
+				6EC73C4D3FD493EE6E5DA2FBD00B3DF9 /* Frameworks */,
+				682FF9E0D691F4A4CD8920006513D4AD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactiveUI;
+			productName = ReactiveUI;
+			productReference = 5B2EB51E491912C4318A4D30FC117C16 /* ReactiveUI.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5D1476ED66CD2F576F4DC885A7FEFA20 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5E306CDE1A0C48CA6A9EB1B278654171 /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				FFCAAF23CF0E5B59C17B9BF4295B6647 /* Sources */,
+				797012AD46118560850DC925088FF407 /* Frameworks */,
+				880FF6F9A37113A08F23C1F50ADB0310 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95F32BDC9CA7EF9740795109E7819CE9 /* PBXTargetDependency */,
+				B8910FA8F523E3AAAB0040EEEB654B34 /* PBXTargetDependency */,
+				993271D443C2FBC29D210139DE0D90E2 /* PBXTargetDependency */,
+				2414687EE0D3DB4F7D3A862DDA932762 /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = D1CD237F3D145A3DAC4C51032D3DCE69 /* Pods.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6A64DD697F368173C74A8134709A56E0 /* UIColor+FlatColors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB886C905A6F369F34193C2376FC0DD5 /* Build configuration list for PBXNativeTarget "UIColor+FlatColors" */;
+			buildPhases = (
+				75D8A36636C5BCA02C748FB82F1246D8 /* Sources */,
+				8F612F8814DD95A7B64DEA47EAB5C0C5 /* Frameworks */,
+				86B94333D668E4C3C3137F471B81C6B0 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -472,7 +502,7 @@
 			);
 			name = "UIColor+FlatColors";
 			productName = "UIColor+FlatColors";
-			productReference = D9A88281B9C1A6E83DD69B39F4E1615F /* UIColor_FlatColors.framework */;
+			productReference = F40F9F29886886F1083A5DAC3BE8F000 /* UIColor_FlatColors.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7AA8D0F18A0D95FF0B44C79F40EF4D60 /* performSelector-swift */ = {
@@ -489,33 +519,16 @@
 			);
 			name = "performSelector-swift";
 			productName = "performSelector-swift";
-			productReference = 495620DB392592A3FB815E83BB4A6F51 /* performSelector_swift.framework */;
+			productReference = 453CCBB7DEB11AFF43F1C7A13547309E /* performSelector_swift.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		923487DCF29E9267FE3EC6540516AC64 /* ReactiveUI */ = {
+		C3A04698AAE4D6124C20602D622956E5 /* Cartography */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CE761D9C061C53DB5C53EC0F4F1F4EF /* Build configuration list for PBXNativeTarget "ReactiveUI" */;
+			buildConfigurationList = B22DC939D187391042315573DBEE7623 /* Build configuration list for PBXNativeTarget "Cartography" */;
 			buildPhases = (
-				1A32DDEA06D3F58ADA626AC0588351F9 /* Sources */,
-				5C80CCF44DF0B64B9CA1BBB8E3C41785 /* Frameworks */,
-				CF37D0CA572483D72D88DAF8B86BCC7A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ReactiveUI;
-			productName = ReactiveUI;
-			productReference = 260CD6DA5D2A29A0A2F46CCD0F3DDEF7 /* ReactiveUI.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A7FF7AF4496870B930CA9A09DA5B0FEA /* Cartography */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E22586A73595989AAEC85919D98B44EB /* Build configuration list for PBXNativeTarget "Cartography" */;
-			buildPhases = (
-				EEFEDBB2081046C86DBEBE7A54634864 /* Sources */,
-				AF7D669E6AFA9DE9ACCA0035879C12AF /* Frameworks */,
-				E2A776CB55F1CCA16FE390F8985076C1 /* Headers */,
+				B962ED42E882856B9D168260BB18AE95 /* Sources */,
+				429A34DF3BBD7321C9C7D6FBF5F1E3FB /* Frameworks */,
+				514705BF944036B79FA99816C564643C /* Headers */,
 			);
 			buildRules = (
 			);
@@ -523,28 +536,7 @@
 			);
 			name = Cartography;
 			productName = Cartography;
-			productReference = A08EF8BFC07D4697E389BD2389E9258D /* Cartography.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EF88F878BFB73E2403A4D9A7A76C07F9 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7561FB36515ECFD2B943D34AE22959D4 /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				A9B17705AF1E58AD3BAF1A1DCA92BFAE /* Sources */,
-				60A2038B606C4189B67A70FEB31E3D12 /* Frameworks */,
-				6C5443147EBE5F0F838FFCCF972F09BC /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AE443998420B4671B93B1AB5AA5424CF /* PBXTargetDependency */,
-				7AF0FE1237E40A83EE6D4DEF7BD20697 /* PBXTargetDependency */,
-				BDC643C081B726DDBC5BFA2330481BF3 /* PBXTargetDependency */,
-				A1A4749B312E331DDE2773C5196A3272 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = 43CD25A6F182220AD548988E7FBED1FF /* Pods.framework */;
+			productReference = D7CF443CB5BE133C6A0972E48CF1C09A /* Cartography.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -564,39 +556,30 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = CCA510CFBEA2D207524CDA0D73C3B561 /* Products */;
+			productRefGroup = 05A248404176CC2BC4C17770D1136983 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A7FF7AF4496870B930CA9A09DA5B0FEA /* Cartography */,
-				EF88F878BFB73E2403A4D9A7A76C07F9 /* Pods */,
-				923487DCF29E9267FE3EC6540516AC64 /* ReactiveUI */,
-				25751BC425F66713BC342DAEAEF41DA6 /* UIColor+FlatColors */,
+				C3A04698AAE4D6124C20602D622956E5 /* Cartography */,
 				7AA8D0F18A0D95FF0B44C79F40EF4D60 /* performSelector-swift */,
+				5D1476ED66CD2F576F4DC885A7FEFA20 /* Pods */,
+				1210328ADFD63D429621787F2E3EC6D5 /* ReactiveUI */,
+				6A64DD697F368173C74A8134709A56E0 /* UIColor+FlatColors */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0AA7E0F1655BD2E5FB2BFE986E94954E /* Sources */ = {
+		3DA1C4588C818EED154A4BD2DA3BCD0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4901B3C93967E9C2B46114A9C338DEFF /* UIColor+FlatColors-dummy.m in Sources */,
-				086B51A3F2099FEB8C446EB0D1516266 /* UIColor+FlatColors.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1A32DDEA06D3F58ADA626AC0588351F9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E7BC37AF059F25A448049B241F75EED9 /* NSTimer.swift in Sources */,
-				A3CD7E4CB68FDBF35CDF07BAE50399E7 /* ReactiveUI-dummy.m in Sources */,
-				FD24489FE23D121A6E2C124DA057AAF3 /* ReactiveUI.swift in Sources */,
-				8892242A38B0EBB3A8B9AA75AAEAAF50 /* UIBarButtonItem.swift in Sources */,
-				AEA1C77FFF5452645DBE4BF1047EF8C0 /* UIControl.swift in Sources */,
-				656671EAA29E39E04F110E02255D19FA /* UIGestureRecognizer.swift in Sources */,
+				FFAA00434BDC2BDE6633D50383660094 /* NSTimer.swift in Sources */,
+				565D4C7F4F8443022140EEF2CEA622F6 /* ReactiveUI-dummy.m in Sources */,
+				D5502831813157201B7B3F70DB1452B6 /* ReactiveUI.swift in Sources */,
+				2DA8C30AC1637DDBCBD399EB56529CE3 /* UIBarButtonItem.swift in Sources */,
+				821DF2B9681F6C9EDDDE25DB5DC9B70A /* UIControl.swift in Sources */,
+				7315785D574A13488638A647EE54B274 /* UIGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,72 +592,109 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A9B17705AF1E58AD3BAF1A1DCA92BFAE /* Sources */ = {
+		75D8A36636C5BCA02C748FB82F1246D8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0816C41B8E7C3E175CC0BAB01692AD85 /* Pods-dummy.m in Sources */,
+				DFF8D71E53101C81010C7EB7CBB8220D /* UIColor+FlatColors-dummy.m in Sources */,
+				E032CD3230E8F1948503F6A5A1493473 /* UIColor+FlatColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EEFEDBB2081046C86DBEBE7A54634864 /* Sources */ = {
+		B962ED42E882856B9D168260BB18AE95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F5E158238C887F2531DFE48BF1D058E /* Align.swift in Sources */,
-				DCFD9E8507982F433577B09CAD0302F1 /* Cartography-dummy.m in Sources */,
-				E7A6937340AE12C7C330FB2DDEDB560C /* Coefficients.swift in Sources */,
-				B7EDFFCD38CFCD547274A0C6AA0BDE5E /* Compound.swift in Sources */,
-				28472373E6A4561ED4E764F09DC030B2 /* Constrain.swift in Sources */,
-				FD4F87B941CC6E507BD66EEF83508D9F /* Constraint.swift in Sources */,
-				A8AB4560903275EEB9B1C107D09D69A0 /* ConstraintGroup.swift in Sources */,
-				C6266E9556BE260B53D6BA1140A6716E /* Context.swift in Sources */,
-				D8FFE020C1E3441659AB6D1AEE0E1294 /* Dimension.swift in Sources */,
-				A2D9F1BB116292E4D21DA2767BCC2034 /* Distribute.swift in Sources */,
-				51AB2A7D444F9F19200EF2CAA929D98B /* Edge.swift in Sources */,
-				4D950C211EF80B49C6F0BCE92547C528 /* Edges.swift in Sources */,
-				64A913DD1A516C9F5544FE0C02A9AA66 /* Expression.swift in Sources */,
-				563D11092B964A103EDBBD31A3348103 /* Extensions.swift in Sources */,
-				B875A291982B253EE198E64F95670111 /* LayoutProxy.swift in Sources */,
-				53C111530A3648FFC9968C9373AAE1C0 /* Point.swift in Sources */,
-				3BC07D47ECAF0D1DB21A048679D880CD /* Priority.swift in Sources */,
-				5B00CE08D6A2FF944280D152B5607758 /* Property.swift in Sources */,
-				5C88FE12734BBBF66880742A01FF199E /* Size.swift in Sources */,
-				4D3AD3149F04E8EBEE950B8AAE757002 /* View.swift in Sources */,
-				D58BE51956978566F89AC71EC14EAFB6 /* ViewUtils.swift in Sources */,
+				584B68A7069844742AEF67ED9311FF50 /* Align.swift in Sources */,
+				D56BD3B0ACF32790F3EF43EA3DB08016 /* Cartography-dummy.m in Sources */,
+				EE94E3F06DA2F096BA43F0679567DC4B /* Coefficients.swift in Sources */,
+				28515F6FFAA0E2F9591A862D532F33AC /* Compound.swift in Sources */,
+				D2C9087C6581055C25D5559F934AF65B /* Constrain.swift in Sources */,
+				F469BC9885602957FCB73DD39B5B92B0 /* Constraint.swift in Sources */,
+				E1451AA498D7B41C4E049F5D9027B4A7 /* ConstraintGroup.swift in Sources */,
+				452C09D0CAC1F8286ABA1CE076033B23 /* Context.swift in Sources */,
+				0729DED1737DCDB309394E0B59393F37 /* Dimension.swift in Sources */,
+				369CA2AACEED2517C99D77D7700DFCEA /* Distribute.swift in Sources */,
+				2057FF930EF0F28E7AD548BF23BE78EE /* Edge.swift in Sources */,
+				5044CA9F7CCBB02F3C294106022FCF9F /* Edges.swift in Sources */,
+				7CD04D81B5ED213A105DFC517187EB87 /* Expression.swift in Sources */,
+				BE2FC20F5EDBAE658F688978AB12C279 /* Extensions.swift in Sources */,
+				8378B61D28075525380201114F6E4582 /* LayoutProxy.swift in Sources */,
+				D3C01862D88692FA2E85A2D84345982B /* Point.swift in Sources */,
+				C3649839064E53A4BF767D2EF29651EF /* Priority.swift in Sources */,
+				EB9E85B0CE6A53DCBDE040A716B5DBF8 /* Property.swift in Sources */,
+				B23E3B878363F72D1E874E46EB62FA7F /* Size.swift in Sources */,
+				F95ADCA0B85C6C0640372D3EFBBF1AD6 /* View.swift in Sources */,
+				48ADE3FB3F30FCA5893083351449DA98 /* ViewUtils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FFCAAF23CF0E5B59C17B9BF4295B6647 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				69F58A35F46434F857A74F8120442968 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7AF0FE1237E40A83EE6D4DEF7BD20697 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ReactiveUI;
-			target = 923487DCF29E9267FE3EC6540516AC64 /* ReactiveUI */;
-			targetProxy = F2D960CF906B5C7328AD8314080E5563 /* PBXContainerItemProxy */;
-		};
-		A1A4749B312E331DDE2773C5196A3272 /* PBXTargetDependency */ = {
+		2414687EE0D3DB4F7D3A862DDA932762 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "performSelector-swift";
 			target = 7AA8D0F18A0D95FF0B44C79F40EF4D60 /* performSelector-swift */;
-			targetProxy = BAD7BB95D0EAB34274FEADA492CB7623 /* PBXContainerItemProxy */;
+			targetProxy = EA46CFF0147EE5506EB380CE38BC478E /* PBXContainerItemProxy */;
 		};
-		AE443998420B4671B93B1AB5AA5424CF /* PBXTargetDependency */ = {
+		95F32BDC9CA7EF9740795109E7819CE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Cartography;
-			target = A7FF7AF4496870B930CA9A09DA5B0FEA /* Cartography */;
-			targetProxy = 49D5E7A6A3B4BA8CDBC452DE59970E7E /* PBXContainerItemProxy */;
+			target = C3A04698AAE4D6124C20602D622956E5 /* Cartography */;
+			targetProxy = 43B124D883B95B07E243D2B0B5B32CC1 /* PBXContainerItemProxy */;
 		};
-		BDC643C081B726DDBC5BFA2330481BF3 /* PBXTargetDependency */ = {
+		993271D443C2FBC29D210139DE0D90E2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "UIColor+FlatColors";
-			target = 25751BC425F66713BC342DAEAEF41DA6 /* UIColor+FlatColors */;
-			targetProxy = DA7B5A5BAD67DCFD518CEC311D6A37B3 /* PBXContainerItemProxy */;
+			target = 6A64DD697F368173C74A8134709A56E0 /* UIColor+FlatColors */;
+			targetProxy = 2277346CC8FB39FABFEE49AA5BE1019D /* PBXContainerItemProxy */;
+		};
+		B8910FA8F523E3AAAB0040EEEB654B34 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReactiveUI;
+			target = 1210328ADFD63D429621787F2E3EC6D5 /* ReactiveUI */;
+			targetProxy = B3F5490EF0E47ABA52BA09EDCA2BFB10 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		086E26C6BC038D89378044192BAFFD1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85636DC8148C0995E9C4F99CBBC03686 /* ReactiveUI.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ReactiveUI/ReactiveUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReactiveUI/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReactiveUI/ReactiveUI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ReactiveUI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		10DE1947DAC0ED28F6C0A9F9BD75D546 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -709,15 +729,42 @@
 			};
 			name = Release;
 		};
-		3815519964B53BC140966634E2520997 /* Release */ = {
+		14E069FE0B2E369AAB2E264D3EEA4727 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D05F38CD30D4F5B7694D04E626841D1 /* UIColor+FlatColors-Private.xcconfig */;
+			baseConfigurationReference = 0667E38D6A1FCFA1C27F3CC1475BDB48 /* Cartography.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.0.2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.0.2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cartography/Cartography-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cartography/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cartography/Cartography.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Cartography;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		3005831886D953F38A71A84E847F3073 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6545A48956F30B68F49DED31071B0966 /* UIColor+FlatColors.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/UIColor+FlatColors/UIColor+FlatColors-prefix.pch";
@@ -735,6 +782,34 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		35D0DADD0D3F3AA0E1A7CABDA884054C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0667E38D6A1FCFA1C27F3CC1475BDB48 /* Cartography.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Cartography/Cartography-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cartography/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Cartography/Cartography.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Cartography;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		552D02D5BA751AC2E8790D2811D496CA /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -775,145 +850,9 @@
 			};
 			name = Debug;
 		};
-		5DB72E344FC0EC05298CC89D174EE5D7 /* Debug */ = {
+		6B744435B015301EB62FAA5D9B8B4AC3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A2591CC868E3E3E64D8D44935CAED8A /* ReactiveUI-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.0.2;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.0.2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ReactiveUI/ReactiveUI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReactiveUI/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReactiveUI/ReactiveUI.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ReactiveUI;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7A7CBB0B3BA61757DDC622498BDEE5E7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17BC120C2A3477C44EBB60CA8D8E5A6A /* performSelector-swift-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/performSelector-swift/performSelector-swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/performSelector-swift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/performSelector-swift/performSelector-swift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = performSelector_swift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		898A4DFA8B8679B36BAB5B3CD7EA8B2B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 249C3EEDBD74EC170259150916E992C6 /* Cartography-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.6.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.6.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Cartography/Cartography-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Cartography/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Cartography/Cartography.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = Cartography;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8F048920722CE2C9266653778ABC47B2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17BC120C2A3477C44EBB60CA8D8E5A6A /* performSelector-swift-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.1.0;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.1.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/performSelector-swift/performSelector-swift-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/performSelector-swift/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/performSelector-swift/performSelector-swift.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = performSelector_swift;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		9B742CB721D94021642C3D10F1333F11 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A2591CC868E3E3E64D8D44935CAED8A /* ReactiveUI-Private.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.0.2;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.0.2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ReactiveUI/ReactiveUI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReactiveUI/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReactiveUI/ReactiveUI.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ReactiveUI;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A8AAE74136C2E55857218515ADC54854 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C97D0CA86D0D79C858A9AD8C87865903 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 85636DC8148C0995E9C4F99CBBC03686 /* ReactiveUI.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -922,62 +861,58 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/ReactiveUI/ReactiveUI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReactiveUI/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
+				MODULEMAP_FILE = "Target Support Files/ReactiveUI/ReactiveUI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ReactiveUI;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		E5D2060663D61C9095639A701E0D6A40 /* Debug */ = {
+		6EFF47001FE1A0521DA886442984CDF2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 249C3EEDBD74EC170259150916E992C6 /* Cartography-Private.xcconfig */;
+			baseConfigurationReference = 3ADF1F1271B90DA3148ED61F86B58576 /* performSelector-swift.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.6.0;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.6.0;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Cartography/Cartography-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Cartography/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/performSelector-swift/performSelector-swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/performSelector-swift/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Cartography/Cartography.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = Cartography;
+				MODULEMAP_FILE = "Target Support Files/performSelector-swift/performSelector-swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = performSelector_swift;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		F07B0B517C26361B5A7F2D898298534D /* Debug */ = {
+		7EE1567E1870BA90B13A8A3448D9BE49 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D05F38CD30D4F5B7694D04E626841D1 /* UIColor+FlatColors-Private.xcconfig */;
+			baseConfigurationReference = 6545A48956F30B68F49DED31071B0966 /* UIColor+FlatColors.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 0.0.2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 0.0.2;
-				DYLIB_CURRENT_VERSION = "$(CURRENT_PROJECT_VERSION)";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/UIColor+FlatColors/UIColor+FlatColors-prefix.pch";
@@ -996,9 +931,9 @@
 			};
 			name = Debug;
 		};
-		F63177EC665AD65CD452B4A3470F4B82 /* Release */ = {
+		87485BE08A4BCABA1EEC63C68305DDD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 06ECF6ACE721D431EC9AA3E6F0ED50C9 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 977577C045EDA9D9D1F46E2598D19FC7 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -1011,6 +946,65 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9DFDAA4B10965FECF0D45531217205E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3ADF1F1271B90DA3148ED61F86B58576 /* performSelector-swift.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/performSelector-swift/performSelector-swift-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/performSelector-swift/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/performSelector-swift/performSelector-swift.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = performSelector_swift;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D669DEA705AB2D973A8EB1AEBFDBDC90 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA312349A49333542E6F4B36B329960E /* Pods.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -1028,15 +1022,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CE761D9C061C53DB5C53EC0F4F1F4EF /* Build configuration list for PBXNativeTarget "ReactiveUI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5DB72E344FC0EC05298CC89D174EE5D7 /* Debug */,
-				9B742CB721D94021642C3D10F1333F11 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1046,11 +1031,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7561FB36515ECFD2B943D34AE22959D4 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+		31D7968481D1A82B1CACAC15E94DAD35 /* Build configuration list for PBXNativeTarget "ReactiveUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A8AAE74136C2E55857218515ADC54854 /* Debug */,
-				F63177EC665AD65CD452B4A3470F4B82 /* Release */,
+				086E26C6BC038D89378044192BAFFD1D /* Debug */,
+				6B744435B015301EB62FAA5D9B8B4AC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5E306CDE1A0C48CA6A9EB1B278654171 /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87485BE08A4BCABA1EEC63C68305DDD6 /* Debug */,
+				D669DEA705AB2D973A8EB1AEBFDBDC90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1058,26 +1052,26 @@
 		A8460119948E82B79CB109E694F24CD6 /* Build configuration list for PBXNativeTarget "performSelector-swift" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7A7CBB0B3BA61757DDC622498BDEE5E7 /* Debug */,
-				8F048920722CE2C9266653778ABC47B2 /* Release */,
+				9DFDAA4B10965FECF0D45531217205E6 /* Debug */,
+				6EFF47001FE1A0521DA886442984CDF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B58B3505C999919F7A52BD6A63B2ED85 /* Build configuration list for PBXNativeTarget "UIColor+FlatColors" */ = {
+		B22DC939D187391042315573DBEE7623 /* Build configuration list for PBXNativeTarget "Cartography" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F07B0B517C26361B5A7F2D898298534D /* Debug */,
-				3815519964B53BC140966634E2520997 /* Release */,
+				35D0DADD0D3F3AA0E1A7CABDA884054C /* Debug */,
+				14E069FE0B2E369AAB2E264D3EEA4727 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E22586A73595989AAEC85919D98B44EB /* Build configuration list for PBXNativeTarget "Cartography" */ = {
+		EB886C905A6F369F34193C2376FC0DD5 /* Build configuration list for PBXNativeTarget "UIColor+FlatColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E5D2060663D61C9095639A701E0D6A40 /* Debug */,
-				898A4DFA8B8679B36BAB5B3CD7EA8B2B /* Release */,
+				7EE1567E1870BA90B13A8A3448D9BE49 /* Debug */,
+				3005831886D953F38A71A84E847F3073 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

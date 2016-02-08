@@ -20,13 +20,13 @@
 		098070AF1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AE1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift */; };
 		098070B11B13E9B900C90479 /* CustomSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070B01B13E9B900C90479 /* CustomSwipeDemoViewController.swift */; };
 		098070B31B13EDB800C90479 /* CustomDirectionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070B21B13EDB800C90479 /* CustomDirectionDemoViewController.swift */; };
-		099CF6411BDABF8600D05FAA /* PreviousViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099CF6401BDABF8600D05FAA /* PreviousViewDemoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		099CF6411BDABF8600D05FAA /* PreviousViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099CF6401BDABF8600D05FAA /* PreviousViewDemoViewController.swift */; };
 		09B2F5291B32018000ECD8B1 /* ShouldSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B2F5281B32018000ECD8B1 /* ShouldSwipeDemoViewController.swift */; };
-		09E79D171BDA002F00A609A1 /* DirectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D161BDA002F00A609A1 /* DirectionTests.swift */; settings = {ASSET_TAGS = (); }; };
-		09E79D191BDA058000A609A1 /* ViewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D181BDA058000A609A1 /* ViewManagerTests.swift */; settings = {ASSET_TAGS = (); }; };
-		09E79D1B1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D1A1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		179604C29FFE95576E597034 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB7EDF499F2D90A9D123AB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		78FA118955F2E3CFC6B2C8A5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB7EDF499F2D90A9D123AB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		09E79D171BDA002F00A609A1 /* DirectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D161BDA002F00A609A1 /* DirectionTests.swift */; };
+		09E79D191BDA058000A609A1 /* ViewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D181BDA058000A609A1 /* ViewManagerTests.swift */; };
+		09E79D1B1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D1A1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift */; };
+		179604C29FFE95576E597034 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB7EDF499F2D90A9D123AB /* Pods.framework */; };
+		78FA118955F2E3CFC6B2C8A5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB7EDF499F2D90A9D123AB /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
