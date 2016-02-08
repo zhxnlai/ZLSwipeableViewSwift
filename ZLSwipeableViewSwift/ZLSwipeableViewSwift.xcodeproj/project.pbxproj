@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		460B725D1B76D42600BB5ED8 /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460B725C1B76D42600BB5ED8 /* ZLSwipeableView.swift */; };
+		46C0F0351C68AC90004BE1B3 /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C0F0341C68AC90004BE1B3 /* ZLSwipeableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		460B72511B76D3E600BB5ED8 /* ZLSwipeableViewSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZLSwipeableViewSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		460B72561B76D3E600BB5ED8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		460B725C1B76D42600BB5ED8 /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
+		46C0F0341C68AC90004BE1B3 /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = SOURCE_ROOT; };
+		46C0F0361C68ACA1004BE1B3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,8 +46,8 @@
 		460B72531B76D3E600BB5ED8 /* ZLSwipeableViewSwift */ = {
 			isa = PBXGroup;
 			children = (
-				460B725C1B76D42600BB5ED8 /* ZLSwipeableView.swift */,
-				460B72561B76D3E600BB5ED8 /* Info.plist */,
+				46C0F0341C68AC90004BE1B3 /* ZLSwipeableView.swift */,
+				46C0F0361C68ACA1004BE1B3 /* Info.plist */,
 			);
 			path = ZLSwipeableViewSwift;
 			sourceTree = "<group>";
@@ -89,7 +89,7 @@
 		460B72481B76D3E600BB5ED8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Andrew Breckenridge";
 				TargetAttributes = {
@@ -130,7 +130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				460B725D1B76D42600BB5ED8 /* ZLSwipeableView.swift in Sources */,
+				46C0F0351C68AC90004BE1B3 /* ZLSwipeableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +234,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ZLSwipeableViewSwift/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.ZLSwipeableViewSwift;
@@ -252,7 +252,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ZLSwipeableViewSwift/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tfw.ZLSwipeableViewSwift;
