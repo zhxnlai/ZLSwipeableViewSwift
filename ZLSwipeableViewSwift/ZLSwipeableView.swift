@@ -119,6 +119,7 @@ public class ZLSwipeableView: UIView {
     public var minTranslationInPercent = CGFloat(0.25)
     public var minVelocityInPointPerSecond = CGFloat(750)
     public var allowedDirection = Direction.Horizontal
+    public var onlySwipeTopCard = false
 
     // MARK: Delegate
     public var didStart: DidStartHandler?
@@ -265,7 +266,7 @@ public class ZLSwipeableView: UIView {
 
         for i in 0 ..< activeViews.count {
             let view = activeViews[i]
-            view.userInteractionEnabled = true
+            view.userInteractionEnabled = onlySwipeTopCard ? i == 0 : true
             let shouldBeHidden = i >= Int(numberOfActiveView)
             view.hidden = shouldBeHidden
             guard !shouldBeHidden else { continue }
