@@ -102,6 +102,9 @@ class ZLSwipeableViewController: UIViewController {
         swipeableView.didCancel = {view in
             print("Did cancel swiping view")
         }
+        swipeableView.didTap = {view, location in
+            print("Did tap at location \(location)")
+        }
 
         constrain(swipeableView, view) { view1, view2 in
             view1.left == view2.left+50
