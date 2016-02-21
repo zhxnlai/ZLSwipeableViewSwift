@@ -90,6 +90,7 @@ public typealias SwipingHandler = (view: UIView, atLocation: CGPoint, translatio
 public typealias DidEndHandler = (view: UIView, atLocation: CGPoint) -> ()
 public typealias DidSwipeHandler = (view: UIView, inDirection: Direction, directionVector: CGVector) -> ()
 public typealias DidCancelHandler = (view: UIView) -> ()
+public typealias DidTap = (view: UIView, atLocation: CGPoint) -> ()
 
 public struct Movement {
     let location: CGPoint
@@ -127,6 +128,7 @@ public class ZLSwipeableView: UIView {
     public var didEnd: DidEndHandler?
     public var didSwipe: DidSwipeHandler?
     public var didCancel: DidCancelHandler?
+    public var didTap: DidTap?
 
     // MARK: Private properties
     /// Contains subviews added by the user.
@@ -470,6 +472,7 @@ internal class ViewManager : NSObject {
 
     /// To be added to view and removed
     private class ZLPanGestureRecognizer: UIPanGestureRecognizer { }
+    private class ZLTapGestureRecognizer: UITapGestureRecognizer { }
 
     static private let anchorViewWidth = CGFloat(1000)
     private var anchorView = UIView(frame: CGRect(x: 0, y: 0, width: anchorViewWidth, height: anchorViewWidth))
@@ -496,6 +499,7 @@ internal class ViewManager : NSObject {
         super.init()
 
         view.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: Selector("handlePan:")))
+        view.addGestureRecognizer(ZLTapGestureRecognizer(target: self, action: Selector("handleTap:")))
         miscContainerView.addSubview(anchorView)
         containerView.insertSubview(view, atIndex: index)
     }
@@ -564,6 +568,13 @@ internal class ViewManager : NSObject {
         default:
             break
         }
+    }
+    
+    func handleTap(recognizer: UITapGestureRecognizer) {
+        guard let swipeableView = swipeableView, topView = swipeableView.topView()  else { return }
+
+        let location = recognizer.locationInView(containerView)
+        swipeableView.didTap?(view: topView, atLocation: location)
     }
 
     private func snapView(point: CGPoint) {
