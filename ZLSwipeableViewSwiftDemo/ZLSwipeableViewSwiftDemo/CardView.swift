@@ -10,26 +10,17 @@ import UIKit
 
 class CardView: UIView {
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-
-    func setup() {
+    override func layoutSublayersOfLayer(layer: CALayer) {
+        
         // Shadow
         layer.shadowColor = UIColor.blackColor().CGColor
         layer.shadowOpacity = 0.25
-        layer.shadowOffset = CGSizeMake(0, 1.5)
+        layer.shadowOffset = CGSize(width: 0, height: 1.5)
         layer.shadowRadius = 4.0
         layer.shouldRasterize = true
         layer.rasterizationScale = UIScreen.mainScreen().scale
         
         // Corner Radius
-        layer.cornerRadius = 10.0;
+        layer.cornerRadius = 10.0
     }
 }
