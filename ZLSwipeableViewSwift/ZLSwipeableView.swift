@@ -91,6 +91,7 @@ public typealias DidEndHandler = (view: UIView, atLocation: CGPoint) -> ()
 public typealias DidSwipeHandler = (view: UIView, inDirection: Direction, directionVector: CGVector) -> ()
 public typealias DidCancelHandler = (view: UIView) -> ()
 public typealias DidTap = (view: UIView, atLocation: CGPoint) -> ()
+public typealias DidDisappear = (view: UIView) -> ()
 
 public struct Movement {
     let location: CGPoint
@@ -129,6 +130,7 @@ public class ZLSwipeableView: UIView {
     public var didSwipe: DidSwipeHandler?
     public var didCancel: DidCancelHandler?
     public var didTap: DidTap?
+    public var didDisappear: DidDisappear?
 
     // MARK: Private properties
     /// Contains subviews added by the user.
@@ -168,6 +170,7 @@ public class ZLSwipeableView: UIView {
         didEnd = nil
         didSwipe = nil
         didCancel = nil
+        didDisappear = nil
     }
 
     override public func layoutSubviews() {
@@ -254,6 +257,7 @@ public class ZLSwipeableView: UIView {
         guard allViews().contains(view) else { return }
 
         viewManagers.removeValueForKey(view)
+        self.didDisappear?(view: view)
     }
 
     public func updateViews() {
