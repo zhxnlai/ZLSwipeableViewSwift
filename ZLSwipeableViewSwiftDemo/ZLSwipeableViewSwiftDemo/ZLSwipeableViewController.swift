@@ -125,7 +125,7 @@ class ZLSwipeableViewController: UIViewController {
 
         let cardView = CardView(frame: swipeableView.bounds)
         cardView.backgroundColor = colorForName(colors[colorIndex])
-        colorIndex++
+        colorIndex += 1
 
         if loadCardsFromXib {
             let contentView = NSBundle.mainBundle().loadNibNamed("CardContentView", owner: self, options: nil).first! as! UIView

@@ -196,7 +196,7 @@ public class ZLSwipeableView: UIView {
     }
 
     public func loadViews() {
-        for var i = UInt(activeViews().count); i < numberOfActiveView; i++ {
+        for _ in UInt(activeViews().count) ..< numberOfActiveView {
             if let nextView = nextView?() {
                 insert(nextView, atIndex: 0)
             }
@@ -502,8 +502,8 @@ internal class ViewManager : NSObject {
 
         super.init()
 
-        view.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: Selector("handlePan:")))
-        view.addGestureRecognizer(ZLTapGestureRecognizer(target: self, action: Selector("handleTap:")))
+        view.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: #selector(ViewManager.handlePan(_:))))
+        view.addGestureRecognizer(ZLTapGestureRecognizer(target: self, action: #selector(ViewManager.handleTap(_:))))
         miscContainerView.addSubview(anchorView)
         containerView.insertSubview(view, atIndex: index)
     }
@@ -660,7 +660,7 @@ internal class Scheduler : NSObject {
         guard timer == nil && interval > 0 else { return }
         self.action = action
         self.endCondition = endCondition
-        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: Selector("doAction:"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: #selector(Scheduler.doAction(_:)), userInfo: nil, repeats: true)
     }
 
     func doAction(timer: NSTimer) {
