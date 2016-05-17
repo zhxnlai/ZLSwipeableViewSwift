@@ -14,7 +14,7 @@ public extension UIGestureRecognizer {
         self.init()
         addAction(action)
     }
-
+    
     func addAction(action: UIGestureRecognizer -> ()) {
         removeAction()
         
