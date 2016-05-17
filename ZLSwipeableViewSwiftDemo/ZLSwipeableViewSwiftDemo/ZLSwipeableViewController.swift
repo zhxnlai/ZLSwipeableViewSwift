@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import performSelector_swift
 import UIColor_FlatColors
 import Cartography
 import ReactiveUI
@@ -154,7 +153,7 @@ class ZLSwipeableViewController: UIViewController {
     func colorForName(name: String) -> UIColor {
         let sanitizedName = name.stringByReplacingOccurrencesOfString(" ", withString: "")
         let selector = "flat\(sanitizedName)Color"
-        return UIColor.swift_performSelector(Selector(selector), withObject: nil) as! UIColor
+        return UIColor.performSelector(Selector(selector)).takeUnretainedValue() as! UIColor
     }
 }
 

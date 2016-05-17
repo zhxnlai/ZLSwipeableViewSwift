@@ -14,19 +14,22 @@
 		09673A9A1AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09673A991AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift */; };
 		098070A21B12ECAD00C90479 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070A11B12ECAD00C90479 /* CardView.swift */; };
 		098070A41B12ED6400C90479 /* CardContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 098070A31B12ED6400C90479 /* CardContentView.xib */; };
-		098070A91B12EDF400C90479 /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070A71B12EDF400C90479 /* ZLSwipeableView.swift */; };
 		098070AB1B13D69300C90479 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AA1B13D69300C90479 /* MenuTableViewController.swift */; };
 		098070AD1B13DEA600C90479 /* HistoryDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AC1B13DEA600C90479 /* HistoryDemoViewController.swift */; };
 		098070AF1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070AE1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift */; };
 		098070B11B13E9B900C90479 /* CustomSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070B01B13E9B900C90479 /* CustomSwipeDemoViewController.swift */; };
 		098070B31B13EDB800C90479 /* CustomDirectionDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 098070B21B13EDB800C90479 /* CustomDirectionDemoViewController.swift */; };
-		099CF6411BDABF8600D05FAA /* PreviousViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099CF6401BDABF8600D05FAA /* PreviousViewDemoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		099CF6411BDABF8600D05FAA /* PreviousViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099CF6401BDABF8600D05FAA /* PreviousViewDemoViewController.swift */; };
 		09B2F5291B32018000ECD8B1 /* ShouldSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B2F5281B32018000ECD8B1 /* ShouldSwipeDemoViewController.swift */; };
-		09E79D171BDA002F00A609A1 /* DirectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D161BDA002F00A609A1 /* DirectionTests.swift */; settings = {ASSET_TAGS = (); }; };
-		09E79D191BDA058000A609A1 /* ViewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D181BDA058000A609A1 /* ViewManagerTests.swift */; settings = {ASSET_TAGS = (); }; };
-		09E79D1B1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D1A1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		179604C29FFE95576E597034 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB7EDF499F2D90A9D123AB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		78FA118955F2E3CFC6B2C8A5 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BEB7EDF499F2D90A9D123AB /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		09E79D171BDA002F00A609A1 /* DirectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D161BDA002F00A609A1 /* DirectionTests.swift */; };
+		09E79D191BDA058000A609A1 /* ViewManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D181BDA058000A609A1 /* ViewManagerTests.swift */; };
+		09E79D1B1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E79D1A1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift */; };
+		466AFFF51CEB912C006FF62A /* Direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AFFF11CEB912C006FF62A /* Direction.swift */; };
+		466AFFF61CEB912C006FF62A /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AFFF21CEB912C006FF62A /* Scheduler.swift */; };
+		466AFFF71CEB912C006FF62A /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AFFF31CEB912C006FF62A /* ViewManager.swift */; };
+		466AFFF81CEB912C006FF62A /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AFFF41CEB912C006FF62A /* ZLSwipeableView.swift */; };
+		946427F2EE69625DD2E9241B /* Pods_ZLSwipeableViewSwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C86DA0F3A6E1F9D418584CE /* Pods_ZLSwipeableViewSwiftDemoTests.framework */; };
+		CFDAB0BCDA1CAF5B54DF76AF /* Pods_ZLSwipeableViewSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD45CD586A46370C71D08D2 /* Pods_ZLSwipeableViewSwiftDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +54,6 @@
 		09673A991AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZLSwipeableViewSwiftDemoTests.swift; sourceTree = "<group>"; };
 		098070A11B12ECAD00C90479 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		098070A31B12ED6400C90479 /* CardContentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardContentView.xib; sourceTree = "<group>"; };
-		098070A71B12EDF400C90479 /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
 		098070AA1B13D69300C90479 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		098070AC1B13DEA600C90479 /* HistoryDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDemoViewController.swift; sourceTree = "<group>"; };
 		098070AE1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomAnimationDemoViewController.swift; sourceTree = "<group>"; };
@@ -63,8 +65,16 @@
 		09E79D181BDA058000A609A1 /* ViewManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManagerTests.swift; sourceTree = "<group>"; };
 		09E79D1A1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlwaysSwipeDemoViewController.swift; sourceTree = "<group>"; };
 		2BEB7EDF499F2D90A9D123AB /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		69405601F3D6658B5E93991C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		6CC972748D132C6CB0208E7C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		466AFFF11CEB912C006FF62A /* Direction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Direction.swift; sourceTree = "<group>"; };
+		466AFFF21CEB912C006FF62A /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
+		466AFFF31CEB912C006FF62A /* ViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
+		466AFFF41CEB912C006FF62A /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
+		4AEF23DC622C3A7E809F3742 /* Pods-ZLSwipeableViewSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemo/Pods-ZLSwipeableViewSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
+		4BA34855EB4A4C2074C86E94 /* Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemo/Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		7AD45CD586A46370C71D08D2 /* Pods_ZLSwipeableViewSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLSwipeableViewSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C86DA0F3A6E1F9D418584CE /* Pods_ZLSwipeableViewSwiftDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLSwipeableViewSwiftDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C998BF9C49543ECF772E8671 /* Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemoTests/Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		E98741382FDFBC754EDA0B1E /* Pods-ZLSwipeableViewSwiftDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewSwiftDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemoTests/Pods-ZLSwipeableViewSwiftDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				179604C29FFE95576E597034 /* Pods.framework in Frameworks */,
+				CFDAB0BCDA1CAF5B54DF76AF /* Pods_ZLSwipeableViewSwiftDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78FA118955F2E3CFC6B2C8A5 /* Pods.framework in Frameworks */,
+				946427F2EE69625DD2E9241B /* Pods_ZLSwipeableViewSwiftDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				2BEB7EDF499F2D90A9D123AB /* Pods.framework */,
+				7AD45CD586A46370C71D08D2 /* Pods_ZLSwipeableViewSwiftDemo.framework */,
+				9C86DA0F3A6E1F9D418584CE /* Pods_ZLSwipeableViewSwiftDemoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,8 +114,8 @@
 				09673A801AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemo */,
 				09673A961AEF5B2E008C7240 /* ZLSwipeableViewSwiftDemoTests */,
 				09673A7F1AEF5B2E008C7240 /* Products */,
-				58FF2FD44DE0959803FE941A /* Pods */,
 				095B859E37702BB8A7139212 /* Frameworks */,
+				2D6DC7A383D6085A240A1A07 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -168,17 +180,22 @@
 		098070A51B12EDF400C90479 /* ZLSwipeableViewSwift */ = {
 			isa = PBXGroup;
 			children = (
-				098070A71B12EDF400C90479 /* ZLSwipeableView.swift */,
+				466AFFF11CEB912C006FF62A /* Direction.swift */,
+				466AFFF21CEB912C006FF62A /* Scheduler.swift */,
+				466AFFF31CEB912C006FF62A /* ViewManager.swift */,
+				466AFFF41CEB912C006FF62A /* ZLSwipeableView.swift */,
 			);
 			name = ZLSwipeableViewSwift;
 			path = ../ZLSwipeableViewSwift;
 			sourceTree = "<group>";
 		};
-		58FF2FD44DE0959803FE941A /* Pods */ = {
+		2D6DC7A383D6085A240A1A07 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				69405601F3D6658B5E93991C /* Pods.debug.xcconfig */,
-				6CC972748D132C6CB0208E7C /* Pods.release.xcconfig */,
+				4BA34855EB4A4C2074C86E94 /* Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig */,
+				4AEF23DC622C3A7E809F3742 /* Pods-ZLSwipeableViewSwiftDemo.release.xcconfig */,
+				E98741382FDFBC754EDA0B1E /* Pods-ZLSwipeableViewSwiftDemoTests.debug.xcconfig */,
+				C998BF9C49543ECF772E8671 /* Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -190,12 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09673A9D1AEF5B2E008C7240 /* Build configuration list for PBXNativeTarget "ZLSwipeableViewSwiftDemo" */;
 			buildPhases = (
-				4CBF2A917D01ED077D9B3E2E /* Check Pods Manifest.lock */,
+				D24BFC2495CE4E130B5E094B /* 📦 Check Pods Manifest.lock */,
 				09673A7A1AEF5B2E008C7240 /* Sources */,
 				09673A7B1AEF5B2E008C7240 /* Frameworks */,
 				09673A7C1AEF5B2E008C7240 /* Resources */,
-				6D90BA6F8682BA76CAC71F23 /* Embed Pods Frameworks */,
-				F6EF86669ACFC71186A9BCF2 /* Copy Pods Resources */,
+				E5D2B40DEBA6A247D56624AF /* 📦 Embed Pods Frameworks */,
+				BA28B0EB3A205B986C485274 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,12 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 09673AA01AEF5B2E008C7240 /* Build configuration list for PBXNativeTarget "ZLSwipeableViewSwiftDemoTests" */;
 			buildPhases = (
-				CC816FFB1755B325273B52E9 /* Check Pods Manifest.lock */,
+				4D987328BC4CEC44C1CC30CC /* 📦 Check Pods Manifest.lock */,
 				09673A8F1AEF5B2E008C7240 /* Sources */,
 				09673A901AEF5B2E008C7240 /* Frameworks */,
 				09673A911AEF5B2E008C7240 /* Resources */,
-				20DDB1F511C25285B68A4DC8 /* Embed Pods Frameworks */,
-				E3EF3239701E0EC98978C9F0 /* Copy Pods Resources */,
+				F8F67696DEC4CE910050511D /* 📦 Embed Pods Frameworks */,
+				B70B17461CAA93E656867E60 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -286,29 +303,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		20DDB1F511C25285B68A4DC8 /* Embed Pods Frameworks */ = {
+		4D987328BC4CEC44C1CC30CC /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4CBF2A917D01ED077D9B3E2E /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,29 +318,44 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6D90BA6F8682BA76CAC71F23 /* Embed Pods Frameworks */ = {
+		B70B17461CAA93E656867E60 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemoTests/Pods-ZLSwipeableViewSwiftDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CC816FFB1755B325273B52E9 /* Check Pods Manifest.lock */ = {
+		BA28B0EB3A205B986C485274 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemo/Pods-ZLSwipeableViewSwiftDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D24BFC2495CE4E130B5E094B /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,34 +363,34 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E3EF3239701E0EC98978C9F0 /* Copy Pods Resources */ = {
+		E5D2B40DEBA6A247D56624AF /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemo/Pods-ZLSwipeableViewSwiftDemo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6EF86669ACFC71186A9BCF2 /* Copy Pods Resources */ = {
+		F8F67696DEC4CE910050511D /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemoTests/Pods-ZLSwipeableViewSwiftDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -383,7 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				098070A91B12EDF400C90479 /* ZLSwipeableView.swift in Sources */,
+				466AFFF61CEB912C006FF62A /* Scheduler.swift in Sources */,
 				098070AF1B13E4EC00C90479 /* CustomAnimationDemoViewController.swift in Sources */,
 				098070AD1B13DEA600C90479 /* HistoryDemoViewController.swift in Sources */,
 				09E79D1B1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift in Sources */,
@@ -393,8 +410,11 @@
 				098070B11B13E9B900C90479 /* CustomSwipeDemoViewController.swift in Sources */,
 				098070AB1B13D69300C90479 /* MenuTableViewController.swift in Sources */,
 				09673A841AEF5B2E008C7240 /* AppDelegate.swift in Sources */,
+				466AFFF81CEB912C006FF62A /* ZLSwipeableView.swift in Sources */,
 				098070A21B12ECAD00C90479 /* CardView.swift in Sources */,
 				099CF6411BDABF8600D05FAA /* PreviousViewDemoViewController.swift in Sources */,
+				466AFFF71CEB912C006FF62A /* ViewManager.swift in Sources */,
+				466AFFF51CEB912C006FF62A /* Direction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,7 +533,7 @@
 		};
 		09673A9E1AEF5B2E008C7240 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69405601F3D6658B5E93991C /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 4BA34855EB4A4C2074C86E94 /* Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZLSwipeableViewSwiftDemo/Info.plist;
@@ -524,7 +544,7 @@
 		};
 		09673A9F1AEF5B2E008C7240 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CC972748D132C6CB0208E7C /* Pods.release.xcconfig */;
+			baseConfigurationReference = 4AEF23DC622C3A7E809F3742 /* Pods-ZLSwipeableViewSwiftDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ZLSwipeableViewSwiftDemo/Info.plist;
@@ -535,7 +555,7 @@
 		};
 		09673AA11AEF5B2E008C7240 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69405601F3D6658B5E93991C /* Pods.debug.xcconfig */;
+			baseConfigurationReference = E98741382FDFBC754EDA0B1E /* Pods-ZLSwipeableViewSwiftDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -555,7 +575,7 @@
 		};
 		09673AA21AEF5B2E008C7240 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6CC972748D132C6CB0208E7C /* Pods.release.xcconfig */;
+			baseConfigurationReference = C998BF9C49543ECF772E8671 /* Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
