@@ -1,19 +1,18 @@
 PODS:
   - Cartography (0.6.0)
-  - performSelector-swift (0.1.0)
-  - ReactiveUI (0.0.2)
+  - ReactiveUI (0.0.3)
   - UIColor+FlatColors (0.0.2)
 
 DEPENDENCIES:
   - Cartography
-  - performSelector-swift
   - ReactiveUI
   - UIColor+FlatColors
 
 SPEC CHECKSUMS:
   Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
-  performSelector-swift: 676d3dab420ed7e1505a7cdaf35e5741509cdd3c
-  ReactiveUI: 597b21e143dfc5fe438afc1b7a73c5c7e256175b
+  ReactiveUI: 05d1f5d884e5a2496a2cd2ac6c0ed35ab0218c02
   UIColor+FlatColors: 6c699df7a575281794c688c64cee6c44fd1f93b4
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: df88596158702c1394e102054df436e6ba492f07
+
+COCOAPODS: 1.0.0

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import performSelector_swift
 import UIColor_FlatColors
 import Cartography
 import ReactiveUI
@@ -102,6 +101,12 @@ class ZLSwipeableViewController: UIViewController {
         swipeableView.didCancel = {view in
             print("Did cancel swiping view")
         }
+        swipeableView.didTap = {view, location in
+            print("Did tap at location \(location)")
+        }
+        swipeableView.didDisappear = { view in
+            print("Did disappear swiping view")
+        }
 
         constrain(swipeableView, view) { view1, view2 in
             view1.left == view2.left+50
@@ -119,7 +124,7 @@ class ZLSwipeableViewController: UIViewController {
 
         let cardView = CardView(frame: swipeableView.bounds)
         cardView.backgroundColor = colorForName(colors[colorIndex])
-        colorIndex++
+        colorIndex += 1
 
         if loadCardsFromXib {
             let contentView = NSBundle.mainBundle().loadNibNamed("CardContentView", owner: self, options: nil).first! as! UIView
@@ -148,7 +153,7 @@ class ZLSwipeableViewController: UIViewController {
     func colorForName(name: String) -> UIColor {
         let sanitizedName = name.stringByReplacingOccurrencesOfString(" ", withString: "")
         let selector = "flat\(sanitizedName)Color"
-        return UIColor.swift_performSelector(Selector(selector), withObject: nil) as! UIColor
+        return UIColor.performSelector(Selector(selector)).takeUnretainedValue() as! UIColor
     }
 }
 

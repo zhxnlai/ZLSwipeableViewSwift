@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import ReactiveUI
 
 class ShouldSwipeDemoViewController: ZLSwipeableViewController {
 

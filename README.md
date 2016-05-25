@@ -48,7 +48,7 @@ public var previousView: (() -> UIView?)?
 ~~~swift
 public func loadViews()
 // Usage:
-swipeableView.numPrefetchedViews = 3
+swipeableView.numberOfActiveView = 3
 swipeableView.nextView = {
   return UIView()
 }

@@ -8,73 +8,6 @@
 
 import UIKit
 
-// MARK: - Helper classes
-public typealias ZLSwipeableViewDirection = Direction
-
-public func ==(lhs: Direction, rhs: Direction) -> Bool {
-    return lhs.rawValue == rhs.rawValue
-}
-
-/**
-*  Swiped direction.
-*/
-public struct Direction : OptionSetType, CustomStringConvertible {
-
-    public var rawValue: UInt
-
-    public init(rawValue: UInt) {
-        self.rawValue = rawValue
-    }
-
-    public static let None = Direction(rawValue: 0b0000)
-    public static let Left = Direction(rawValue: 0b0001)
-    public static let Right = Direction(rawValue: 0b0010)
-    public static let Up = Direction(rawValue: 0b0100)
-    public static let Down = Direction(rawValue: 0b1000)
-    public static let Horizontal: Direction = [Left, Right]
-    public static let Vertical: Direction = [Up, Down]
-    public static let All: Direction = [Horizontal, Vertical]
-
-    public static func fromPoint(point: CGPoint) -> Direction {
-        switch (point.x, point.y) {
-        case let (x, y) where abs(x) >= abs(y) && x > 0:
-            return .Right
-        case let (x, y) where abs(x) >= abs(y) && x < 0:
-            return .Left
-        case let (x, y) where abs(x) < abs(y) && y < 0:
-            return .Up
-        case let (x, y) where abs(x) < abs(y) && y > 0:
-            return .Down
-        case (_, _):
-            return .None
-        }
-    }
-
-    public var description: String {
-        switch self {
-        case Direction.None:
-            return "None"
-        case Direction.Left:
-            return "Left"
-        case Direction.Right:
-            return "Right"
-        case Direction.Up:
-            return "Up"
-        case Direction.Down:
-            return "Down"
-        case Direction.Horizontal:
-            return "Horizontal"
-        case Direction.Vertical:
-            return "Vertical"
-        case Direction.All:
-            return "All"
-        default:
-            return "Unknown"
-        }
-    }
-
-}
-
 // data source
 public typealias NextViewHandler = () -> UIView?
 public typealias PreviousViewHandler = () -> UIView?
@@ -90,6 +23,8 @@ public typealias SwipingHandler = (view: UIView, atLocation: CGPoint, translatio
 public typealias DidEndHandler = (view: UIView, atLocation: CGPoint) -> ()
 public typealias DidSwipeHandler = (view: UIView, inDirection: Direction, directionVector: CGVector) -> ()
 public typealias DidCancelHandler = (view: UIView) -> ()
+public typealias DidTap = (view: UIView, atLocation: CGPoint) -> ()
+public typealias DidDisappear = (view: UIView) -> ()
 
 public struct Movement {
     let location: CGPoint
@@ -119,6 +54,7 @@ public class ZLSwipeableView: UIView {
     public var minTranslationInPercent = CGFloat(0.25)
     public var minVelocityInPointPerSecond = CGFloat(750)
     public var allowedDirection = Direction.Horizontal
+    public var onlySwipeTopCard = false
 
     // MARK: Delegate
     public var didStart: DidStartHandler?
@@ -126,6 +62,8 @@ public class ZLSwipeableView: UIView {
     public var didEnd: DidEndHandler?
     public var didSwipe: DidSwipeHandler?
     public var didCancel: DidCancelHandler?
+    public var didTap: DidTap?
+    public var didDisappear: DidDisappear?
 
     // MARK: Private properties
     /// Contains subviews added by the user.
@@ -165,6 +103,7 @@ public class ZLSwipeableView: UIView {
         didEnd = nil
         didSwipe = nil
         didCancel = nil
+        didDisappear = nil
     }
 
     override public func layoutSubviews() {
@@ -190,7 +129,7 @@ public class ZLSwipeableView: UIView {
     }
 
     public func loadViews() {
-        for var i = UInt(activeViews().count); i < numberOfActiveView; i++ {
+        for _ in UInt(activeViews().count) ..< numberOfActiveView {
             if let nextView = nextView?() {
                 insert(nextView, atIndex: 0)
             }
@@ -251,6 +190,7 @@ public class ZLSwipeableView: UIView {
         guard allViews().contains(view) else { return }
 
         viewManagers.removeValueForKey(view)
+        self.didDisappear?(view: view)
     }
 
     public func updateViews() {
@@ -265,7 +205,7 @@ public class ZLSwipeableView: UIView {
 
         for i in 0 ..< activeViews.count {
             let view = activeViews[i]
-            view.userInteractionEnabled = true
+            view.userInteractionEnabled = onlySwipeTopCard ? i == 0 : true
             let shouldBeHidden = i >= Int(numberOfActiveView)
             view.hidden = shouldBeHidden
             guard !shouldBeHidden else { continue }
@@ -273,7 +213,7 @@ public class ZLSwipeableView: UIView {
         }
     }
 
-    private func swipeView(view: UIView, location: CGPoint, directionVector: CGVector) {
+    func swipeView(view: UIView, location: CGPoint, directionVector: CGVector) {
         let direction = Direction.fromPoint(CGPoint(x: directionVector.dx, y: directionVector.dy))
 
         scheduleToBeRemoved(view) { aView in
@@ -283,7 +223,7 @@ public class ZLSwipeableView: UIView {
         loadViews()
     }
 
-    private func scheduleToBeRemoved(view: UIView, withPredicate predicate: (UIView) -> Bool) {
+    func scheduleToBeRemoved(view: UIView, withPredicate predicate: (UIView) -> Bool) {
         guard allViews().contains(view) else { return }
 
         history.append(view)
@@ -432,232 +372,6 @@ extension ZLSwipeableView {
         }
     }
     
-}
-
-// MARK: - Internal classes
-internal class ViewManager : NSObject {
-
-    // Snapping -> [Moving]+ -> Snapping
-    // Snapping -> [Moving]+ -> Swiping -> Snapping
-    enum State {
-        case Snapping(CGPoint), Moving(CGPoint), Swiping(CGPoint, CGVector)
-    }
-
-    var state: State {
-        didSet {
-            if case .Snapping(_) = oldValue,  case let .Moving(point) = state {
-                unsnapView()
-                attachView(toPoint: point)
-            } else if case .Snapping(_) = oldValue,  case let .Swiping(origin, direction) = state {
-                unsnapView()
-                attachView(toPoint: origin)
-                pushView(fromPoint: origin, inDirection: direction)
-            } else if case .Moving(_) = oldValue, case let .Moving(point) = state {
-                moveView(toPoint: point)
-            } else if case .Moving(_) = oldValue, case let .Snapping(point) = state {
-                detachView()
-                snapView(point)
-            } else if case .Moving(_) = oldValue, case let .Swiping(origin, direction) = state {
-                pushView(fromPoint: origin, inDirection: direction)
-            } else if case .Swiping(_, _) = oldValue, case let .Snapping(point) = state {
-                unpushView()
-                detachView()
-                snapView(point)
-            }
-        }
-    }
-
-    /// To be added to view and removed
-    private class ZLPanGestureRecognizer: UIPanGestureRecognizer { }
-
-    static private let anchorViewWidth = CGFloat(1000)
-    private var anchorView = UIView(frame: CGRect(x: 0, y: 0, width: anchorViewWidth, height: anchorViewWidth))
-
-    private var snapBehavior: UISnapBehavior!
-    private var viewToAnchorViewAttachmentBehavior: UIAttachmentBehavior!
-    private var anchorViewToPointAttachmentBehavior: UIAttachmentBehavior!
-    private var pushBehavior: UIPushBehavior!
-
-    private let view: UIView
-    private let containerView: UIView
-    private let miscContainerView: UIView
-    private let animator: UIDynamicAnimator
-    private weak var swipeableView: ZLSwipeableView?
-
-    init(view: UIView, containerView: UIView, index: Int, miscContainerView: UIView, animator: UIDynamicAnimator, swipeableView: ZLSwipeableView) {
-        self.view = view
-        self.containerView = containerView
-        self.miscContainerView = miscContainerView
-        self.animator = animator
-        self.swipeableView = swipeableView
-        self.state = ViewManager.defaultSnappingState(view)
-
-        super.init()
-
-        view.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: Selector("handlePan:")))
-        miscContainerView.addSubview(anchorView)
-        containerView.insertSubview(view, atIndex: index)
-    }
-
-    static func defaultSnappingState(view: UIView) -> State {
-        return .Snapping(view.convertPoint(view.center, fromView: view.superview))
-    }
-
-    func snappingStateAtContainerCenter() -> State {
-        guard let swipeableView = swipeableView else { return ViewManager.defaultSnappingState(view) }
-        return .Snapping(containerView.convertPoint(swipeableView.center, fromView: swipeableView.superview))
-    }
-
-    deinit {
-        if let snapBehavior = snapBehavior {
-            removeBehavior(snapBehavior)
-        }
-        if let viewToAnchorViewAttachmentBehavior = viewToAnchorViewAttachmentBehavior {
-            removeBehavior(viewToAnchorViewAttachmentBehavior)
-        }
-        if let anchorViewToPointAttachmentBehavior = anchorViewToPointAttachmentBehavior {
-            removeBehavior(anchorViewToPointAttachmentBehavior)
-        }
-        if let pushBehavior = pushBehavior {
-            removeBehavior(pushBehavior)
-        }
-
-        for gestureRecognizer in view.gestureRecognizers! {
-            if gestureRecognizer.isKindOfClass(ZLPanGestureRecognizer.classForCoder()) {
-                view.removeGestureRecognizer(gestureRecognizer)
-            }
-        }
-
-        anchorView.removeFromSuperview()
-        view.removeFromSuperview()
-    }
-
-    func handlePan(recognizer: UIPanGestureRecognizer) {
-        guard let swipeableView = swipeableView else { return }
-
-        let translation = recognizer.translationInView(containerView)
-        let location = recognizer.locationInView(containerView)
-        let velocity = recognizer.velocityInView(containerView)
-        let movement = Movement(location: location, translation: translation, velocity: velocity)
-
-        switch recognizer.state {
-        case .Began:
-            guard case .Snapping(_) = state else { return }
-            state = .Moving(location)
-            swipeableView.didStart?(view: view, atLocation: location)
-        case .Changed:
-            guard case .Moving(_) = state else { return }
-            state = .Moving(location)
-            swipeableView.swiping?(view: view, atLocation: location, translation: translation)
-        case .Ended, .Cancelled:
-            guard case .Moving(_) = state else { return }
-            if swipeableView.shouldSwipeView(view: view, movement: movement, swipeableView: swipeableView) {
-                let directionVector = CGVector(point: translation.normalized * max(velocity.magnitude, swipeableView.minVelocityInPointPerSecond))
-                state = .Swiping(location, directionVector)
-                swipeableView.swipeView(view, location: location, directionVector: directionVector)
-            } else {
-                state = snappingStateAtContainerCenter()
-                swipeableView.didCancel?(view: view)
-            }
-            swipeableView.didEnd?(view: view, atLocation: location)
-        default:
-            break
-        }
-    }
-
-    private func snapView(point: CGPoint) {
-        snapBehavior = UISnapBehavior(item: view, snapToPoint: point)
-        snapBehavior!.damping = 0.75
-        addBehavior(snapBehavior)
-    }
-
-    private func unsnapView() {
-        guard let snapBehavior = snapBehavior else { return }
-        removeBehavior(snapBehavior)
-    }
-
-    private func attachView(toPoint point: CGPoint) {
-        anchorView.center = point
-        anchorView.backgroundColor = UIColor.blueColor()
-        anchorView.hidden = true
-
-        // attach aView to anchorView
-        let p = view.center
-        viewToAnchorViewAttachmentBehavior = UIAttachmentBehavior(item: view, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
-        viewToAnchorViewAttachmentBehavior!.length = 0
-
-        // attach anchorView to point
-        anchorViewToPointAttachmentBehavior = UIAttachmentBehavior(item: anchorView, offsetFromCenter: UIOffsetZero, attachedToAnchor: point)
-        anchorViewToPointAttachmentBehavior!.damping = 100
-        anchorViewToPointAttachmentBehavior!.length = 0
-
-        addBehavior(viewToAnchorViewAttachmentBehavior!)
-        addBehavior(anchorViewToPointAttachmentBehavior!)
-    }
-
-    private func moveView(toPoint point: CGPoint) {
-        guard let _ = viewToAnchorViewAttachmentBehavior, let toPoint = anchorViewToPointAttachmentBehavior else { return }
-        toPoint.anchorPoint = point
-    }
-
-    private func detachView() {
-        guard let viewToAnchorViewAttachmentBehavior = viewToAnchorViewAttachmentBehavior, let anchorViewToPointAttachmentBehavior = anchorViewToPointAttachmentBehavior else { return }
-        removeBehavior(viewToAnchorViewAttachmentBehavior)
-        removeBehavior(anchorViewToPointAttachmentBehavior)
-    }
-
-    private func pushView(fromPoint point: CGPoint, inDirection direction: CGVector) {
-        guard let _ = viewToAnchorViewAttachmentBehavior, let anchorViewToPointAttachmentBehavior = anchorViewToPointAttachmentBehavior  else { return }
-
-        removeBehavior(anchorViewToPointAttachmentBehavior)
-
-        pushBehavior = UIPushBehavior(items: [anchorView], mode: .Instantaneous)
-        pushBehavior.pushDirection = direction
-        addBehavior(pushBehavior)
-    }
-
-    private func unpushView() {
-        guard let pushBehavior = pushBehavior else { return }
-        removeBehavior(pushBehavior)
-    }
-    
-    private func addBehavior(behavior: UIDynamicBehavior) {
-        animator.addBehavior(behavior)
-    }
-    
-    private func removeBehavior(behavior: UIDynamicBehavior) {
-        animator.removeBehavior(behavior)
-    }
-    
-}
-
-internal class Scheduler : NSObject {
-
-    typealias Action = () -> Void
-    typealias EndCondition = () -> Bool
-
-    var timer: NSTimer?
-    var action: Action?
-    var endCondition: EndCondition?
-
-    func scheduleRepeatedly(action: Action, interval: NSTimeInterval, endCondition: EndCondition)  {
-        guard timer == nil && interval > 0 else { return }
-        self.action = action
-        self.endCondition = endCondition
-        timer = NSTimer.scheduledTimerWithTimeInterval(interval, target: self, selector: Selector("doAction:"), userInfo: nil, repeats: true)
-    }
-
-    func doAction(timer: NSTimer) {
-        guard let action = action, let endCondition = endCondition where !endCondition() else {
-            timer.invalidate()
-            self.timer = nil
-            self.action = nil
-            self.endCondition = nil
-            return
-        }
-        action()
-    }
-
 }
 
 // MARK: - Helper extensions
