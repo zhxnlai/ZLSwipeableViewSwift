@@ -23,6 +23,10 @@ You can install `ZLSwipeableViewSwift` through CocoaPods adding the following to
 Then import it using:
 
     import ZLSwipeableViewSwift
+    
+Carthage
+---
+You can install `ZLSwipeableViewSwift` through Carthage by adding  `github "zhxnlai/ZLSwipeableViewSwift"` to your Cartfile
 
 Usage
 ---
