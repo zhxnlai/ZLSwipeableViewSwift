@@ -147,7 +147,9 @@ public class ZLSwipeableView: UIView {
 
         guard let view = viewToBeRewinded else { return }
 
-        remove(activeViews().last!)
+        if UInt(allViews().count) == numberOfActiveView && allViews().last != nil {
+            remove(allViews().first!)
+        }
         insert(view, atIndex: allViews().count)
         updateViews()
     }
