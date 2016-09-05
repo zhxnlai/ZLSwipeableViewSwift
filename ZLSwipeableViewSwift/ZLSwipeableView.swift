@@ -27,9 +27,9 @@ public typealias DidTap = (view: UIView, atLocation: CGPoint) -> ()
 public typealias DidDisappear = (view: UIView) -> ()
 
 public struct Movement {
-    let location: CGPoint
-    let translation: CGPoint
-    let velocity: CGPoint
+    public let location: CGPoint
+    public let translation: CGPoint
+    public let velocity: CGPoint
 }
 
 // MARK: - Main
