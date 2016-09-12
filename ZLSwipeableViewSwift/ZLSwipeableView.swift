@@ -13,18 +13,18 @@ public typealias NextViewHandler = () -> UIView?
 public typealias PreviousViewHandler = () -> UIView?
 
 // customization
-public typealias AnimateViewHandler = (view: UIView, index: Int, views: [UIView], swipeableView: ZLSwipeableView) -> ()
-public typealias InterpretDirectionHandler = (topView: UIView, direction: Direction, views: [UIView], swipeableView: ZLSwipeableView) -> (CGPoint, CGVector)
-public typealias ShouldSwipeHandler = (view: UIView, movement: Movement, swipeableView: ZLSwipeableView) -> Bool
+public typealias AnimateViewHandler = (_ view: UIView, _ index: Int, _ views: [UIView], _ swipeableView: ZLSwipeableView) -> ()
+public typealias InterpretDirectionHandler = (_ topView: UIView, _ direction: Direction, _ views: [UIView], _ swipeableView: ZLSwipeableView) -> (CGPoint, CGVector)
+public typealias ShouldSwipeHandler = (_ view: UIView, _ movement: Movement, _ swipeableView: ZLSwipeableView) -> Bool
 
 // delegates
-public typealias DidStartHandler = (view: UIView, atLocation: CGPoint) -> ()
-public typealias SwipingHandler = (view: UIView, atLocation: CGPoint, translation: CGPoint) -> ()
-public typealias DidEndHandler = (view: UIView, atLocation: CGPoint) -> ()
-public typealias DidSwipeHandler = (view: UIView, inDirection: Direction, directionVector: CGVector) -> ()
-public typealias DidCancelHandler = (view: UIView) -> ()
-public typealias DidTap = (view: UIView, atLocation: CGPoint) -> ()
-public typealias DidDisappear = (view: UIView) -> ()
+public typealias DidStartHandler = (_ view: UIView, _ atLocation: CGPoint) -> ()
+public typealias SwipingHandler = (_ view: UIView, _ atLocation: CGPoint, _ translation: CGPoint) -> ()
+public typealias DidEndHandler = (_ view: UIView, _ atLocation: CGPoint) -> ()
+public typealias DidSwipeHandler = (_ view: UIView, _ inDirection: Direction, _ directionVector: CGVector) -> ()
+public typealias DidCancelHandler = (_ view: UIView) -> ()
+public typealias DidTap = (_ view: UIView, _ atLocation: CGPoint) -> ()
+public typealias DidDisappear = (_ view: UIView) -> ()
 
 public struct Movement {
     public let location: CGPoint
@@ -33,50 +33,50 @@ public struct Movement {
 }
 
 // MARK: - Main
-public class ZLSwipeableView: UIView {
+open class ZLSwipeableView: UIView {
 
     // MARK: Data Source
-    public var numberOfActiveView = UInt(4)
-    public var nextView: NextViewHandler? {
+    open var numberOfActiveView = UInt(4)
+    open var nextView: NextViewHandler? {
         didSet {
             loadViews()
         }
     }
-    public var previousView: PreviousViewHandler?
+    open var previousView: PreviousViewHandler?
     // Rewinding
-    public var history = [UIView]()
-    public var numberOfHistoryItem = UInt(10)
+    open var history = [UIView]()
+    open var numberOfHistoryItem = UInt(10)
 
     // MARK: Customizable behavior
-    public var animateView = ZLSwipeableView.defaultAnimateViewHandler()
-    public var interpretDirection = ZLSwipeableView.defaultInterpretDirectionHandler()
-    public var shouldSwipeView = ZLSwipeableView.defaultShouldSwipeViewHandler()
-    public var minTranslationInPercent = CGFloat(0.25)
-    public var minVelocityInPointPerSecond = CGFloat(750)
-    public var allowedDirection = Direction.Horizontal
-    public var onlySwipeTopCard = false
+    open var animateView = ZLSwipeableView.defaultAnimateViewHandler()
+    open var interpretDirection = ZLSwipeableView.defaultInterpretDirectionHandler()
+    open var shouldSwipeView = ZLSwipeableView.defaultShouldSwipeViewHandler()
+    open var minTranslationInPercent = CGFloat(0.25)
+    open var minVelocityInPointPerSecond = CGFloat(750)
+    open var allowedDirection = Direction.horizontal
+    open var onlySwipeTopCard = false
 
     // MARK: Delegate
-    public var didStart: DidStartHandler?
-    public var swiping: SwipingHandler?
-    public var didEnd: DidEndHandler?
-    public var didSwipe: DidSwipeHandler?
-    public var didCancel: DidCancelHandler?
-    public var didTap: DidTap?
-    public var didDisappear: DidDisappear?
+    open var didStart: DidStartHandler?
+    open var swiping: SwipingHandler?
+    open var didEnd: DidEndHandler?
+    open var didSwipe: DidSwipeHandler?
+    open var didCancel: DidCancelHandler?
+    open var didTap: DidTap?
+    open var didDisappear: DidDisappear?
 
     // MARK: Private properties
     /// Contains subviews added by the user.
-    private var containerView = UIView()
+    fileprivate var containerView = UIView()
 
     /// Contains auxiliary subviews.
-    private var miscContainerView = UIView()
+    fileprivate var miscContainerView = UIView()
 
-    private var animator: UIDynamicAnimator!
+    fileprivate var animator: UIDynamicAnimator!
 
-    private var viewManagers = [UIView: ViewManager]()
+    fileprivate var viewManagers = [UIView: ViewManager]()
 
-    private var scheduler = Scheduler()
+    fileprivate var scheduler = Scheduler()
 
     // MARK: Life cycle
     public override init(frame: CGRect) {
@@ -89,7 +89,7 @@ public class ZLSwipeableView: UIView {
         setup()
     }
 
-    private func setup() {
+    fileprivate func setup() {
         addSubview(containerView)
         addSubview(miscContainerView)
         animator = UIDynamicAnimator(referenceView: self)
@@ -106,29 +106,29 @@ public class ZLSwipeableView: UIView {
         didDisappear = nil
     }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         containerView.frame = bounds
     }
 
     // MARK: Public APIs
-    public func topView() -> UIView? {
+    open func topView() -> UIView? {
         return activeViews().first
     }
 
     // top view first
-    public func activeViews() -> [UIView] {
+    open func activeViews() -> [UIView] {
         return allViews().filter() {
             view in
             guard let viewManager = viewManagers[view] else { return false }
-            if case .Swiping(_) = viewManager.state {
+            if case .swiping(_) = viewManager.state {
                 return false
             }
             return true
-        }.reverse()
+        }.reversed()
     }
 
-    public func loadViews() {
+    open func loadViews() {
         for _ in UInt(activeViews().count) ..< numberOfActiveView {
             if let nextView = nextView?() {
                 insert(nextView, atIndex: 0)
@@ -137,7 +137,7 @@ public class ZLSwipeableView: UIView {
         updateViews()
     }
 
-    public func rewind() {
+    open func rewind() {
         var viewToBeRewinded: UIView?
         if let lastSwipedView = history.popLast() {
             viewToBeRewinded = lastSwipedView
@@ -154,30 +154,30 @@ public class ZLSwipeableView: UIView {
         updateViews()
     }
 
-    public func discardViews() {
+    open func discardViews() {
         for view in allViews() {
             remove(view)
         }
     }
 
-    public func swipeTopView(inDirection direction: Direction) {
+    open func swipeTopView(inDirection direction: Direction) {
         guard let topView = topView() else { return }
-        let (location, directionVector) = interpretDirection(topView: topView, direction: direction, views: activeViews(), swipeableView: self)
+        let (location, directionVector) = interpretDirection(topView, direction, activeViews(), self)
         swipeTopView(fromPoint: location, inDirection: directionVector)
     }
 
-    public func swipeTopView(fromPoint location: CGPoint, inDirection directionVector: CGVector) {
-        guard let topView = topView(), topViewManager = viewManagers[topView] else { return }
-        topViewManager.state = .Swiping(location, directionVector)
+    open func swipeTopView(fromPoint location: CGPoint, inDirection directionVector: CGVector) {
+        guard let topView = topView(), let topViewManager = viewManagers[topView] else { return }
+        topViewManager.state = .swiping(location, directionVector)
         swipeView(topView, location: location, directionVector: directionVector)
     }
 
     // MARK: Private APIs
-    private func allViews() -> [UIView] {
+    fileprivate func allViews() -> [UIView] {
         return containerView.subviews
     }
 
-    private func insert(view: UIView, atIndex index: Int) {
+    fileprivate func insert(_ view: UIView, atIndex index: Int) {
         guard !allViews().contains(view) else {
             // this view has been schedule to be removed
             guard let viewManager = viewManagers[view] else { return }
@@ -189,44 +189,44 @@ public class ZLSwipeableView: UIView {
         viewManagers[view] = viewManager
     }
 
-    private func remove(view: UIView) {
+    fileprivate func remove(_ view: UIView) {
         guard allViews().contains(view) else { return }
 
-        viewManagers.removeValueForKey(view)
-        self.didDisappear?(view: view)
+        viewManagers.removeValue(forKey: view)
+        self.didDisappear?(view)
     }
 
-    public func updateViews() {
+    open func updateViews() {
         let activeViews = self.activeViews()
         let inactiveViews = allViews().arrayByRemoveObjectsInArray(activeViews)
 
         for view in inactiveViews {
-            view.userInteractionEnabled = false
+            view.isUserInteractionEnabled = false
         }
 
-        guard let gestureRecognizers = activeViews.first?.gestureRecognizers where gestureRecognizers.filter({ gestureRecognizer in gestureRecognizer.state != .Possible }).count == 0 else { return }
+        guard let gestureRecognizers = activeViews.first?.gestureRecognizers , gestureRecognizers.filter({ gestureRecognizer in gestureRecognizer.state != .possible }).count == 0 else { return }
 
         for i in 0 ..< activeViews.count {
             let view = activeViews[i]
-            view.userInteractionEnabled = onlySwipeTopCard ? i == 0 : true
+            view.isUserInteractionEnabled = onlySwipeTopCard ? i == 0 : true
             let shouldBeHidden = i >= Int(numberOfActiveView)
-            view.hidden = shouldBeHidden
+            view.isHidden = shouldBeHidden
             guard !shouldBeHidden else { continue }
-            animateView(view: view, index: i, views: activeViews, swipeableView: self)
+            animateView(view, i, activeViews, self)
         }
     }
 
-    func swipeView(view: UIView, location: CGPoint, directionVector: CGVector) {
-        let direction = Direction.fromPoint(CGPoint(x: directionVector.dx, y: directionVector.dy))
+    func swipeView(_ view: UIView, location: CGPoint, directionVector: CGVector) {
+        let direction = Direction.from(CGPoint(x: directionVector.dx, y: directionVector.dy))
 
         scheduleToBeRemoved(view) { aView in
-            !CGRectIntersectsRect(self.containerView.convertRect(aView.frame, toView: nil), UIScreen.mainScreen().bounds)
+            !self.containerView.convert(aView.frame, to: nil).intersects(UIScreen.main.bounds)
         }
-        didSwipe?(view: view, inDirection: direction, directionVector: directionVector)
+        didSwipe?(view, direction, directionVector)
         loadViews()
     }
 
-    func scheduleToBeRemoved(view: UIView, withPredicate predicate: (UIView) -> Bool) {
+    func scheduleToBeRemoved(_ view: UIView, withPredicate predicate: @escaping (UIView) -> Bool) {
         guard allViews().contains(view) else { return }
 
         history.append(view)
@@ -246,16 +246,16 @@ public class ZLSwipeableView: UIView {
 extension ZLSwipeableView {
 
     static func defaultAnimateViewHandler() -> AnimateViewHandler {
-        func toRadian(degree: CGFloat) -> CGFloat {
+        func toRadian(_ degree: CGFloat) -> CGFloat {
             return degree * CGFloat(M_PI / 180)
         }
 
-        func rotateView(view: UIView, forDegree degree: CGFloat, duration: NSTimeInterval, offsetFromCenter offset: CGPoint, swipeableView: ZLSwipeableView,  completion: ((Bool) -> Void)? = nil) {
-            UIView.animateWithDuration(duration, delay: 0, options: .AllowUserInteraction, animations: {
-                view.center = swipeableView.convertPoint(swipeableView.center, fromView: swipeableView.superview)
-                var transform = CGAffineTransformMakeTranslation(offset.x, offset.y)
-                transform = CGAffineTransformRotate(transform, toRadian(degree))
-                transform = CGAffineTransformTranslate(transform, -offset.x, -offset.y)
+        func rotateView(_ view: UIView, forDegree degree: CGFloat, duration: TimeInterval, offsetFromCenter offset: CGPoint, swipeableView: ZLSwipeableView,  completion: ((Bool) -> Void)? = nil) {
+            UIView.animate(withDuration: duration, delay: 0, options: .allowUserInteraction, animations: {
+                view.center = swipeableView.convert(swipeableView.center, from: swipeableView.superview)
+                var transform = CGAffineTransform(translationX: offset.x, y: offset.y)
+                transform = transform.rotated(by: toRadian(degree))
+                transform = transform.translatedBy(x: -offset.x, y: -offset.y)
                 view.transform = transform
                 },
                 completion: completion)
@@ -264,7 +264,7 @@ extension ZLSwipeableView {
         return { (view: UIView, index: Int, views: [UIView], swipeableView: ZLSwipeableView) in
             let degree = CGFloat(1)
             let duration = 0.4
-            let offset = CGPoint(x: 0, y: CGRectGetHeight(swipeableView.bounds) * 0.3)
+            let offset = CGPoint(x: 0, y: swipeableView.bounds.height * 0.3)
             switch index {
             case 0:
                 rotateView(view, forDegree: 0, duration: duration, offsetFromCenter: offset, swipeableView: swipeableView)
@@ -285,13 +285,13 @@ extension ZLSwipeableView {
             var directionVector: CGVector!
 
             switch direction {
-            case Direction.Left:
+            case Direction.left:
                 directionVector = CGVector(dx: -programmaticSwipeVelocity, dy: 0)
-            case Direction.Right:
+            case Direction.right:
                 directionVector = CGVector(dx: programmaticSwipeVelocity, dy: 0)
-            case Direction.Up:
+            case Direction.up:
                 directionVector = CGVector(dx: 0, dy: -programmaticSwipeVelocity)
-            case Direction.Down:
+            case Direction.down:
                 directionVector = CGVector(dx: 0, dy: programmaticSwipeVelocity)
             default:
                 directionVector = CGVector(dx: 0, dy: 0)
@@ -315,7 +315,7 @@ extension ZLSwipeableView {
             }
 
             func isDirectionAllowed() -> Bool {
-                return Direction.fromPoint(translation).intersect(allowedDirection) != .None
+                return Direction.from(translation).intersection(allowedDirection) != .none
             }
 
             func isTranslationLargeEnough() -> Bool {
@@ -335,7 +335,7 @@ extension ZLSwipeableView {
 // MARK: - Deprecated APIs
 extension ZLSwipeableView {
 
-    @available(*, deprecated=1, message="Use numberOfActiveView")
+    @available(*, deprecated: 1, message: "Use numberOfActiveView")
     public var numPrefetchedViews: UInt {
         get {
             return numberOfActiveView
@@ -345,7 +345,7 @@ extension ZLSwipeableView {
         }
     }
 
-    @available(*, deprecated=1, message="Use allowedDirection")
+    @available(*, deprecated: 1, message: "Use allowedDirection")
     public var direction: Direction {
         get {
             return allowedDirection
@@ -355,7 +355,7 @@ extension ZLSwipeableView {
         }
     }
 
-    @available(*, deprecated=1, message="Use minTranslationInPercent")
+    @available(*, deprecated: 1, message: "Use minTranslationInPercent")
     public var translationThreshold: CGFloat {
         get {
             return minTranslationInPercent
@@ -365,7 +365,7 @@ extension ZLSwipeableView {
         }
     }
 
-    @available(*, deprecated=1, message="Use minVelocityInPointPerSecond")
+    @available(*, deprecated: 1, message: "Use minVelocityInPointPerSecond")
     public var velocityThreshold: CGFloat {
         get {
             return minVelocityInPointPerSecond
@@ -396,9 +396,9 @@ extension CGPoint {
         return CGFloat(sqrtf(powf(Float(x), 2) + powf(Float(y), 2)))
     }
 
-    static func areInSameTheDirection(p1: CGPoint, p2: CGPoint) -> Bool {
+    static func areInSameTheDirection(_ p1: CGPoint, p2: CGPoint) -> Bool {
 
-        func signNum(n: CGFloat) -> Int {
+        func signNum(_ n: CGFloat) -> Int {
             return (n < 0.0) ? -1 : (n > 0.0) ? +1 : 0
         }
 
@@ -417,7 +417,7 @@ extension CGVector {
 
 extension Array where Element: Equatable {
 
-    func arrayByRemoveObjectsInArray(array: [Element]) -> [Element] {
+    func arrayByRemoveObjectsInArray(_ array: [Element]) -> [Element] {
         return Array(self).filter() { element in !array.contains(element) }
     }
 
