@@ -18,7 +18,7 @@ public func ==(lhs: Direction, rhs: Direction) -> Bool {
 /**
  *  Swiped direction.
  */
-public struct Direction : OptionSetType, CustomStringConvertible {
+public struct Direction : OptionSet, CustomStringConvertible {
     
     public var rawValue: UInt
     
@@ -26,47 +26,47 @@ public struct Direction : OptionSetType, CustomStringConvertible {
         self.rawValue = rawValue
     }
     
-    public static let None = Direction(rawValue: 0b0000)
-    public static let Left = Direction(rawValue: 0b0001)
-    public static let Right = Direction(rawValue: 0b0010)
-    public static let Up = Direction(rawValue: 0b0100)
-    public static let Down = Direction(rawValue: 0b1000)
-    public static let Horizontal: Direction = [Left, Right]
-    public static let Vertical: Direction = [Up, Down]
-    public static let All: Direction = [Horizontal, Vertical]
+    public static let none = Direction(rawValue: 0b0000)
+    public static let left = Direction(rawValue: 0b0001)
+    public static let right = Direction(rawValue: 0b0010)
+    public static let up = Direction(rawValue: 0b0100)
+    public static let down = Direction(rawValue: 0b1000)
+    public static let horizontal: Direction = [left, right]
+    public static let vertical: Direction = [up, down]
+    public static let all: Direction = [horizontal, vertical]
     
-    public static func fromPoint(point: CGPoint) -> Direction {
+    public static func from(_ point: CGPoint) -> Direction {
         switch (point.x, point.y) {
         case let (x, y) where abs(x) >= abs(y) && x > 0:
-            return .Right
+            return .right
         case let (x, y) where abs(x) >= abs(y) && x < 0:
-            return .Left
+            return .left
         case let (x, y) where abs(x) < abs(y) && y < 0:
-            return .Up
+            return .up
         case let (x, y) where abs(x) < abs(y) && y > 0:
-            return .Down
+            return .down
         case (_, _):
-            return .None
+            return .none
         }
     }
     
     public var description: String {
         switch self {
-        case Direction.None:
+        case Direction.none:
             return "None"
-        case Direction.Left:
+        case Direction.left:
             return "Left"
-        case Direction.Right:
+        case Direction.right:
             return "Right"
-        case Direction.Up:
+        case Direction.up:
             return "Up"
-        case Direction.Down:
+        case Direction.down:
             return "Down"
-        case Direction.Horizontal:
+        case Direction.horizontal:
             return "Horizontal"
-        case Direction.Vertical:
+        case Direction.vertical:
             return "Vertical"
-        case Direction.All:
+        case Direction.all:
             return "All"
         default:
             return "Unknown"
