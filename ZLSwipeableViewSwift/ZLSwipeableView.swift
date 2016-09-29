@@ -383,7 +383,7 @@ public func *(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
     return CGPoint(x: lhs.x * rhs, y: lhs.y * rhs)
 }
 
-extension CGPoint {
+public extension CGPoint {
 
     init(vector: CGVector) {
         self.init(x: vector.dx, y: vector.dy)
@@ -408,7 +408,7 @@ extension CGPoint {
 
 }
 
-extension CGVector {
+public extension CGVector {
 
     init(point: CGPoint) {
         self.init(dx: point.x, dy: point.y)
@@ -416,7 +416,7 @@ extension CGVector {
 
 }
 
-extension Array where Element: Equatable {
+public extension Array where Element: Equatable {
 
     func arrayByRemoveObjectsInArray(array: [Element]) -> [Element] {
         return Array(self).filter() { element in !array.contains(element) }
