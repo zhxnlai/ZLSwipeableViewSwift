@@ -53,6 +53,7 @@ public class ZLSwipeableView: UIView {
     public var shouldSwipeView = ZLSwipeableView.defaultShouldSwipeViewHandler()
     public var minTranslationInPercent = CGFloat(0.25)
     public var minVelocityInPointPerSecond = CGFloat(750)
+    public var rotatingSpeedMultiplyer = CGFloat(1)
     public var allowedDirection = Direction.Horizontal
     public var onlySwipeTopCard = false
 
@@ -185,7 +186,7 @@ public class ZLSwipeableView: UIView {
             return
         }
 
-        let viewManager = ViewManager(view: view, containerView: containerView, index: index, miscContainerView: miscContainerView, animator: animator, swipeableView: self)
+        let viewManager = ViewManager(view: view, containerView: containerView, index: index, miscContainerView: miscContainerView, animator: animator, swipeableView: self, rotatingSpeedMultiplyer: rotatingSpeedMultiplyer)
         viewManagers[view] = viewManager
     }
 
@@ -382,7 +383,7 @@ public func *(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
     return CGPoint(x: lhs.x * rhs, y: lhs.y * rhs)
 }
 
-extension CGPoint {
+public extension CGPoint {
 
     init(vector: CGVector) {
         self.init(x: vector.dx, y: vector.dy)
@@ -407,7 +408,7 @@ extension CGPoint {
 
 }
 
-extension CGVector {
+public extension CGVector {
 
     init(point: CGPoint) {
         self.init(dx: point.x, dy: point.y)
@@ -415,7 +416,7 @@ extension CGVector {
 
 }
 
-extension Array where Element: Equatable {
+public extension Array where Element: Equatable {
 
     func arrayByRemoveObjectsInArray(array: [Element]) -> [Element] {
         return Array(self).filter() { element in !array.contains(element) }
