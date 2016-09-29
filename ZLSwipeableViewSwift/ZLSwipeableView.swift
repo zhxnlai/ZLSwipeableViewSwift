@@ -53,6 +53,7 @@ public class ZLSwipeableView: UIView {
     public var shouldSwipeView = ZLSwipeableView.defaultShouldSwipeViewHandler()
     public var minTranslationInPercent = CGFloat(0.25)
     public var minVelocityInPointPerSecond = CGFloat(750)
+    public var rotatingSpeedMultiplyer = CGFloat(1)
     public var allowedDirection = Direction.Horizontal
     public var onlySwipeTopCard = false
 

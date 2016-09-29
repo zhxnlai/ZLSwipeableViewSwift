@@ -56,15 +56,18 @@ class ViewManager : NSObject {
     private let containerView: UIView
     private let miscContainerView: UIView
     private let animator: UIDynamicAnimator
+    private let rotatingSpeedMultiplyer: CGFloat
+
     private weak var swipeableView: ZLSwipeableView?
     
-    init(view: UIView, containerView: UIView, index: Int, miscContainerView: UIView, animator: UIDynamicAnimator, swipeableView: ZLSwipeableView) {
+    init(view: UIView, containerView: UIView, index: Int, miscContainerView: UIView, animator: UIDynamicAnimator, swipeableView: ZLSwipeableView, rotatingSpeedMultiplyer rotMul: CGFloat) {
         self.view = view
         self.containerView = containerView
         self.miscContainerView = miscContainerView
         self.animator = animator
         self.swipeableView = swipeableView
         self.state = ViewManager.defaultSnappingState(view)
+        self.rotatingSpeedMultiplyer = rotMul
         
         super.init()
         
@@ -160,13 +163,14 @@ class ViewManager : NSObject {
     
     private func attachView(toPoint point: CGPoint) {
         anchorView.center = point
-        anchorView.backgroundColor = UIColor.blueColor()
-        anchorView.hidden = true
-        
+
         // attach aView to anchorView
         let p = view.center
-        viewToAnchorViewAttachmentBehavior = UIAttachmentBehavior(item: view, offsetFromCenter: UIOffset(horizontal: -(p.x - point.x), vertical: -(p.y - point.y)), attachedToItem: anchorView, offsetFromCenter: UIOffsetZero)
-        viewToAnchorViewAttachmentBehavior!.length = 0
+        let x = (point.x - p.x) * rotatingSpeedMultiplyer + p.x
+        let y = (point.y - p.y) * rotatingSpeedMultiplyer + p.y
+        let newPoint = CGPoint(x: x, y: y)
+        
+        viewToAnchorViewAttachmentBehavior = UIAttachmentBehavior.pinAttachmentWithItem(view, attachedToItem: anchorView, attachmentAnchor: newPoint)
         
         // attach anchorView to point
         anchorViewToPointAttachmentBehavior = UIAttachmentBehavior(item: anchorView, offsetFromCenter: UIOffsetZero, attachedToAnchor: point)
