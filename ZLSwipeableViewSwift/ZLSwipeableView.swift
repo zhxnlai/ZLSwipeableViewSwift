@@ -186,7 +186,7 @@ public class ZLSwipeableView: UIView {
             return
         }
 
-        let viewManager = ViewManager(view: view, containerView: containerView, index: index, miscContainerView: miscContainerView, animator: animator, swipeableView: self)
+        let viewManager = ViewManager(view: view, containerView: containerView, index: index, miscContainerView: miscContainerView, animator: animator, swipeableView: self, rotatingSpeedMultiplyer: rotatingSpeedMultiplyer)
         viewManagers[view] = viewManager
     }
 
