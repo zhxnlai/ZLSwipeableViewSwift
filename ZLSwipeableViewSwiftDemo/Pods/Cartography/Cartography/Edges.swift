@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 #else
 import AppKit
@@ -29,7 +29,7 @@ public struct Edges: Compound, RelativeCompoundEquality, RelativeCompoundInequal
 ///
 /// - returns: A new expression with the inset edges.
 ///
-public func inset(edges: Edges, _ all: CGFloat) -> Expression<Edges> {
+public func inset(_ edges: Edges, _ all: CGFloat) -> Expression<Edges> {
     return inset(edges, all, all, all, all)
 }
 
@@ -43,7 +43,7 @@ public func inset(edges: Edges, _ all: CGFloat) -> Expression<Edges> {
 ///
 /// - returns: A new expression with the inset edges.
 ///
-public func inset(edges: Edges, _ horizontal: CGFloat, _ vertical: CGFloat) -> Expression<Edges> {
+public func inset(_ edges: Edges, _ horizontal: CGFloat, _ vertical: CGFloat) -> Expression<Edges> {
     return inset(edges, vertical, horizontal, vertical, horizontal)
 }
 
@@ -57,7 +57,7 @@ public func inset(edges: Edges, _ horizontal: CGFloat, _ vertical: CGFloat) -> E
 ///
 /// - returns: A new expression with the inset edges.
 ///
-public func inset(edges: Edges, _ top: CGFloat, _ leading: CGFloat, _ bottom: CGFloat, _ trailing: CGFloat) -> Expression<Edges> {
+public func inset(_ edges: Edges, _ top: CGFloat, _ leading: CGFloat, _ bottom: CGFloat, _ trailing: CGFloat) -> Expression<Edges> {
     return Expression(edges, [
         Coefficients(1, top),
         Coefficients(1, leading),
@@ -65,3 +65,16 @@ public func inset(edges: Edges, _ top: CGFloat, _ leading: CGFloat, _ bottom: CG
         Coefficients(1, -trailing)
     ])
 }
+
+#if os(iOS) || os(tvOS)
+/// Insets edges individually with UIEdgeInset.
+///
+/// - parameter edges:    The edges to inset.
+/// - parameter insets:   The amounts by which to inset all edges, in points via UIEdgeInsets.
+///
+/// - returns: A new expression with the inset edges.
+///
+public func inset(_ edges: Edges, _ insets: UIEdgeInsets) -> Expression<Edges> {
+    return inset(edges, insets.top, insets.left, insets.bottom, insets.right)
+}
+#endif

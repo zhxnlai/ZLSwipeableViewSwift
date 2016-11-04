@@ -9,7 +9,6 @@
 import UIKit
 import UIColor_FlatColors
 import Cartography
-import ReactiveUI
 
 class ZLSwipeableViewController: UIViewController {
 
@@ -19,11 +18,16 @@ class ZLSwipeableViewController: UIViewController {
     var colorIndex = 0
     var loadCardsFromXib = false
     
-    var reloadBarButtonItem = UIBarButtonItem(title: "Reload", style: .Plain) { item in }
-    var leftBarButtonItem = UIBarButtonItem(title: "←", style: .Plain) { item in }
-    var upBarButtonItem = UIBarButtonItem(title: "↑", style: .Plain) { item in }
-    var rightBarButtonItem = UIBarButtonItem(title: "→", style: .Plain) { item in }
-    var downBarButtonItem = UIBarButtonItem(title: "↓", style: .Plain) { item in }
+    var reloadBarButtonItem: UIBarButtonItem!
+    // var reloadBarButtonItem = UIBarButtonItem(barButtonSystemItem: "Reload", target: .Plain) { item in }
+    var leftBarButtonItem: UIBarButtonItem!
+    // var leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: "←", target: .Plain) { item in }
+    var upBarButtonItem: UIBarButtonItem!
+    // var upBarButtonItem = UIBarButtonItem(barButtonSystemItem: "↑", target: .Plain) { item in }
+    var rightBarButtonItem: UIBarButtonItem!
+    // var rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: "→", target: .Plain) { item in }
+    var downBarButtonItem:UIBarButtonItem!
+    // var downBarButtonItem = UIBarButtonItem(barButtonSystemItem: "↓", target: .Plain) { item in }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -35,53 +39,19 @@ class ZLSwipeableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.setToolbarHidden(false, animated: false)
-        view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.white
         view.clipsToBounds = true
         
-        reloadBarButtonItem.addAction() { item in
-            let alertController = UIAlertController(title: nil, message: "Load Cards:", preferredStyle: .ActionSheet)
-            
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
-                // ...
-            }
-            alertController.addAction(cancelAction)
-            
-            let ProgrammaticallyAction = UIAlertAction(title: "Programmatically", style: .Default) { (action) in
-                self.loadCardsFromXib = false
-                self.colorIndex = 0
-                self.swipeableView.discardViews()
-                self.swipeableView.loadViews()
-            }
-            alertController.addAction(ProgrammaticallyAction)
-            
-            let XibAction = UIAlertAction(title: "From Xib", style: .Default) { (action) in
-                self.loadCardsFromXib = true
-                self.colorIndex = 0
-                self.swipeableView.discardViews()
-                self.swipeableView.loadViews()
-            }
-            alertController.addAction(XibAction)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
+        reloadBarButtonItem = UIBarButtonItem(title: "Reload", style: .plain, target: self, action: #selector(reloadButtonAction))
+        leftBarButtonItem = UIBarButtonItem(title: "←", style: .plain, target: self, action: #selector(leftButtonAction))
+        upBarButtonItem = UIBarButtonItem(title: "↑", style: .plain, target: self, action: #selector(upButtonAction))
+        rightBarButtonItem = UIBarButtonItem(title: "→", style: .plain, target: self, action: #selector(rightButtonAction))
+        downBarButtonItem = UIBarButtonItem(title: "↓", style: .plain, target: self, action: #selector(downButtonAction))
         
-        leftBarButtonItem.addAction() { item in
-            self.swipeableView.swipeTopView(inDirection: .Left)
-        }
-        upBarButtonItem.addAction() { item in
-            self.swipeableView.swipeTopView(inDirection: .Up)
-        }
-        rightBarButtonItem.addAction() { item in
-            self.swipeableView.swipeTopView(inDirection: .Right)
-        }
-        downBarButtonItem.addAction() { item in
-            self.swipeableView.swipeTopView(inDirection: .Down)
-        }
+        let fixedSpace = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         
-        let fixedSpace = UIBarButtonItem(barButtonSystemItem: .FixedSpace, action: {item in})
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .FlexibleSpace, action: {item in})
-        
-        let items = [fixedSpace, reloadBarButtonItem, flexibleSpace, leftBarButtonItem, flexibleSpace, upBarButtonItem, flexibleSpace, rightBarButtonItem, flexibleSpace, downBarButtonItem, fixedSpace]
+        let items = [fixedSpace, reloadBarButtonItem!, flexibleSpace, leftBarButtonItem!, flexibleSpace, upBarButtonItem!, flexibleSpace, rightBarButtonItem!, flexibleSpace, downBarButtonItem!, fixedSpace]
         toolbarItems = items
 
         swipeableView = ZLSwipeableView()
@@ -116,6 +86,51 @@ class ZLSwipeableViewController: UIViewController {
         }
     }
     
+    // MARK: - Actions
+    
+    func reloadButtonAction() {
+        let alertController = UIAlertController(title: nil, message: "Load Cards:", preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        let ProgrammaticallyAction = UIAlertAction(title: "Programmatically", style: .default) { (action) in
+            self.loadCardsFromXib = false
+            self.colorIndex = 0
+            self.swipeableView.discardViews()
+            self.swipeableView.loadViews()
+        }
+        alertController.addAction(ProgrammaticallyAction)
+        
+        let XibAction = UIAlertAction(title: "From Xib", style: .default) { (action) in
+            self.loadCardsFromXib = true
+            self.colorIndex = 0
+            self.swipeableView.discardViews()
+            self.swipeableView.loadViews()
+        }
+        alertController.addAction(XibAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func leftButtonAction() {
+        self.swipeableView.swipeTopView(inDirection: .Left)
+    }
+    
+    func upButtonAction() {
+        self.swipeableView.swipeTopView(inDirection: .Up)
+    }
+    
+    func rightButtonAction() {
+        self.swipeableView.swipeTopView(inDirection: .Right)
+    }
+    
+    func downButtonAction() {
+        self.swipeableView.swipeTopView(inDirection: .Down)
+    }
+    
     // MARK: ()
     func nextCardView() -> UIView? {
         if colorIndex >= colors.count {
@@ -127,7 +142,7 @@ class ZLSwipeableViewController: UIViewController {
         colorIndex += 1
 
         if loadCardsFromXib {
-            let contentView = NSBundle.mainBundle().loadNibNamed("CardContentView", owner: self, options: nil).first! as! UIView
+            let contentView = Bundle.main.loadNibNamed("CardContentView", owner: self, options: nil)?.first! as! UIView
             contentView.translatesAutoresizingMaskIntoConstraints = false
             contentView.backgroundColor = cardView.backgroundColor
             cardView.addSubview(contentView)
@@ -150,10 +165,10 @@ class ZLSwipeableViewController: UIViewController {
         return cardView
     }
 
-    func colorForName(name: String) -> UIColor {
-        let sanitizedName = name.stringByReplacingOccurrencesOfString(" ", withString: "")
+    func colorForName(_ name: String) -> UIColor {
+        let sanitizedName = name.replacingOccurrences(of: " ", with: "")
         let selector = "flat\(sanitizedName)Color"
-        return UIColor.performSelector(Selector(selector)).takeUnretainedValue() as! UIColor
+        return UIColor.perform(Selector(selector)).takeUnretainedValue() as! UIColor
     }
 }
 

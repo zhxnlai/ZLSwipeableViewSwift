@@ -17,11 +17,15 @@ class CustomDirectionDemoViewController: ZLSwipeableViewController {
         segmentControl.selectedSegmentIndex = 5
         navigationItem.titleView = segmentControl
         
-        let directions: [ZLSwipeableViewDirection] = [.None, .Left, .Up, .Right, .Down, .Horizontal, .Vertical, .All]
-        segmentControl.forControlEvents(.ValueChanged) { control in
-            if let control = control as? UISegmentedControl {
-                self.swipeableView.allowedDirection = directions[control.selectedSegmentIndex]
-            }
+        segmentControl.addTarget(self, action: #selector(segmentedControlFired), for: .valueChanged)
+    }
+    
+    // MARK: - Actions
+    
+    func segmentedControlFired(control: AnyObject?) {
+        if let control = control as? UISegmentedControl {
+            let directions: [ZLSwipeableViewDirection] = [.None, .Left, .Up, .Right, .Down, .Horizontal, .Vertical, .All]
+            self.swipeableView.allowedDirection = directions[control.selectedSegmentIndex]
         }
     }
 

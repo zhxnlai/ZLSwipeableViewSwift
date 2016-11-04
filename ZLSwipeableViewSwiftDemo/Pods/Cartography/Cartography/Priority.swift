@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 
 public typealias LayoutPriority = UILayoutPriority
@@ -16,7 +16,12 @@ import AppKit
 public typealias LayoutPriority = NSLayoutPriority
 #endif
 
-infix operator  ~ { }
+precedencegroup CarthographyPriorityPrecedence {
+    lowerThan: ComparisonPrecedence
+    higherThan: AssignmentPrecedence
+}
+
+infix operator  ~: CarthographyPriorityPrecedence
 
 /// Sets the priority for a constraint.
 ///
@@ -25,7 +30,7 @@ infix operator  ~ { }
 ///
 /// - returns: The same constraint with its priority updated.
 ///
-public func ~ (lhs: NSLayoutConstraint, rhs: LayoutPriority) -> NSLayoutConstraint {
+@discardableResult public func ~ (lhs: NSLayoutConstraint, rhs: LayoutPriority) -> NSLayoutConstraint {
     lhs.priority = rhs
 
     return lhs
@@ -38,7 +43,7 @@ public func ~ (lhs: NSLayoutConstraint, rhs: LayoutPriority) -> NSLayoutConstrai
 ///
 /// - returns: The same constraints with their priorities updated.
 ///
-public func ~ (lhs: [NSLayoutConstraint], rhs: LayoutPriority) -> [NSLayoutConstraint] {
+@discardableResult public func ~ (lhs: [NSLayoutConstraint], rhs: LayoutPriority) -> [NSLayoutConstraint] {
     return lhs.map {
         $0 ~ rhs
     }
