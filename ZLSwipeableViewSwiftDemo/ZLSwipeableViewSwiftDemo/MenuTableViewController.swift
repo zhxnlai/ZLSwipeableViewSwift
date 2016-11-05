@@ -26,24 +26,24 @@ class MenuTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return demoViewControllers.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = String(format: "s%li-r%li", indexPath.section, indexPath.row)
-        var cell: UITableViewCell! = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+        var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
+            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
 
         cell.textLabel?.text = titleForRowAtIndexPath(indexPath)
-        cell.accessoryType = .DisclosureIndicator
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         
         let title = titleForRowAtIndexPath(indexPath)
         let vc = viewControllerForRowAtIndexPath(indexPath)
@@ -51,12 +51,12 @@ class MenuTableViewController: UITableViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    func titleForRowAtIndexPath(indexPath: NSIndexPath) -> String {
+    func titleForRowAtIndexPath(_ indexPath: IndexPath) -> String {
         let (title, _) = demoViewControllers[indexPath.row]
         return title
     }
     
-    func viewControllerForRowAtIndexPath(indexPath: NSIndexPath) -> ZLSwipeableViewController {
+    func viewControllerForRowAtIndexPath(_ indexPath: IndexPath) -> ZLSwipeableViewController {
         let (_, vc) = demoViewControllers[indexPath.row]
         return vc.init()
     }

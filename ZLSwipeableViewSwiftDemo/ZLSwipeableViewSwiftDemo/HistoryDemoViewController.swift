@@ -21,7 +21,7 @@ class HistoryDemoViewController: ZLSwipeableViewController {
         func updateRightBarButtonItem() {
             let historyLength = self.swipeableView.history.count
             let enabled = historyLength != 0
-            self.navigationItem.rightBarButtonItem?.enabled = enabled
+            self.navigationItem.rightBarButtonItem?.isEnabled = enabled
             if !enabled {
                 self.navigationItem.rightBarButtonItem?.title = rightBarButtonItemTitle
                 return
@@ -36,12 +36,17 @@ class HistoryDemoViewController: ZLSwipeableViewController {
         }
 
         // ↺
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: rightBarButtonItemTitle, style: .Plain) { item in
-            self.swipeableView.rewind()
-            updateRightBarButtonItem()
-        }
+        let rightButton = UIBarButtonItem(title: rightBarButtonItemTitle, style: .plain, target: self, action: #selector(rightButtonClicked))
+        navigationItem.rightBarButtonItem = rightButton
 
         updateRightBarButtonItem()
+    }
+    
+    // MARK: - Actions
+    
+    func rightButtonClicked() {
+        self.swipeableView.rewind()
+        // updateRightBarButtonItem()
     }
 
 }
