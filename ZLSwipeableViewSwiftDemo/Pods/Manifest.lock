@@ -1,18 +1,15 @@
 PODS:
-  - Cartography (0.6.0)
-  - ReactiveUI (0.0.3)
+  - Cartography (1.0.1)
   - UIColor+FlatColors (0.0.2)
 
 DEPENDENCIES:
   - Cartography
-  - ReactiveUI
   - UIColor+FlatColors
 
 SPEC CHECKSUMS:
-  Cartography: 70af183a248547694a8cfaa6b989cb7e04589985
-  ReactiveUI: 05d1f5d884e5a2496a2cd2ac6c0ed35ab0218c02
+  Cartography: c1460e99395b824d9d75360b0382faeb0b33dcd7
   UIColor+FlatColors: 6c699df7a575281794c688c64cee6c44fd1f93b4
 
-PODFILE CHECKSUM: df88596158702c1394e102054df436e6ba492f07
+PODFILE CHECKSUM: 8e7c96524d011a1ab9a3ff3f064c099b04f6b392
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.1.1

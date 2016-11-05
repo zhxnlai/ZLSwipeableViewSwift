@@ -15,15 +15,20 @@ class ShouldSwipeDemoViewController: ZLSwipeableViewController {
         super.viewDidLoad()
         
         self.title = "Should Swipe 👍"
-        NSTimer.scheduledTimerWithTimeInterval(3, action: {_ in
-            self.shouldSwipe = !self.shouldSwipe
-            self.title = "Should Swipe " + (self.shouldSwipe ? "👍" : "👎")
-        }, repeats: true)
+        
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(handleTimer), userInfo: nil, repeats: true)
 
         let defaultHandler = swipeableView.shouldSwipeView
         swipeableView.shouldSwipeView = {(view: UIView, movement: Movement, swipeableView: ZLSwipeableView) in
-            self.shouldSwipe && defaultHandler(view: view, movement: movement, swipeableView: swipeableView)
+            self.shouldSwipe && defaultHandler(view, movement, swipeableView)
         }
+    }
+    
+    // MARK: - Actions
+    
+    func handleTimer() {
+        self.shouldSwipe = !self.shouldSwipe
+        self.title = "Should Swipe " + (self.shouldSwipe ? "👍" : "👎")
     }
 
 }
