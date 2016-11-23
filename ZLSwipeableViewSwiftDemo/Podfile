@@ -1,13 +1,13 @@
 target 'ZLSwipeableViewSwiftDemo' do
 	pod 'UIColor+FlatColors'
 	pod 'Cartography'
-	pod 'ReactiveUI'
+	# pod 'ReactiveUI'
 end
 
 target 'ZLSwipeableViewSwiftDemoTests' do
 	pod 'UIColor+FlatColors'
 	pod 'Cartography'
-	pod 'ReactiveUI'
+	# pod 'ReactiveUI'
 end
 
 use_frameworks!

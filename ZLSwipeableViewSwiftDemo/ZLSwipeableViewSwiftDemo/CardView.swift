@@ -22,12 +22,12 @@ class CardView: UIView {
 
     func setup() {
         // Shadow
-        layer.shadowColor = UIColor.blackColor().CGColor
+        layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.25
-        layer.shadowOffset = CGSizeMake(0, 1.5)
+        layer.shadowOffset = CGSize(width: 0, height: 1.5)
         layer.shadowRadius = 4.0
         layer.shouldRasterize = true
-        layer.rasterizationScale = UIScreen.mainScreen().scale
+        layer.rasterizationScale = UIScreen.main.scale
         
         // Corner Radius
         layer.cornerRadius = 10.0;

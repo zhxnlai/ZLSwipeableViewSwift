@@ -18,7 +18,7 @@ public func ==(lhs: Direction, rhs: Direction) -> Bool {
 /**
  *  Swiped direction.
  */
-public struct Direction : OptionSetType, CustomStringConvertible {
+public struct Direction : OptionSet, CustomStringConvertible {
     
     public var rawValue: UInt
     
@@ -35,7 +35,7 @@ public struct Direction : OptionSetType, CustomStringConvertible {
     public static let Vertical: Direction = [Up, Down]
     public static let All: Direction = [Horizontal, Vertical]
     
-    public static func fromPoint(point: CGPoint) -> Direction {
+    public static func fromPoint(_ point: CGPoint) -> Direction {
         switch (point.x, point.y) {
         case let (x, y) where abs(x) >= abs(y) && x > 0:
             return .Right

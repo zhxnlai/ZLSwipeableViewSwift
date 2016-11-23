@@ -1,6 +1,0 @@
-framework module ReactiveUI {
-  umbrella header "ReactiveUI-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -84,12 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ReactiveUI/ReactiveUI.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/UIColor+FlatColors/UIColor_FlatColors.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Cartography-iOS9.0/Cartography.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIColor+FlatColors-iOS9.0/UIColor_FlatColors.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "$BUILT_PRODUCTS_DIR/Cartography/Cartography.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/ReactiveUI/ReactiveUI.framework"
-  install_framework "$BUILT_PRODUCTS_DIR/UIColor+FlatColors/UIColor_FlatColors.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Cartography-iOS9.0/Cartography.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/UIColor+FlatColors-iOS9.0/UIColor_FlatColors.framework"
 fi

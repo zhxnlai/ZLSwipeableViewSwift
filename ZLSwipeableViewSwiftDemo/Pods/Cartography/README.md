@@ -8,7 +8,7 @@
     <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" align="right" vspace="2px">
 </a>
 
-Using Cartography, you can set up your Layout constraints in declarative code and without any stringly typing!
+Using Cartography, you can set up your Auto Layout constraints in declarative code and without any stringly typing!
 
 In short, it allows you to replace this:
 
@@ -35,6 +35,8 @@ constrain(button1, button2) { button1, button2 in
 ```
 
 If you end up using Cartography in production, I'd love to hear from you. You can reach me through [Twitter] or [email].
+
+If you need Swift 2.x support, then please use `0.7.0` and below.
 
 ## Usage
 
@@ -240,5 +242,5 @@ Cartography was built by [Robb Böhnke][me] and was inspired by the excellent
 [flkautolayout]: https://github.com/floriankugler/FLKAutoLayout
 [florian]:       https://github.com/floriankugler
 [me]:            http://robb.is
-[twitter]:       https://twitter.com/ceterum_censeo
+[twitter]:       https://twitter.com/dlx
 [email]:         mailto:robb@robb.is

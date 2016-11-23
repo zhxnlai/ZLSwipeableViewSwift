@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Robert Böhnke. All rights reserved.
 //
 
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 #else
 import AppKit
 #endif
 
-internal func closestCommonAncestor(a: View, b: View) -> View? {
+internal func closestCommonAncestor(_ a: View, b: View) -> View? {
     let (aSuper, bSuper) = (a.superview, b.superview)
 
     if a === b { return a }
@@ -31,13 +31,13 @@ internal func closestCommonAncestor(a: View, b: View) -> View? {
         }
     }
 
-    return .None
+    return .none
 }
 
-private func ancestors(v: View) -> AnySequence<View> {
-    return AnySequence { () -> AnyGenerator<View> in
+private func ancestors(_ v: View) -> AnySequence<View> {
+    return AnySequence { () -> AnyIterator<View> in
         var view: View? = v
-        return anyGenerator {
+        return AnyIterator {
             let current = view
             view = view?.superview
             return current
