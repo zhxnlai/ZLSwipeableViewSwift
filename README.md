@@ -35,7 +35,7 @@ Check out the [demo app](https://github.com/zhxnlai/ZLSwipeableViewSwift/archive
 ### Instantiation
 `ZLSwipeableView` can be added to storyboard or instantiated programmatically:
 ~~~swift
-var swipeableView = ZLSwipeableView(frame: CGRect(x: 0, y: 0, width: 300, height: 500)))
+var swipeableView = ZLSwipeableView(frame: CGRect(x: 0, y: 0, width: 300, height: 500))
 view.addSubview(swipeableView)
 ~~~
 
