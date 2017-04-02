@@ -69,7 +69,9 @@ class ViewManager : NSObject {
         super.init()
         
         view.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: #selector(ViewManager.handlePan(_:))))
-        view.addGestureRecognizer(ZLTapGestureRecognizer(target: self, action: #selector(ViewManager.handleTap(_:))))
+        if swipeableView.didTap != nil {
+            view.addGestureRecognizer(ZLTapGestureRecognizer(target: self, action: #selector(ViewManager.handleTap(_:))))
+        }
         miscContainerView.addSubview(anchorView)
         containerView.insertSubview(view, at: index)
     }
