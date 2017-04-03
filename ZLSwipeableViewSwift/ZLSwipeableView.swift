@@ -64,6 +64,7 @@ open class ZLSwipeableView: UIView {
     open var didCancel: DidCancelHandler?
     open var didTap: DidTap? {
         didSet {
+            guard didTap != nil else { return }
             // Update all viewManagers to listen for taps
             viewManagers.forEach { view, viewManager in
                 viewManager.addTapRecognizer()
