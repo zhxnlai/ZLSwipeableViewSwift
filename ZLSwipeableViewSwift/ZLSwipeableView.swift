@@ -62,7 +62,14 @@ open class ZLSwipeableView: UIView {
     open var didEnd: DidEndHandler?
     open var didSwipe: DidSwipeHandler?
     open var didCancel: DidCancelHandler?
-    open var didTap: DidTap?
+    open var didTap: DidTap? {
+        didSet {
+            // Update all viewManagers to listen for taps
+            viewManagers.forEach { view, viewManager in
+                viewManager.addTapRecognizer()
+            }
+        }
+    }
     open var didDisappear: DidDisappear?
 
     // MARK: Private properties

@@ -70,7 +70,7 @@ class ViewManager : NSObject {
         
         view.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: #selector(ViewManager.handlePan(_:))))
         if swipeableView.didTap != nil {
-            view.addGestureRecognizer(ZLTapGestureRecognizer(target: self, action: #selector(ViewManager.handleTap(_:))))
+            self.addTapRecognizer()
         }
         miscContainerView.addSubview(anchorView)
         containerView.insertSubview(view, at: index)
@@ -140,6 +140,12 @@ class ViewManager : NSObject {
         default:
             break
         }
+    }
+    
+    func addTapRecognizer() {
+        guard !(view.gestureRecognizers ?? []).contains(where: { $0 is ZLTapGestureRecognizer }) else { return }
+
+        view.addGestureRecognizer(ZLTapGestureRecognizer(target: self, action: #selector(ViewManager.handleTap(_:))))
     }
     
     func handleTap(_ recognizer: UITapGestureRecognizer) {
