@@ -167,7 +167,7 @@ public func activeViews() -> [UIView]
 
 Requirements
 ---
-- iOS 7 or higher.
+- iOS 8 or higher.
 
 Credits
 ---
