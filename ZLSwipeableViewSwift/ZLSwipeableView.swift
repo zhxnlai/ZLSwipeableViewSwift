@@ -161,6 +161,13 @@ open class ZLSwipeableView: UIView {
         insert(view, atIndex: allViews().count)
         updateViews()
     }
+    
+    open func discardTopView() {
+        guard let topView = topView() else { return }
+        
+        remove(topView)
+        loadViews()
+    }
 
     open func discardViews() {
         for view in allViews() {
