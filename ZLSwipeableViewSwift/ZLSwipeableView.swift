@@ -162,7 +162,7 @@ open class ZLSwipeableView: UIView {
         updateViews()
     }
     
-    open func discardTopView() {
+    open func discardTopCard() {
         guard let topView = topView() else { return }
         
         remove(topView)
