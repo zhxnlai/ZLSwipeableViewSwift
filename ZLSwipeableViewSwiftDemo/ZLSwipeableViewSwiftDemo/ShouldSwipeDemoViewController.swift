@@ -26,7 +26,7 @@ class ShouldSwipeDemoViewController: ZLSwipeableViewController {
     
     // MARK: - Actions
     
-    func handleTimer() {
+    @objc func handleTimer() {
         self.shouldSwipe = !self.shouldSwipe
         self.title = "Should Swipe " + (self.shouldSwipe ? "👍" : "👎")
     }

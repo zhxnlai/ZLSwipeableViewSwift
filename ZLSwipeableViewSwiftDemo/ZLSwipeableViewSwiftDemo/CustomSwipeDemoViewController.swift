@@ -40,11 +40,11 @@ class CustomSwipeDemoViewController: ZLSwipeableViewController {
     
     // MARK: - Actions
     
-    func leftBarButtonAction() {
+    @objc func leftBarButtonAction() {
         self.swipeableView.swipeTopView(fromPoint: CGPoint(x: 10, y: 300), inDirection: CGVector(dx: -700, dy: -300))
     }
     
-    func upBarButtonAction() {
+    @objc func upBarButtonAction() {
         self.swipeableView.swipeTopView(fromPoint: CGPoint(x: 100, y: 30), inDirection: CGVector(dx: 100, dy: -800))
     }
 

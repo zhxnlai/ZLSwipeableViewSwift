@@ -88,7 +88,7 @@ class ZLSwipeableViewController: UIViewController {
     
     // MARK: - Actions
     
-    func reloadButtonAction() {
+    @objc func reloadButtonAction() {
         let alertController = UIAlertController(title: nil, message: "Load Cards:", preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
@@ -115,19 +115,19 @@ class ZLSwipeableViewController: UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    func leftButtonAction() {
+    @objc func leftButtonAction() {
         self.swipeableView.swipeTopView(inDirection: .Left)
     }
     
-    func upButtonAction() {
+    @objc func upButtonAction() {
         self.swipeableView.swipeTopView(inDirection: .Up)
     }
     
-    func rightButtonAction() {
+    @objc func rightButtonAction() {
         self.swipeableView.swipeTopView(inDirection: .Right)
     }
     
-    func downButtonAction() {
+    @objc func downButtonAction() {
         self.swipeableView.swipeTopView(inDirection: .Down)
     }
     

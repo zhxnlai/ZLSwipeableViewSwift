@@ -83,12 +83,12 @@
 		10584487185446B86E530724474550ED /* Distribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Distribute.swift; path = Cartography/Distribute.swift; sourceTree = "<group>"; };
 		1122715433E5F9C56876F5747FC01BAA /* Compound.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compound.swift; path = Cartography/Compound.swift; sourceTree = "<group>"; };
 		144872B37ADE2B71B4AD895E761F53AC /* Pods-ZLSwipeableViewSwiftDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZLSwipeableViewSwiftDemo-acknowledgements.plist"; sourceTree = "<group>"; };
-		1551875FF5B51A65C34E3FE5B5F5A2C0 /* Pods-ZLSwipeableViewSwiftDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZLSwipeableViewSwiftDemo.modulemap"; sourceTree = "<group>"; };
+		1551875FF5B51A65C34E3FE5B5F5A2C0 /* Pods-ZLSwipeableViewSwiftDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ZLSwipeableViewSwiftDemo.modulemap"; sourceTree = "<group>"; };
 		15CBE55F33346A40E0E5ECF63D636444 /* UIColor+FlatColors-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+FlatColors-prefix.pch"; sourceTree = "<group>"; };
 		19862EB90DF1BA41770DE121D41C84D0 /* Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		1EFD0E1DAE8E53DA3325258E62F2166C /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Extensions.swift; path = Cartography/Extensions.swift; sourceTree = "<group>"; };
 		32BC03D97DF8CD337DD7964722764CB7 /* Align.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Align.swift; path = Cartography/Align.swift; sourceTree = "<group>"; };
-		346376136DE9C6AF99167A2E0DA53F53 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cartography.framework; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		346376136DE9C6AF99167A2E0DA53F53 /* Cartography.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Cartography.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		39760435A2CA3D2D92DB574810C03DC2 /* Pods-ZLSwipeableViewSwiftDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ZLSwipeableViewSwiftDemo-umbrella.h"; sourceTree = "<group>"; };
 		39C5AB9B52B5110E0D7494B32D29376C /* Pods-ZLSwipeableViewSwiftDemoTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ZLSwipeableViewSwiftDemoTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3A95A05ED3AF87C100329CCCE2D75840 /* Size.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Size.swift; path = Cartography/Size.swift; sourceTree = "<group>"; };
@@ -99,11 +99,11 @@
 		4F49A17299C45CE3D10F6025D98E4E89 /* Property.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Property.swift; path = Cartography/Property.swift; sourceTree = "<group>"; };
 		529095B45EEBC69EC9DC506779747E61 /* LayoutProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutProxy.swift; path = Cartography/LayoutProxy.swift; sourceTree = "<group>"; };
 		552EC411E489BD5B6A401C1379CDCAB2 /* Pods-ZLSwipeableViewSwiftDemoTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZLSwipeableViewSwiftDemoTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		59E5BC6AB8A71218AE35EA61E40A9E04 /* Pods-ZLSwipeableViewSwiftDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-ZLSwipeableViewSwiftDemoTests.modulemap"; sourceTree = "<group>"; };
-		5B33D0074CFA621DED0931E4F1CB9AD9 /* UIColor_FlatColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIColor_FlatColors.framework; path = "UIColor+FlatColors.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		59E5BC6AB8A71218AE35EA61E40A9E04 /* Pods-ZLSwipeableViewSwiftDemoTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-ZLSwipeableViewSwiftDemoTests.modulemap"; sourceTree = "<group>"; };
+		5B33D0074CFA621DED0931E4F1CB9AD9 /* UIColor_FlatColors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIColor_FlatColors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FBE4B8943641164F12820ED2DC1E5B6 /* Pods-ZLSwipeableViewSwiftDemoTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZLSwipeableViewSwiftDemoTests-frameworks.sh"; sourceTree = "<group>"; };
 		62966EE79D7E4A3816F8DB0474179836 /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Context.swift; path = Cartography/Context.swift; sourceTree = "<group>"; };
-		63370DEFF8A1605E9A984AEB8DA345E7 /* UIColor+FlatColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "UIColor+FlatColors.modulemap"; sourceTree = "<group>"; };
+		63370DEFF8A1605E9A984AEB8DA345E7 /* UIColor+FlatColors.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "UIColor+FlatColors.modulemap"; sourceTree = "<group>"; };
 		6F34D3F333E71195A38C3C28D698A46B /* Cartography.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cartography.xcconfig; sourceTree = "<group>"; };
 		7B032C1D2B22E57D12888C0F4E0D3FD8 /* Pods-ZLSwipeableViewSwiftDemo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZLSwipeableViewSwiftDemo-resources.sh"; sourceTree = "<group>"; };
 		7D7A6F0DAE636B6774E46AC2B0303E67 /* Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,9 +111,9 @@
 		827DFD7DC43C74BA36FD35E5BD6B7F6C /* Edge.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edge.swift; path = Cartography/Edge.swift; sourceTree = "<group>"; };
 		85ED3CD27E9420698B8B8B2257146093 /* View.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = View.swift; path = Cartography/View.swift; sourceTree = "<group>"; };
 		88E3D73B5FCFA374E0FD022330A6B73A /* UIColor+FlatColors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+FlatColors.h"; path = "UIColor+FlatColors/UIColor+FlatColors.h"; sourceTree = "<group>"; };
-		8CEF4DDB47EBB0FEFCA9080470B6DBAD /* Pods_ZLSwipeableViewSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZLSwipeableViewSwiftDemo.framework; path = "Pods-ZLSwipeableViewSwiftDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CEF4DDB47EBB0FEFCA9080470B6DBAD /* Pods_ZLSwipeableViewSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLSwipeableViewSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D11C1BA50F6B7B0A5B0B6C6CFEBA4E9 /* Cartography-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-prefix.pch"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		959F86BCA0B54E1C2D0DB2240B85FF14 /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = Cartography/Priority.swift; sourceTree = "<group>"; };
 		9944B123CA6E82D96A78E33D3265D8B2 /* Point.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Point.swift; path = Cartography/Point.swift; sourceTree = "<group>"; };
 		9B69F499F76B38963A8EBF60E987A173 /* UIColor+FlatColors-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+FlatColors-dummy.m"; sourceTree = "<group>"; };
@@ -126,7 +126,7 @@
 		B5FEAEF37F1A09C56536F1D1C7F8B52E /* Pods-ZLSwipeableViewSwiftDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ZLSwipeableViewSwiftDemo-frameworks.sh"; sourceTree = "<group>"; };
 		B825803F73EBF168EB7666179CBB7074 /* UIColor+FlatColors.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+FlatColors.m"; path = "UIColor+FlatColors/UIColor+FlatColors.m"; sourceTree = "<group>"; };
 		BB052FCFE536AD94C296C2EBF32F12ED /* Expression.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Expression.swift; path = Cartography/Expression.swift; sourceTree = "<group>"; };
-		C1B8A383CAC34A0A5DCD0BB3F70383B9 /* Cartography.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Cartography.modulemap; sourceTree = "<group>"; };
+		C1B8A383CAC34A0A5DCD0BB3F70383B9 /* Cartography.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Cartography.modulemap; sourceTree = "<group>"; };
 		C74C15D7C65C5E757F0D39A97EB8241D /* LayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutSupport.swift; path = Cartography/LayoutSupport.swift; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CC98EE9BA8154342D8F5F6F8CD67A0F1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		DFE41F36162373502AA84E92B9AA4C96 /* Cartography-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cartography-umbrella.h"; sourceTree = "<group>"; };
 		ED2DBE26DD45A7C3CC120B15DFC572BB /* Edges.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Edges.swift; path = Cartography/Edges.swift; sourceTree = "<group>"; };
 		F60E605E020CF6FF0D759F0D20C729D1 /* Pods-ZLSwipeableViewSwiftDemo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ZLSwipeableViewSwiftDemo-dummy.m"; sourceTree = "<group>"; };
-		FA91E1F3959333918D5CBE942CF3FE67 /* Pods_ZLSwipeableViewSwiftDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ZLSwipeableViewSwiftDemoTests.framework; path = "Pods-ZLSwipeableViewSwiftDemoTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA91E1F3959333918D5CBE942CF3FE67 /* Pods_ZLSwipeableViewSwiftDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLSwipeableViewSwiftDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7EA4A3499BA3D2A3E9962E96A7DCF7 /* Pods-ZLSwipeableViewSwiftDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ZLSwipeableViewSwiftDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -251,7 +251,6 @@
 				A5D6A957C55C41CAC75BAE198D01275B /* ViewUtils.swift */,
 				20EF0C29784D35861079D5E4FD944627 /* Support Files */,
 			);
-			name = Cartography;
 			path = Cartography;
 			sourceTree = "<group>";
 		};
@@ -332,7 +331,6 @@
 				B825803F73EBF168EB7666179CBB7074 /* UIColor+FlatColors.m */,
 				A6F517101456AFA8868EB2A9CB33C669 /* Support Files */,
 			);
-			name = "UIColor+FlatColors";
 			path = "UIColor+FlatColors";
 			sourceTree = "<group>";
 		};
@@ -455,6 +453,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					544212980401A6DA7806F65EAD8C6637 = {
+						LastSwiftMigration = 0900;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -586,7 +589,8 @@
 				PRODUCT_NAME = Cartography;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -841,7 +845,8 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

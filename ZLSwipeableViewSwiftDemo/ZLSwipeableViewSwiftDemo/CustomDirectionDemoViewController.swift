@@ -22,7 +22,7 @@ class CustomDirectionDemoViewController: ZLSwipeableViewController {
     
     // MARK: - Actions
     
-    func segmentedControlFired(control: AnyObject?) {
+    @objc func segmentedControlFired(control: AnyObject?) {
         if let control = control as? UISegmentedControl {
             let directions: [ZLSwipeableViewDirection] = [.None, .Left, .Up, .Right, .Down, .Horizontal, .Vertical, .All]
             self.swipeableView.allowedDirection = directions[control.selectedSegmentIndex]
