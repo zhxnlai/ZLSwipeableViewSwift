@@ -24,7 +24,7 @@ class Scheduler : NSObject {
         timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(Scheduler.doAction(_:)), userInfo: nil, repeats: true)
     }
     
-    func doAction(_ timer: Timer) {
+    @objc func doAction(_ timer: Timer) {
         guard let action = action, let endCondition = endCondition, !endCondition() else {
             timer.invalidate()
             self.timer = nil

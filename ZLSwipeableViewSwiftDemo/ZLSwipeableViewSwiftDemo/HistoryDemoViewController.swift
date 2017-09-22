@@ -44,7 +44,7 @@ class HistoryDemoViewController: ZLSwipeableViewController {
     
     // MARK: - Actions
     
-    func rightButtonClicked() {
+    @objc func rightButtonClicked() {
         self.swipeableView.rewind()
         // updateRightBarButtonItem()
     }

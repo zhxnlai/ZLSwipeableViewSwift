@@ -52,7 +52,7 @@ class PreviousViewDemoViewController: ZLSwipeableViewController {
     
     // MARK: - Actions
     
-    func rightBarButtonClicked() {
+    @objc func rightBarButtonClicked() {
         self.swipeableView.rewind()
     }
 
