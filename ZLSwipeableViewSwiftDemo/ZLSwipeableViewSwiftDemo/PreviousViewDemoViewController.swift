@@ -33,6 +33,11 @@ class PreviousViewDemoViewController: ZLSwipeableViewController {
         // ↺
         let rightBarButtonItem = UIBarButtonItem(title: rightBarButtonItemTitle, style: .plain, target: self, action: #selector(rightBarButtonClicked))
         navigationItem.rightBarButtonItem = rightBarButtonItem
+
+        // Load previous by tap the card
+//        swipeableView.didTap = {view, location in
+//            self.swipeableView.rewind()
+//        }
     }
 
     func applyRandomTansform(_ view: UIView) {
