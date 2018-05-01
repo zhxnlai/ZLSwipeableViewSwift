@@ -68,8 +68,10 @@ class ViewManager : NSObject {
         
         super.init()
         
-        view.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: #selector(ViewManager.handlePan(_:))))
-        view.addGestureRecognizer(ZLTapGestureRecognizer(target: self, action: #selector(ViewManager.handleTap(_:))))
+        if !swipeableView.ignoreGestures {
+            view.addGestureRecognizer(ZLPanGestureRecognizer(target: self, action: #selector(ViewManager.handlePan(_:))))
+            view.addGestureRecognizer(ZLTapGestureRecognizer(target: self, action: #selector(ViewManager.handleTap(_:))))
+        }
         miscContainerView.addSubview(anchorView)
         containerView.insertSubview(view, at: index)
     }
@@ -96,10 +98,12 @@ class ViewManager : NSObject {
         if let pushBehavior = pushBehavior {
             removeBehavior(pushBehavior)
         }
-        
-        for gestureRecognizer in view.gestureRecognizers! {
-            if gestureRecognizer.isKind(of: ZLPanGestureRecognizer.classForCoder()) {
-                view.removeGestureRecognizer(gestureRecognizer)
+
+        if !(swipeableView?.ignoreGestures)! {
+            for gestureRecognizer in view.gestureRecognizers! {
+                if gestureRecognizer.isKind(of: ZLPanGestureRecognizer.classForCoder()) {
+                    view.removeGestureRecognizer(gestureRecognizer)
+                }
             }
         }
         

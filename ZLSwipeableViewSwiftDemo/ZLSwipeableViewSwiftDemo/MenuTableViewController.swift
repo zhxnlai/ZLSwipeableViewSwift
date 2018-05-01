@@ -17,7 +17,9 @@ class MenuTableViewController: UITableViewController {
                                 ("History", HistoryDemoViewController.self),
                                 ("Previous View", PreviousViewDemoViewController.self),
                                 ("Should Swipe", ShouldSwipeDemoViewController.self),
-                                ("Always Swipe", AlwaysSwipeDemoViewController.self)]
+                                ("Always Swipe", AlwaysSwipeDemoViewController.self),
+                                ("Ignore Gestures", IgnoreGensturesViewController.self)]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

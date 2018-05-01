@@ -28,6 +28,7 @@
 		466AFFF61CEB912C006FF62A /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AFFF21CEB912C006FF62A /* Scheduler.swift */; };
 		466AFFF71CEB912C006FF62A /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AFFF31CEB912C006FF62A /* ViewManager.swift */; };
 		466AFFF81CEB912C006FF62A /* ZLSwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466AFFF41CEB912C006FF62A /* ZLSwipeableView.swift */; };
+		78F98C602098D6C4002ECCA1 /* IgnoreGesturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F98C5F2098D6C4002ECCA1 /* IgnoreGesturesViewController.swift */; };
 		946427F2EE69625DD2E9241B /* Pods_ZLSwipeableViewSwiftDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C86DA0F3A6E1F9D418584CE /* Pods_ZLSwipeableViewSwiftDemoTests.framework */; };
 		CFDAB0BCDA1CAF5B54DF76AF /* Pods_ZLSwipeableViewSwiftDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AD45CD586A46370C71D08D2 /* Pods_ZLSwipeableViewSwiftDemo.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		466AFFF41CEB912C006FF62A /* ZLSwipeableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZLSwipeableView.swift; sourceTree = "<group>"; };
 		4AEF23DC622C3A7E809F3742 /* Pods-ZLSwipeableViewSwiftDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewSwiftDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemo/Pods-ZLSwipeableViewSwiftDemo.release.xcconfig"; sourceTree = "<group>"; };
 		4BA34855EB4A4C2074C86E94 /* Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemo/Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		78F98C5F2098D6C4002ECCA1 /* IgnoreGesturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnoreGesturesViewController.swift; sourceTree = "<group>"; };
 		7AD45CD586A46370C71D08D2 /* Pods_ZLSwipeableViewSwiftDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLSwipeableViewSwiftDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C86DA0F3A6E1F9D418584CE /* Pods_ZLSwipeableViewSwiftDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLSwipeableViewSwiftDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C998BF9C49543ECF772E8671 /* Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZLSwipeableViewSwiftDemoTests/Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				099CF6401BDABF8600D05FAA /* PreviousViewDemoViewController.swift */,
 				09B2F5281B32018000ECD8B1 /* ShouldSwipeDemoViewController.swift */,
 				09E79D1A1BDAA5BD00A609A1 /* AlwaysSwipeDemoViewController.swift */,
+				78F98C5F2098D6C4002ECCA1 /* IgnoreGesturesViewController.swift */,
 				098070A11B12ECAD00C90479 /* CardView.swift */,
 				098070A31B12ED6400C90479 /* CardContentView.xib */,
 				09673A8A1AEF5B2E008C7240 /* Images.xcassets */,
@@ -412,6 +415,7 @@
 				098070B11B13E9B900C90479 /* CustomSwipeDemoViewController.swift in Sources */,
 				098070AB1B13D69300C90479 /* MenuTableViewController.swift in Sources */,
 				09673A841AEF5B2E008C7240 /* AppDelegate.swift in Sources */,
+				78F98C602098D6C4002ECCA1 /* IgnoreGesturesViewController.swift in Sources */,
 				466AFFF81CEB912C006FF62A /* ZLSwipeableView.swift in Sources */,
 				098070A21B12ECAD00C90479 /* CardView.swift in Sources */,
 				099CF6411BDABF8600D05FAA /* PreviousViewDemoViewController.swift in Sources */,

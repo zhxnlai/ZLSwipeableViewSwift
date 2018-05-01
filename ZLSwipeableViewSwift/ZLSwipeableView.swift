@@ -55,6 +55,7 @@ open class ZLSwipeableView: UIView {
     open var minVelocityInPointPerSecond = CGFloat(750)
     open var allowedDirection = Direction.Horizontal
     open var onlySwipeTopCard = false
+    open var ignoreGestures = false
 
     // MARK: Delegate
     open var didStart: DidStartHandler?
