@@ -256,7 +256,6 @@
 				TargetAttributes = {
 					09673A7D1AEF5B2E008C7240 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = NAV5A3CB56;
 						LastSwiftMigration = 0900;
 					};
 					09673A921AEF5B2E008C7240 = {
@@ -540,7 +539,7 @@
 			baseConfigurationReference = 4BA34855EB4A4C2074C86E94 /* Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NAV5A3CB56;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ZLSwipeableViewSwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axcel.$(PRODUCT_NAME:rfc1034identifier)";
@@ -555,7 +554,7 @@
 			baseConfigurationReference = 4AEF23DC622C3A7E809F3742 /* Pods-ZLSwipeableViewSwiftDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = NAV5A3CB56;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ZLSwipeableViewSwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axcel.$(PRODUCT_NAME:rfc1034identifier)";
