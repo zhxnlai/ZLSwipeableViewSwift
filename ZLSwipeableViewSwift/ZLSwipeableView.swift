@@ -55,6 +55,7 @@ open class ZLSwipeableView: UIView {
     open var minVelocityInPointPerSecond = CGFloat(750)
     open var allowedDirection = Direction.Horizontal
     open var onlySwipeTopCard = false
+    open var ignoreGestures = false
 
     // MARK: Delegate
     open var didStart: DidStartHandler?
@@ -204,7 +205,6 @@ open class ZLSwipeableView: UIView {
             view.isUserInteractionEnabled = false
         }
 
-        guard let gestureRecognizers = activeViews.first?.gestureRecognizers, gestureRecognizers.filter({ gestureRecognizer in gestureRecognizer.state != .possible }).count == 0 else { return }
 
         for i in 0 ..< activeViews.count {
             let view = activeViews[i]
