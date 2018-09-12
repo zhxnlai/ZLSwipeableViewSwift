@@ -173,6 +173,13 @@ class ViewManager : NSObject {
         removeBehavior(snapBehavior)
     }
     
+    func resnapView() {
+        if case .snapping(_) = state {
+            unsnapView()
+            state = snappingStateAtContainerCenter()
+        }
+    }
+    
     fileprivate func attachView(toPoint point: CGPoint) {
         anchorView.center = point
         anchorView.backgroundColor = UIColor.blue
