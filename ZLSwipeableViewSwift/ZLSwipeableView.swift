@@ -117,6 +117,9 @@ open class ZLSwipeableView: UIView {
     override open func layoutSubviews() {
         super.layoutSubviews()
         containerView.frame = bounds
+        for viewManager in viewManagers.values {
+            viewManager.resnapView()
+        }
     }
 
     // MARK: Public APIs
