@@ -176,6 +176,7 @@ open class ZLSwipeableView: UIView {
         for view in allViews() {
             remove(view)
         }
+        history = []
     }
 
     open func swipeTopView(inDirection direction: Direction) {
