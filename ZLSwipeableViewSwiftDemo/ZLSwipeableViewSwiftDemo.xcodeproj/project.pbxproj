@@ -256,12 +256,10 @@
 				TargetAttributes = {
 					09673A7D1AEF5B2E008C7240 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 89D52653SY;
 						LastSwiftMigration = 0900;
 					};
 					09673A921AEF5B2E008C7240 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = 89D52653SY;
 						LastSwiftMigration = 0900;
 						TestTargetID = 09673A7D1AEF5B2E008C7240;
 					};
@@ -564,9 +562,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4BA34855EB4A4C2074C86E94 /* Pods-ZLSwipeableViewSwiftDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 89D52653SY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ZLSwipeableViewSwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axcel.$(PRODUCT_NAME:rfc1034identifier)";
@@ -580,9 +578,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4AEF23DC622C3A7E809F3742 /* Pods-ZLSwipeableViewSwiftDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 89D52653SY;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = ZLSwipeableViewSwiftDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.axcel.$(PRODUCT_NAME:rfc1034identifier)";
@@ -596,9 +594,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E98741382FDFBC754EDA0B1E /* Pods-ZLSwipeableViewSwiftDemoTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 89D52653SY;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -621,9 +619,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C998BF9C49543ECF772E8671 /* Pods-ZLSwipeableViewSwiftDemoTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 89D52653SY;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
