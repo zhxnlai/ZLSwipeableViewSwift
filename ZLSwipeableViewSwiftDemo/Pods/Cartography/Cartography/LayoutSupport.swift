@@ -18,13 +18,13 @@ import Foundation
 
     public extension UIViewController {
         
-        public var topLayoutGuideCartography : LayoutSupport {
+        var topLayoutGuideCartography : LayoutSupport {
             get {
                 return LayoutSupport(layoutGuide: self.topLayoutGuide, attribute: .bottom)
             }
         }
         
-        public var bottomLayoutGuideCartography : LayoutSupport {
+        var bottomLayoutGuideCartography : LayoutSupport {
             get {
                 return LayoutSupport(layoutGuide: self.bottomLayoutGuide, attribute: .top)
             }

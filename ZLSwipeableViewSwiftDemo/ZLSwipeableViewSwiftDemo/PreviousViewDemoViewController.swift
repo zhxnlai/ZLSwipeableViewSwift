@@ -46,7 +46,7 @@ class PreviousViewDemoViewController: ZLSwipeableViewController {
         let distance = max(width, height)
 
         func randomRadian() -> CGFloat {
-            return CGFloat(arc4random() % 360)  * CGFloat(M_PI / 180)
+            return CGFloat(arc4random() % 360)  * CGFloat(Double.pi / 180)
         }
 
         var transform = CGAffineTransform(rotationAngle: randomRadian())

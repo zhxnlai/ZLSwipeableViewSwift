@@ -13,7 +13,7 @@ class CustomAnimationDemoViewController: ZLSwipeableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         func toRadian(_ degree: CGFloat) -> CGFloat {
-            return degree * CGFloat(M_PI/180)
+            return degree * CGFloat(Double.pi/180)
         }
         func rotateAndTranslateView(_ view: UIView, forDegree degree: CGFloat, translation: CGPoint, duration: TimeInterval, offsetFromCenter offset: CGPoint, swipeableView: ZLSwipeableView) {
             UIView.animate(withDuration: duration, delay: 0, options: .allowUserInteraction, animations: {

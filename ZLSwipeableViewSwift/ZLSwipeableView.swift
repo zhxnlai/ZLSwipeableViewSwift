@@ -350,51 +350,6 @@ extension ZLSwipeableView {
 
 }
 
-// MARK: - Deprecated APIs
-extension ZLSwipeableView {
-
-    @available(*, deprecated: 1, message: "Use numberOfActiveView")
-    public var numPrefetchedViews: UInt {
-        get {
-            return numberOfActiveView
-        }
-        set(newValue){
-            numberOfActiveView = newValue
-        }
-    }
-
-    @available(*, deprecated: 1, message: "Use allowedDirection")
-    public var direction: Direction {
-        get {
-            return allowedDirection
-        }
-        set(newValue){
-            allowedDirection = newValue
-        }
-    }
-
-    @available(*, deprecated: 1, message: "Use minTranslationInPercent")
-    public var translationThreshold: CGFloat {
-        get {
-            return minTranslationInPercent
-        }
-        set(newValue){
-            minTranslationInPercent = newValue
-        }
-    }
-
-    @available(*, deprecated: 1, message: "Use minVelocityInPointPerSecond")
-    public var velocityThreshold: CGFloat {
-        get {
-            return minVelocityInPointPerSecond
-        }
-        set(newValue){
-            minVelocityInPointPerSecond = newValue
-        }
-    }
-    
-}
-
 // MARK: - Helper extensions
 public func *(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
     return CGPoint(x: lhs.x * rhs, y: lhs.y * rhs)
