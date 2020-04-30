@@ -51,6 +51,7 @@ open class ZLSwipeableView: UIView {
     open var animateView = ZLSwipeableView.defaultAnimateViewHandler()
     open var interpretDirection = ZLSwipeableView.defaultInterpretDirectionHandler()
     open var shouldSwipeView = ZLSwipeableView.defaultShouldSwipeViewHandler()
+    open var angle = CGFloat(1.0)
     open var minTranslationInPercent = CGFloat(0.25)
     open var minVelocityInPointPerSecond = CGFloat(750)
     open var allowedDirection = Direction.Horizontal
@@ -280,7 +281,7 @@ extension ZLSwipeableView {
         }
 
         return { (view: UIView, index: Int, views: [UIView], swipeableView: ZLSwipeableView) in
-            let degree = CGFloat(1)
+            let degree = swipeableView.angle
             let duration = 0.4
             let offset = CGPoint(x: 0, y: swipeableView.bounds.height * 0.3)
             switch index {
