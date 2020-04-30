@@ -158,6 +158,10 @@ swipeableView.allowedDirection = .Left | .Up
 swipeableView.allowedDirection = .All
 ~~~
 
+### angle
+
+You can change the rotation of the swipe views with the 'angle' property
+
 ### Misc
 
 ~~~swift
