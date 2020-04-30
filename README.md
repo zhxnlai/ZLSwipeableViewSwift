@@ -136,6 +136,7 @@ Here is a list of customizable behaviors:
 public var animateView = ZLSwipeableView.defaultAnimateViewHandler()
 public var interpretDirection = ZLSwipeableView.defaultInterpretDirectionHandler()
 public var shouldSwipeView = ZLSwipeableView.defaultShouldSwipeViewHandler()
+public var angle = CGFloat(1.0)
 public var minTranslationInPercent = CGFloat(0.25)
 public var minVelocityInPointPerSecond = CGFloat(750)
 public var allowedDirection = Direction.Horizontal
@@ -156,6 +157,10 @@ The `allowedDirection` property limits the directions in which the user is allow
 swipeableView.allowedDirection = .Left | .Up
 swipeableView.allowedDirection = .All
 ~~~
+
+### angle
+
+You can change the rotation of the swipe views with the 'angle' property
 
 ### Misc
 
