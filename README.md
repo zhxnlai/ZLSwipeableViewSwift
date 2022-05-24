@@ -28,6 +28,16 @@ Carthage
 ---
 You can install `ZLSwipeableViewSwift` through Carthage by adding  `github "zhxnlai/ZLSwipeableViewSwift"` to your Cartfile
 
+Swift Package Manager
+---
+You can install `ZLSwipeableViewSwift` through Swift Package Manager by adding it to the `dependencies` value of your `Package.swift`.
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/zhxnlai/ZLSwipeableViewSwift", .upToNextMajor(from: "0.0.9"))
+]
+```
+
 Usage
 ---
 Check out the [demo app](https://github.com/zhxnlai/ZLSwipeableViewSwift/archive/master.zip) for an example. It contains the following demos: Default, Custom Animation, Custom Swipe, Allowed Direction, History, Previous View, Should Swipe and Always Swipe.
