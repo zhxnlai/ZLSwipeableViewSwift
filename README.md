@@ -34,7 +34,7 @@ You can install `ZLSwipeableViewSwift` through Swift Package Manager by adding i
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/zhxnlai/ZLSwipeableViewSwift", .upToNextMajor(from: "0.0.9"))
+    .package(url: "https://github.com/zhxnlai/ZLSwipeableViewSwift", .branchItem("master"))
 ]
 ```
 
